@@ -1,0 +1,320 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Anoop Ayyappan</title>
+		<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/</link>
+		<description>Recent content in Posts on Anoop Ayyappan</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Tue, 14 Sep 2021 20:03:06 +0530</lastBuildDate>
+		<atom:link href="http://www.chemistry.iitkgp.ac.in_~anoop/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Biography of tools (updated after more than a year)</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/7/</link>
+			<pubDate>Tue, 14 Sep 2021 20:03:06 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/7/</guid>
+			<description>I am slightly updating the list that I posted last year.
+Manuscript workflow Markdown and pandoc for document preparation and git + bitbucket for sharing with co-authors. Convert to latex or docx using pandoc before submission. Operating systems Major: Unix → Solaris → Redhat → Suse → Ubuntu &amp;amp; Pop-OS Others: Windows Reason: I love Free Software. Text Editors Vim Started with Vim, did not find any rason to change. Formatted text Microsoft Word → Lyx → Latex → markdown.</description>
+			<content type="html"><![CDATA[<p>I am slightly updating the list that I posted last year.</p>
+<h2 id="manuscript-workflow">Manuscript workflow</h2>
+<ul>
+<li>Markdown and pandoc for document preparation and git + bitbucket for sharing
+with co-authors.  Convert to latex or docx using pandoc before submission.</li>
+</ul>
+<h2 id="operating-systems">Operating systems</h2>
+<ul>
+<li>Major: Unix → Solaris → Redhat → Suse → Ubuntu &amp; Pop-OS</li>
+<li>Others: Windows</li>
+<li>Reason: I love Free Software.</li>
+</ul>
+<h2 id="text-editors">Text Editors</h2>
+<ul>
+<li>Vim</li>
+<li>Started with Vim, did not find any rason to change.</li>
+</ul>
+<h2 id="formatted-text">Formatted text</h2>
+<ul>
+<li>Microsoft Word → Lyx → Latex → markdown.</li>
+<li>Others: MS word, Libreoffice Writer, and Latex</li>
+<li>Reason: I prefer markup to gui, typing to clicking. Also I prefer
+opensource.</li>
+</ul>
+<h2 id="plotting">Plotting</h2>
+<ul>
+<li>Origin → Xmgrace → Gnuplot → matplotlib in Jupyter Notebook</li>
+<li>Others: Excel</li>
+<li>Reason: Free software is preferred.</li>
+</ul>
+<h2 id="dtp">DTP</h2>
+<ul>
+<li>Sribus</li>
+</ul>
+<h2 id="molecular-visualizer-and-builder">Molecular visualizer and builder</h2>
+<h3 id="builder">Builder</h3>
+<ul>
+<li>Main: Z-matrix → molden → Gaussview → Material Studio
+Visualiser → Avogadro</li>
+<li>Others: Gaussview, molden</li>
+</ul>
+<h3 id="viewer">Viewer</h3>
+<ul>
+<li>Main: molden</li>
+<li>Others: Avogadro</li>
+<li>Reason: Avogadro is Free software, molden is lightweght.</li>
+</ul>
+<h2 id="scripting-languages">Scripting languages</h2>
+<ul>
+<li>Main: csh → tcsh → bash → tcl, →python</li>
+<li>Others: bash</li>
+</ul>
+<h2 id="programming-languages">Programming languages</h2>
+<ul>
+<li>Main: C → Fortran → Python</li>
+</ul>
+<h2 id="qauantum-chemistry-calculations">Qauantum Chemistry Calculations</h2>
+<ul>
+<li>Main: Gaussian → Turbomole → Orca → Orca/Turbomole</li>
+<li>Others: Xtb, Mopac, Gaussian</li>
+</ul>
+<h2 id="email-client">Email client</h2>
+<ul>
+<li>Main: Pine → Thunderbird → Evolution → Zimbra web client</li>
+</ul>
+<h2 id="social-media">Social media</h2>
+<ul>
+<li>Main: Orkut → Facebook → Twitter, LinkedIn, Clubhouse</li>
+<li>Others:</li>
+</ul>
+<h2 id="messagingchat">Messaging/Chat</h2>
+<ul>
+<li>Main: Yahoo messenger → WhatsApp → Signal, Telegram, slack</li>
+<li>Others: Skype</li>
+<li>Dropped: WhatsApp</li>
+</ul>
+<h2 id="presentation">Presentation</h2>
+<ul>
+<li>Powerpoint → Beamer → Prezi → Powerpoint</li>
+</ul>
+<h2 id="ide">IDE</h2>
+<ul>
+<li>Vim → Jupyter/PyCharm, Codium</li>
+</ul>
+<h2 id="browser">Browser</h2>
+<ul>
+<li>Main: Netscape Navigaor → Mozilla Firefox</li>
+<li>Others: Chromium, Tor Browser, Brave</li>
+</ul>
+<h2 id="search-engine">Search engine</h2>
+<ul>
+<li>Main: Yahoo → Google → DuckDuckGo</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Goodbye and Welcome</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/6/</link>
+			<pubDate>Wed, 11 Aug 2021 00:00:00 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/6/</guid>
+			<description> Ayusman Chiranjibi has completed his MSc and joined his job through campus placement. All the best! Sayan Paul is continuing his PhD in our group after completing MSc. Bhrigu Chakraborty joins for PhD under the joint supervison of Prof. Chattaraj. </description>
+			<content type="html"><![CDATA[<ul>
+<li>Ayusman Chiranjibi has completed his MSc and joined his job through campus placement. All the best!</li>
+<li>Sayan Paul is continuing his PhD in our group after completing MSc.</li>
+<li>Bhrigu Chakraborty joins for PhD under the joint supervison of Prof. Chattaraj.</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Congrats to Eshani and Lazum</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/4/</link>
+			<pubDate>Mon, 03 Aug 2020 23:42:30 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/4/</guid>
+			<description>Eshani defended her PhD, congrats!
+Lazum joined as Assistant Professor in Bijoy Krishna Girls College taking a temporary withdrawal from the PhD program.
+Two good news, incidentally on my birthday.</description>
+			<content type="html"><![CDATA[<p>Eshani defended her PhD, congrats!</p>
+<p>Lazum joined as Assistant Professor in Bijoy Krishna Girls College
+taking a temporary withdrawal from the PhD program.</p>
+<p>Two good news, incidentally on my birthday.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Welcome to new members</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/5/</link>
+			<pubDate>Sat, 01 Aug 2020 10:00:00 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/5/</guid>
+			<description>Welcome to Arptita Poddar and Sandip Giri to the lab.</description>
+			<content type="html"><![CDATA[<p>Welcome to Arptita Poddar and Sandip Giri to the lab.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Biography of tools</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/3/</link>
+			<pubDate>Sun, 10 May 2020 00:03:06 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/3/</guid>
+			<description>The favourite tools change over time, often due to evolution in technology, sometimes due to change of taste. Often there is a general purpose major tools, and there are other tools for occational specual purpose.
+Operating systems Major: Unix → Solaris → Redhat → Suse → Ubuntu Others: Windows Reason: I love Free Software. Text Editors Vim Started with Vim, did not find any rason to change. Formatted text Microsoft Word → Lyx → Latex → markdown.</description>
+			<content type="html"><![CDATA[<p>The favourite tools change over time, often due to evolution in
+technology, sometimes due to change of taste.  Often there is a general
+purpose major tools, and there are other tools for occational specual
+purpose.</p>
+<h2 id="operating-systems">Operating systems</h2>
+<ul>
+<li>Major: Unix → Solaris → Redhat → Suse → Ubuntu</li>
+<li>Others: Windows</li>
+<li>Reason: I love Free Software.</li>
+</ul>
+<h2 id="text-editors">Text Editors</h2>
+<ul>
+<li>Vim</li>
+<li>Started with Vim, did not find any rason to change.</li>
+</ul>
+<h2 id="formatted-text">Formatted text</h2>
+<ul>
+<li>Microsoft Word → Lyx → Latex → markdown.</li>
+<li>Others: MS word, Libreoffice Writer, and Latex</li>
+<li>Reason: I prefer markup to gui, typing to clicking. Also I prefer
+opensource.</li>
+</ul>
+<h2 id="plotting">Plotting</h2>
+<ul>
+<li>Origin → Xmgrace → Gnuplot → matplotlib in Jupyter Notebook</li>
+<li>Others: Excel</li>
+<li>Reason: Free software is preferred.</li>
+</ul>
+<h2 id="molecular-visualizer-and--builder">Molecular visualizer and  builder</h2>
+<h3 id="builder">Builder</h3>
+<ul>
+<li>Main: Z-matrix → molden → Gaussview → Material Studio
+Visualiser → Avogadro</li>
+<li>Others: Gaussview, molden</li>
+</ul>
+<h3 id="viewer">Viewer</h3>
+<ul>
+<li>Main: molden</li>
+<li>Others: Avogadro</li>
+<li>Reason: Avogadro is Free software, molden is lightweght.</li>
+</ul>
+<h2 id="scripting-languages">Scripting languages</h2>
+<ul>
+<li>Main: csh → tcsh → bash → tcl, →python</li>
+<li>Others: bash</li>
+</ul>
+<h2 id="programming-languages">Programming languages</h2>
+<ul>
+<li>Main: C → Fortran → Python</li>
+</ul>
+<h2 id="qauantum-chemistry-calculations">Qauantum Chemistry Calculations</h2>
+<ul>
+<li>Main: Gaussian → Turbomole → Orca → Orca/Turbomole</li>
+<li>Others: Xtb, Mopac, Gaussian</li>
+</ul>
+<h2 id="email-client">Email client</h2>
+<ul>
+<li>Main: Pine → Thunderbird → Evolution → Zimbra web client</li>
+</ul>
+<h2 id="social-media">Social media</h2>
+<ul>
+<li>Main: Orkut → Facebook → Twitter</li>
+<li>Others: Instagram, LinkedIn</li>
+</ul>
+<h2 id="messagingchat">Messaging/Chat</h2>
+<ul>
+<li>Main: Yahoo messenger → WhatsApp</li>
+<li>Others: Skype</li>
+</ul>
+<h2 id="presentation">Presentation</h2>
+<ul>
+<li>Powerpoint → Beamer → Prezi → Powerpoint</li>
+</ul>
+<h2 id="ide">IDE</h2>
+<ul>
+<li>Vim → Jupyter/PyCharm</li>
+</ul>
+<h2 id="browser">Browser</h2>
+<ul>
+<li>Main: Netscape Navigaor → Mozilla Firefox</li>
+<li>Others: Chromium, Tor Browser</li>
+</ul>
+<h2 id="search-engine">Search engine</h2>
+<ul>
+<li>Main: Yahoo → Google → DuckDuckGo</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Check status of the remote machines</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/2/</link>
+			<pubDate>Sun, 26 Apr 2020 17:16:18 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/2/</guid>
+			<description>Another lockdown effect. A useful script when one is not able to acess the server rooms often. A fast ping on all the ip addresses, and then post the report to the Slack channel.
+Got inspired from The original code at My adaptation machines = {&amp;#34;x.x.x.x&amp;#34;: &amp;#34;machenie 1&amp;#34;) output = &amp;#39;Machines pinged at\n&amp;#39; output += datetime.datetime.now().strftime(&amp;#39;%a, %d %b %Y, %H:%M:%S&amp;#39;) output += &amp;#39;\n&amp;#39; for ip_address, name in our_computers.items(): resp = os.</description>
+			<content type="html"><![CDATA[<p>Another lockdown effect. A useful script when one is not able to acess
+the server rooms often. A fast ping on all the ip addresses, and then
+post the report to the Slack channel.</p>
+<p>Got inspired from 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/rNGJtWGQ3b8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>The original code at <img src="https://github.com/ginathegenius/vbrownbag-demo.git" alt="githut"></p>
+<h3 id="my-adaptation">My adaptation</h3>
+<pre tabindex="0"><code>    machines = {&#34;x.x.x.x&#34;: &#34;machenie 1&#34;)
+
+    output = &#39;Machines pinged at\n&#39;
+    output += datetime.datetime.now().strftime(&#39;%a, %d %b %Y, %H:%M:%S&#39;)
+    output += &#39;\n&#39;
+    for ip_address, name in our_computers.items():
+        resp = os.system(&#34;fping --quiet --interval=1 --vcount=2 --period=50 &#34; + ip_address)
+        if resp == 0:
+            output += ip_address + &#39;, &#39; + name + &#39; is up!\n&#39;
+        else:
+            output += ip_address + &#39;, &#39; + name + &#39;, is down!\n&#39;
+
+    data = &#39;{\&#34;text\&#34;:\&#34;&#39; + output + &#39;\&#34;}&#39;
+
+    url = &#34;https://hooks.slack.com/services/&lt;Your-slack-key&gt;&gt;&#34;
+    headers = {
+        &#39;Content-Type&#39;: &#34;application/json&#34;,
+        &#39;cache-control&#39;: &#34;no-cache&#34;
+    }
+
+    requests.request(&#34;POST&#34;, url, data=data, headers=headers)
+</code></pre>]]></content>
+		</item>
+		
+		<item>
+			<title>Updating Website</title>
+			<link>http://www.chemistry.iitkgp.ac.in_~anoop/posts/1/</link>
+			<pubDate>Fri, 24 Apr 2020 13:15:03 +0530</pubDate>
+			
+			<guid>http://www.chemistry.iitkgp.ac.in_~anoop/posts/1/</guid>
+			<description>Making use of the lockdown time, I have spent some time to update my homepage. I was bored in dealing directly with html/css. After some research on the tools for making a static website, I narrowed down to the Hugo. I prefer static website to dynamic webstie, as I will never have any dynamic content. After spending some time exploring the themes, I have finalized on Hermit theme. Some customization was needed.</description>
+			<content type="html"><![CDATA[<p>Making use of the lockdown time, I have spent some time to update my
+homepage. I was bored in dealing directly with html/css. After some
+research on the tools for making a static website, I narrowed down to
+the <a href="https://gohugo.io">Hugo</a>. I prefer static website to dynamic
+webstie, as I will never have any dynamic content. After spending some
+time exploring the themes, I have finalized on Hermit theme. Some
+customization was needed.</p>
+<p>This video helped me 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>
