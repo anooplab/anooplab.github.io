@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Anoop Ayyappan</title>
-    <link>https://anooplab.github.io/publications/</link>
+    <link>https://anooplab.in/publications/</link>
     <description>Recent content in Publications on Anoop Ayyappan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 11 Jan 2022 12:34:43 +0530</lastBuildDate>
-    <atom:link href="https://anooplab.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://anooplab.in/publications/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Preprints</title>
-      <link>https://anooplab.github.io/publications/preprints/</link>
+      <link>https://anooplab.in/publications/preprints/</link>
       <pubDate>Tue, 11 Jan 2022 12:34:43 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/preprints/</guid>
+      <guid>https://anooplab.in/publications/preprints/</guid>
       <description>These contents are preprints and has not been peer-reviewed.&#xA;Roy, S.; Anoop, A. Insights into the Active Catalyst Formation In Palladium Catalyzed Coupling Reaction From Di-Nuclear Palladium Acetate: A DFT Study. ChemRxiv 2022&#xA;Anoop, A.; Ganesh, V. The Role of Homoaromaticity in the Tropylium-Catalyzed Carboxylic Acid O-H Insertion with Diazoesters. ChemRxiv 2022.&#xA;Khatun, M.; Paul, S.; Roy, S.; Dey, S.; Anoop, A. Small Gold-Thiolate Clusters Au3(SMe)3: Benchmarking of Density Functionals And Bonding Analysis.</description>
     </item>
     <item>
       <title>Conference Presentations</title>
-      <link>https://anooplab.github.io/publications/presentations/conferences/</link>
+      <link>https://anooplab.in/publications/presentations/conferences/</link>
       <pubDate>Thu, 23 Apr 2020 23:42:04 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/presentations/conferences/</guid>
+      <guid>https://anooplab.in/publications/presentations/conferences/</guid>
       <description>National Seminar &amp;amp; Discussion Meeting on Simulations in Polymers, Materials, and Biomolecules: Academia and Industry Perspectives 22-24 June, 2023 organized by Somaiya Vidtavihar University, Mumbai National Seminar on Recent Advances in Chemical Sciences organized by School of Chemical Sciences, M. G. University, 3-4 April 2023 International Conference on Systems and Processes in Physics, Chemistry and Biology (ICSPPCB-2023) organized by Assam University Silchar, Assam, 2-5 March 2023 International Conference on Designing Catalysts on Computer (DCC22) organized by IACS Kolkata, 2-3 December 2022 International Conference on Emerging Trends in Chemical Scinences (EFCS 2021) organized by Farook College, Kerala, 29-31 October 2021.</description>
     </item>
     <item>
       <title>General talks/Workshops</title>
-      <link>https://anooplab.github.io/publications/presentations/general/</link>
+      <link>https://anooplab.in/publications/presentations/general/</link>
       <pubDate>Thu, 23 Apr 2020 23:42:04 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/presentations/general/</guid>
+      <guid>https://anooplab.in/publications/presentations/general/</guid>
       <description>Workshop in Chemistry for PG Students and Teachers organised by Calicut Chemistry Collective, 27 November 2021. Computational Modeling in Chemistry, Biology and Materials&amp;quot;- Making it Mainstream, organized by Cochin University fo Science and Technology (CUSAT), Kerala, 23-26 Novemeber 2021. Lecture in the QIP Workshop Computationally Designing of Materials for Materials Genome organized by Department of Chemistry, IIT Indore, March 1-6 2021. Science Academies sponsored Refresher Course oN “Theoretical and Computational Chemistry” Organized by PG &amp;amp; Research Department of Chemistry, PSGR Krishnammal College for Women, Coimbatore, Tamil NadU, Feb 8-11 2021.</description>
     </item>
     <item>
       <title>Software</title>
-      <link>https://anooplab.github.io/publications/software/pyar/</link>
+      <link>https://anooplab.in/publications/software/pyar/</link>
       <pubDate>Thu, 23 Apr 2020 23:41:36 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/software/pyar/</guid>
+      <guid>https://anooplab.in/publications/software/pyar/</guid>
       <description>PyAR Python code for Aggregation and Reaction&#xA;A free software for a) automated exploration of reactions between two reactants, b) automated workflow for prodicting the gemoetries of molecular aggregates and clusters.&#xA;Download from github&#xA;Install with&#xA;python3 -m pip install git+https://github.com/anooplab/pyar.git&#xA;and to upgrade:&#xA;python3 -m pip install &amp;ndash;upgrade git+https://github.com/anooplab/pyar.git</description>
     </item>
     <item>
       <title>Journal articles</title>
-      <link>https://anooplab.github.io/publications/journal_artcles/</link>
+      <link>https://anooplab.in/publications/journal_artcles/</link>
       <pubDate>Thu, 23 Apr 2020 23:03:46 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/journal_artcles/</guid>
+      <guid>https://anooplab.in/publications/journal_artcles/</guid>
       <description>“Riboflavin-Induced DNA Damage and Anticancer Activity in Breast Cancer Cells under Visible Light: A TD-DFT and In Vitro Study”, Ranabir Majumder, Shreya Banerjee, Sayan Paul, Saugat Mondal, Madhurima Mandal, Priya Ghosh, Debjit Maity, Anakuthil Anoop, N. D. Pradeep Singh, and Mahitosh Mandal, Journal of Chemical Information and Modeling, 2024, DOI: 10.1021/acs.jcim.4c01104&#xA;“Structure of Small Yttrium Monoxide Clusters, Chemical Bonding, and Photoionization: Threshold Photoionization and Density Functional Theory Investigations”, Varun Vinayak Deshpande, Vaibhav Chauhan, Debashis Bandyopadhyay, Anakuthil Anoop and Soumen Bhattacharyya, Physical Chemistry Chemical Physics, 2024, DOI: 10.</description>
     </item>
   </channel>

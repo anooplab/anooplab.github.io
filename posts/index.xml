@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on Anoop Ayyappan</title>
-		<link>https://anooplab.github.io/posts/</link>
+		<link>https://anooplab.in/posts/</link>
 		<description>Recent content in Posts on Anoop Ayyappan</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Tue, 14 Sep 2021 20:03:06 +0530</lastBuildDate>
-		<atom:link href="https://anooplab.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://anooplab.in/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Biography of tools (updated after more than a year)</title>
-			<link>https://anooplab.github.io/posts/7/</link>
+			<link>https://anooplab.in/posts/7/</link>
 			<pubDate>Tue, 14 Sep 2021 20:03:06 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/7/</guid>
+			<guid>https://anooplab.in/posts/7/</guid>
 			<description>I am slightly updating the list that I posted last year.
 Manuscript workflow Markdown and pandoc for document preparation and git + bitbucket for sharing with co-authors. Convert to latex or docx using pandoc before submission. Operating systems Major: Unix → Solaris → Redhat → Suse → Ubuntu &amp;amp; Pop-OS Others: Windows Reason: I love Free Software. Text Editors Vim Started with Vim, did not find any rason to change. Formatted text Microsoft Word → Lyx → Latex → markdown.</description>
 			<content type="html"><![CDATA[<p>I am slightly updating the list that I posted last year.</p>
@@ -115,10 +115,10 @@ Visualiser → Avogadro</li>
 		
 		<item>
 			<title>Goodbye and Welcome</title>
-			<link>https://anooplab.github.io/posts/6/</link>
+			<link>https://anooplab.in/posts/6/</link>
 			<pubDate>Wed, 11 Aug 2021 00:00:00 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/6/</guid>
+			<guid>https://anooplab.in/posts/6/</guid>
 			<description> Ayusman Chiranjibi has completed his MSc and joined his job through campus placement. All the best! Sayan Paul is continuing his PhD in our group after completing MSc. Bhrigu Chakraborty joins for PhD under the joint supervison of Prof. Chattaraj. </description>
 			<content type="html"><![CDATA[<ul>
 <li>Ayusman Chiranjibi has completed his MSc and joined his job through campus placement. All the best!</li>
@@ -130,10 +130,10 @@ Visualiser → Avogadro</li>
 		
 		<item>
 			<title>Congrats to Eshani and Lazum</title>
-			<link>https://anooplab.github.io/posts/4/</link>
+			<link>https://anooplab.in/posts/4/</link>
 			<pubDate>Mon, 03 Aug 2020 23:42:30 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/4/</guid>
+			<guid>https://anooplab.in/posts/4/</guid>
 			<description>Eshani defended her PhD, congrats!
 Lazum joined as Assistant Professor in Bijoy Krishna Girls College taking a temporary withdrawal from the PhD program.
 Two good news, incidentally on my birthday.</description>
@@ -146,10 +146,10 @@ taking a temporary withdrawal from the PhD program.</p>
 		
 		<item>
 			<title>Welcome to new members</title>
-			<link>https://anooplab.github.io/posts/5/</link>
+			<link>https://anooplab.in/posts/5/</link>
 			<pubDate>Sat, 01 Aug 2020 10:00:00 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/5/</guid>
+			<guid>https://anooplab.in/posts/5/</guid>
 			<description>Welcome to Arptita Poddar and Sandip Giri to the lab.</description>
 			<content type="html"><![CDATA[<p>Welcome to Arptita Poddar and Sandip Giri to the lab.</p>
 ]]></content>
@@ -157,10 +157,10 @@ taking a temporary withdrawal from the PhD program.</p>
 		
 		<item>
 			<title>Biography of tools</title>
-			<link>https://anooplab.github.io/posts/3/</link>
+			<link>https://anooplab.in/posts/3/</link>
 			<pubDate>Sun, 10 May 2020 00:03:06 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/3/</guid>
+			<guid>https://anooplab.in/posts/3/</guid>
 			<description>The favourite tools change over time, often due to evolution in technology, sometimes due to change of taste. Often there is a general purpose major tools, and there are other tools for occational specual purpose.
 Operating systems Major: Unix → Solaris → Redhat → Suse → Ubuntu Others: Windows Reason: I love Free Software. Text Editors Vim Started with Vim, did not find any rason to change. Formatted text Microsoft Word → Lyx → Latex → markdown.</description>
 			<content type="html"><![CDATA[<p>The favourite tools change over time, often due to evolution in
@@ -254,10 +254,10 @@ Visualiser → Avogadro</li>
 		
 		<item>
 			<title>Check status of the remote machines</title>
-			<link>https://anooplab.github.io/posts/2/</link>
+			<link>https://anooplab.in/posts/2/</link>
 			<pubDate>Sun, 26 Apr 2020 17:16:18 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/2/</guid>
+			<guid>https://anooplab.in/posts/2/</guid>
 			<description>Another lockdown effect. A useful script when one is not able to acess the server rooms often. A fast ping on all the ip addresses, and then post the report to the Slack channel.
 Got inspired from The original code at My adaptation machines = {&amp;#34;x.x.x.x&amp;#34;: &amp;#34;machenie 1&amp;#34;) output = &amp;#39;Machines pinged at\n&amp;#39; output += datetime.datetime.now().strftime(&amp;#39;%a, %d %b %Y, %H:%M:%S&amp;#39;) output += &amp;#39;\n&amp;#39; for ip_address, name in our_computers.items(): resp = os.</description>
 			<content type="html"><![CDATA[<p>Another lockdown effect. A useful script when one is not able to acess
@@ -296,10 +296,10 @@ post the report to the Slack channel.</p>
 		
 		<item>
 			<title>Updating Website</title>
-			<link>https://anooplab.github.io/posts/1/</link>
+			<link>https://anooplab.in/posts/1/</link>
 			<pubDate>Fri, 24 Apr 2020 13:15:03 +0530</pubDate>
 			
-			<guid>https://anooplab.github.io/posts/1/</guid>
+			<guid>https://anooplab.in/posts/1/</guid>
 			<description>Making use of the lockdown time, I have spent some time to update my homepage. I was bored in dealing directly with html/css. After some research on the tools for making a static website, I narrowed down to the Hugo. I prefer static website to dynamic webstie, as I will never have any dynamic content. After spending some time exploring the themes, I have finalized on Hermit theme. Some customization was needed.</description>
 			<content type="html"><![CDATA[<p>Making use of the lockdown time, I have spent some time to update my
 homepage. I was bored in dealing directly with html/css. After some
