@@ -1,60 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Anoop Ayyappan - Profile</title>
+    <title>Anoop A - Homepage</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Welcome to the personal homepage of Anoop, an academic and researcher in computational chemistry and machine learning. Explore his work, affiliations, and contributions to science.">
+    <meta name="keywords" content="Anoop, Computational Chemistry, Machine Learning, Research, Academic Profiles, Digital University Kerala, Chemistry, Teaching, Editorial Duties">
+    <meta name="author" content="Anoop">
+    <link rel="canonical" href="https://anoopmvpa.site">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+    <!-- CSS Styling -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.7;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
+
         .container {
             max-width: 800px;
-            margin: auto;
-            background: white;
+            margin: 0 auto;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .intro {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .intro img {
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
         h1, h2 {
-            color: #333;
+            color: #268bd2;
         }
-        p {
-            line-height: 1.6;
+
+        a {
+            color: #2aa198;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .external::after {
+            content: "\f35d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-left: 5px;
+            font-size: 0.8em;
+            color: #2aa198;
+        }
+
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
         }
     </style>
+
+    <!-- JavaScript for interactive behavior -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll("nav a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            const backToTopLinks = document.querySelectorAll(".back-to-top");
+
+            backToTopLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+    </script>
 </head>
+
 <body>
     <div class="container">
-        <h1>Dr. Anoop Ayyappan</h1>
-        <p>Professor<br />
-           Digital University Kerala <br />
-           <strong>Email:</strong> anoop@duk.ac.in <br />
-           <strong>Phone:</strong> +91-471-2788-027
-        </p>
+        <nav>
+            <a href="#intro">Intro</a>
+            <a href="#who-i-am">Bio</a>
+            <a href="#research">Research</a>
+            <a href="#other-details">Others</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <h3>Education</h3>
-        <p><strong>PhD:</strong> University of Hyderabad</p>
+        <section id="intro" class="intro">
+            <div>
+                <h1>Hello!</h1>
+                <p>Welcome to my personal homepage! I'm Anoop, an academic and researcher focusing on the fields of computational chemistry and machine learning.</p>
+            </div>
+            <img src="anoop.png" alt="Anoop's Passport size photo" width="150">
+        </section>
 
-        <h3>Postdoctoral Experience</h3>
-        <p>Max-Planck Institute of Kohlenforshung and University of Boon, Germany</p>
+        <section id="who-i-am">
+            <h2>Bio</h2>
+            <p>Currently, I’m a Professor in the School of Digital Sciences at <a href="https://duk.ac.in" class="external">Digital University Kerala</a>. Before this, I worked as an Assistant and Associate Professor at the Department of Chemistry, Indian Institute of Technology Kharagpur (2010-2023). I spent over four years in Germany as a Postdoctoral Researcher with Prof. Walther Thiel at the Max Planck Institute für Kohlenforschung and with Prof. Frank Neese at the University of Bonn.</p>
+            <a href="#intro" class="back-to-top">Back to Top</a>
+        </section>
 
-        <h3>Research Interests</h3>
-        <ul>
-            <li>Computational Chemistry</li>
-            <li>Machine Learning Applications in Science</li>
-            <li>Prebiotic Reactions</li>
-        </ul>
+        <section id="research">
+            <h2>Research</h2>
+            <p>My research focuses on computational chemistry and the application of machine learning to drive scientific discovery. While our work spans various aspects of molecular structures and reaction mechanisms, our primary focus is on exploring prebiotic chemistry and developing software tools to model complex atomic clusters and nanoclusters.</p>
+            <p>For more details on my research and publications, visit my academic profiles:</p>
+            <ul>
+                <li><a href="https://orcid.org/0000-0002-8116-5506">ORCID</a></li>
+                <li><a href="http://www.researcherid.com/rid/B-3483-2008">Publons</a></li>
+                <li><a href="https://www.scopus.com/authid/detail.uri?authorId=6508191130">Scopus Author ID</a></li>
+                <li><a href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a></li>
+                <li><a href="https://www.researchgate.net/profile/Anakuthil_Anoop/publications">ResearchGate</a></li>
+            </ul>
+            <a href="#intro" class="back-to-top">Back to Top</a>
+        </section>
 
-        <h3>Publications</h3>
-        <p>Please see the prfile:
-	<ul>
-		<li><a href="https://www.scopus.com/authid/detail.uri?authorId=6508191130">Scopus author id</a></li>
-	</ul>
-	</p>
+        <section id="other-details">
+            <h2>Other Details</h2>
+            <p>I’ve been fortunate to teach courses on various topics, including Chemistry, Computational Chemistry, Quantum Chemistry, Healthcare Analytics, and Photochemistry. Alongside teaching, I’m involved in editorial work as a Subject Editor/Associate Editor for journals like the Journal of Molecular Graphics and Modelling, the Indian Journal of Chemistry, and Frontiers in Chemistry.</p>
+            <p>I’m also a member of several professional bodies, including:</p>
+            <ul>
+                <li>National Academy of Sciences India (NASI)</li>
+                <li>Chemical Research Society of India (CRSI)</li>
+                <li>World Association of Theoretical and Computational Chemists (WATOC)</li>
+                <li>Board of Studies Member, Chemistry, Kannur University</li>
+                <li>Board of Studies Member, Chemistry, Nirmal College (Autonomous), Muvattupuzha</li>
+            </ul>
+            <a href="#intro" class="back-to-top">Back to Top</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you’d like to get in touch or follow me, here’s how you can reach me:</p>
+            <ul>
+                <li>Email: <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a></li>
+                <li>Twitter: <a href="https://twitter.com/A_Anoop_A">@A_Anoop_A</a></li>
+                <li>GitHub: <a href="https://github.com/anooplab">anooplab</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/anoop-a-9286125/">Anoop A on LinkedIn</a></li>
+            </ul>
+            <a href="#intro" class="back-to-top">Back to Top</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Anoop A</p>
+        </footer>
     </div>
 </body>
+
 </html>
 
