@@ -34,12 +34,15 @@
         .intro {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 40px;
         }
 
         .intro img {
             border-radius: 50%;
-            margin-left: 20px;
+            width: 30%;
+            max-width: 150px;
+            height: auto;
         }
 
         h1, h2 {
@@ -95,6 +98,18 @@
             margin-top: 20px;
             font-size: 0.9em;
         }
+
+        @media (max-width: 600px) {
+            .intro {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .intro img {
+                width: 50%;
+                margin: 20px 0;
+            }
+        }
     </style>
 
     <!-- JavaScript for interactive behavior -->
@@ -144,7 +159,7 @@
                 <h1>Welcome!</h1>
                 <p>Welcome to my personal homepage! I'm Anoop, an academic and researcher specializing in computational chemistry and machine learning.</p>
             </div>
-            <img src="anoop.png" alt="Anoop's Passport size photo" width="150">
+            <img src="anoop.png" alt="Anoop's Passport size photo">
         </section>
 
         <section id="who-i-am">
