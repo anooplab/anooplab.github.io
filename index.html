@@ -63,7 +63,10 @@
             margin-bottom: 40px;
             background-color: #1a1a1a;
             border-radius: 15px;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
         }
 
         nav a {
@@ -102,8 +105,24 @@
             font-size: 0.9em;
             background-color: #2a2a2a;
             width: 100px;
-            align: centre;
             border-radius: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #2aa198;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #268bd2;
         }
 
         @media (max-width: 600px) {
@@ -156,74 +175,64 @@
         <nav>
             <a href="#intro">Intro</a>
             <a href="#who-i-am">Bio</a>
-            <a href="#research">Research</a>
+            <a href="#research">Publications</a>
             <a href="#professional-roles">Extras</a>
             <a href="#contact">Contact</a>
         </nav>
 
         <section id="intro" class="intro">
             <div>
-                <h1>Welcome!</h1>
-                <p>Welcome to my personal homepage. I am Anoop, an academic and researcher specializing in computational chemistry and machine learning.</p>
+                <h1>Welcome</h1>
+                <p>
+                    Welcome to my personal homepage. I am Anoop, a Professor at the School of Digital Sciences, <a href="https://duk.ac.in">Digital University Kerala</a>, specializing in computational chemistry and machine learning. My work focuses on exploring the complex chemical space of novel molecular structures and reactions, using computational techniques and machine learning.
+                </p>
             </div>
             <img src="anoop.png" alt="Anoop's photo">
         </section>
 
         <section id="who-i-am">
             <h2>Bio</h2>
-            <p>I am a Professor in the School of Digital Sciences at <a href="https://duk.ac.in">Digital University
-Kerala</a>. I previously served as an Assistant Professor from 2010 to 2016 and as an Associate Professor from 2016 to
-2023 at the <a href="https://www.iitkgp.ac.in/">Indian Institute of Technology Kharagpur</a>. My postdoctoral research
-was conducted in Germany under the guidance of <a href="https://www.kofo.mpg.de/person/101025/748293">Prof. Walther
-Thiel</a> at the <a href="https://www.kofo.mpg.de">Max Planck Institute für Kohlenforschung and <a
-href="https://www.kofo.mpg.de/person/100939/222678">Prof. Frank Neese</a> at the <a
-href="https://www.chemie.uni-bonn.de/ciptc/de">University of Bonn</a>.</p> <p>I completed my PhD in Computational
-Chemistry at the <a href="https://uohyd.ac.in/">University of Hyderabad</a> under the supervision of <a
-href="https://ipc.iisc.ac.in/~edj/">Prof. E. D. Jemmis</a>. I earned my Bachelor's in Chemistry from <a
-href=https://nirmalacollege.ac.in"">Nirmala College</a>, Muvattupuzha, and my Master's from <a
-href="https://www.mgu.ac.in/">Mahatma Gandhi University</a>, Kottayam.</p>
+            <p>My academic career includes serving as an Assistant Professor and Associate Professor at the <a href="https://www.iitkgp.ac.in/">Indian Institute of Technology Kharagpur</a>. I conducted postdoctoral research under the mentorship of <a href="https://www.kofo.mpg.de/person/101025/748293">Prof. Walther Thiel</a> at the <a href="https://www.kofo.mpg.de">Max-Planck Institut fuer Kohlenforschung</a> and <a href="https://www.kofo.mpg.de/person/100939/222678">Prof. Frank Neese</a> at <a href="https://www.chemie.uni-bonn.de/ciptc/de">University of Bonn, Germany</a>. 
+            I earned my PhD in Computational Chemistry from the <a href="https://uohyd.ac.in/">University of Hyderabad</a> guided by <a href="https://ipc.iisc.ac.in/~edj/">Prof. E. D. Jemmis</a>. My undergraduate and master's degrees were completed at <a href="https://nirmalacollege.ac.in">Nirmala College</a> and <a href="https://www.mgu.ac.in/">Mahatma Gandhi University</a>, respectively.</p>
             <a href="#intro" class="back-to-top">Back to Top</a>
         </section>
 
         <section id="research">
-            <h2>Research</h2>
-            <p>My research focuses on computational chemistry and the application of machine learning to scientific discovery. I explore molecular structures and reaction mechanisms, with a primary emphasis on prebiotic chemistry. I also develop software tools for modeling complex atomic clusters and nanoclusters.</p>
-            <p>For more details on my research and publications, please visit my academic profiles:
+            <h2>Publications</h2>
+            <p>For the publication list , visit my profiles on:
             <ul>
                 <li><a href="https://orcid.org/0000-0002-8116-5506">ORCID</a></li>
                 <li><a href="http://www.researcherid.com/rid/B-3483-2008">Publons</a></li>
-                <li><a href="https://www.scopus.com/authid/detail.uri?authorId=6508191130">Scopus Author ID</a></li>
-                <li><a href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a></li>
+                <li><a href="https://www.scopus.com/authid/detail.uri?authorId=6508191130">Scopus</a></li>
+                <li><a href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&hl=en&oi=ao">Google Scholar</a></li>
                 <li><a href="https://www.researchgate.net/profile/Anakuthil_Anoop/publications">ResearchGate</a></li>
             </ul>
             </p>
-            <p>The codes from our group are available on <a href="https://github.com/anooplab"
-class="external">GitHub</a>.</p>
+            <p>Our group's codes are available on <a href="https://github.com/anooplab" class="external">GitHub</a>.</p>
             <a href="#intro" class="back-to-top">Back to Top</a>
         </section>
 
         <section id="professional-roles">
             <h2>Professional Roles</h2>
-            <p>I teach courses in Chemistry, Computational Chemistry, Quantum Chemistry, Photochemistry, and Healthcare
-Analytics. I also serve as an <a
-href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling/about/editorial-board">Associate
-Editor</a> for <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling">Journal of
-Molecular Graphics and Modelling</a> and subject editor for <a href="http://op.niscpr.res.in/index.php/IJC/index">Indian Journal of Chemistry</a>.</p>
-            <p> I am a member of professional organizations, including the <a href="http://nasi.nic.in/">National
-Academy of Sciences India</a>, the <a href="https://crsi-india.org/">Chemical Research Society of India</a>, and the <a
-href="https://www.watoc.net/">World Association of Theoretical and Computational Chemists (WATOC)</a>. Additionally, I am a member of Board of Studies in Kannur University and Nirmala College (Autonomous).</p>
+            <p>I serve as an <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling/about/editorial-board">Associate Editor</a> for the <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling">Journal of Molecular Graphics and Modelling</a> and the <a href="http://op.niscpr.res.in/index.php/IJC/index">Indian Journal of Chemistry</a>.</p>
+            <p>I am a member of professional organizations, including the <a href="http://nasi.nic.in/">National Academy of Sciences India</a>, the <a href="https://crsi-india.org/">Chemical Research Society of India</a>, and the <a href="https://www.watoc.net/">World Association of Theoretical and Computational Chemists (WATOC)</a>. I also serve on the Board of Studies at Kannur University and Nirmala College (```html
+        <section id="professional-roles">
+            <h2>Professional Roles</h2>
+            <p>I serve as an <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling/about/editorial-board">Associate Editor</a> for the <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling">Journal of Molecular Graphics and Modelling</a> and the <a href="http://op.niscpr.res.in/index.php/IJC/index">Indian Journal of Chemistry</a>.</p>
+            <p>I am a member of professional organizations, including the <a href="http://nasi.nic.in/">National Academy of Sciences India</a>, the <a href="https://crsi-india.org/">Chemical Research Society of India</a>, and the <a href="https://www.watoc.net/">World Association of Theoretical and Computational Chemists (WATOC)</a>. I also serve on the Board of Studies at Kannur University and Nirmala College (Autonomous).</p>
             <a href="#intro" class="back-to-top">Back to Top</a>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>If you would like to get in touch or follow my work, here is how you can reach me:</p>
-            <ul>
-                <li>Email: <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a></li>
-                <li>Twitter: <a href="https://twitter.com/A_Anoop_A" class="external">@A_Anoop_A</a></li>
-                <li>GitHub: <a href="https://github.com/anooplab" class="external">anooplab</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/anoop-a-9286125/" class="external">LinkedIn</a></li>
-            </ul>
+            <p>To connect with me, you can email <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a> or connect in
+the following platforms:</p>
+            <div class="social-icons">
+                <a href="https://twitter.com/A_Anoop_A" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/anooplab" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/anoop-a-9286125/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
             <a href="#intro" class="back-to-top">Back to Top</a>
         </section>
 
