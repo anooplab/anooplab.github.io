@@ -99,7 +99,7 @@ html {
 
 .social-icons a {
     color: #2aa198;
-    font-size: 24px;
+    font-size: 0.9em;
     transition: color 0.3s;
 }
 
@@ -116,7 +116,7 @@ html {
 
 .publication-links a {
     color: #2aa198;
-    font-size: 18px;
+    font-size: 0.9em;
     text-decoration: none;
     transition: color 0.3s;
     display: flex;
