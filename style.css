@@ -17,14 +17,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
+    gap: 50px; 
+    padding: 20px;
+}
+
+.intro div {
+    flex: 1;
 }
 
 .intro img {
-    border-radius: 5%;
-    width: 10%;
-    max-width: 150px;
+    object-fit: cover;
+    width: auto;
     height: auto;
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 15%;  
 }
 
 h1, h2 {
@@ -84,7 +91,7 @@ html {
     display: block;
     text-align: center;
     margin: 20px auto;
-    font-size: 0.9em;
+    font-size: 0.8em;
     background-color: #2a2a2a;
     width: 100px;
     border-radius: 15px;
@@ -99,7 +106,7 @@ html {
 
 .social-icons a {
     color: #2aa198;
-    font-size: 0.9em;
+    font-size: 1.9em;
     transition: color 0.3s;
 }
 
@@ -109,7 +116,6 @@ html {
 
 .publication-links {
     display: flex;
-    flex-direction: column;
     gap: 10px;
     margin-top: 10px;
 }
