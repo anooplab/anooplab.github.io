@@ -13,161 +13,8 @@
     <link rel="canonical" href="https://anoopmvpa.site">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
-    <!-- CSS Styling -->
-    <style>
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .intro {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-        .intro img {
-            border-radius: 5%;
-            width: 10%;
-            max-width: 150px;
-            height: auto;
-        }
-
-        h1, h2 {
-            color: #268bd2;
-        }
-
-        a {
-            color: #2aa198;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        nav {
-            text-align: center;
-            margin-bottom: 40px;
-            background-color: #1a1a1a;
-            border-radius: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 10px 0;
-        }
-
-        nav a {
-            margin: 0 15px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .external::after {
-            content: "\f35d";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            margin-left: 5px;
-            font-size: 0.8em;
-            color: #2aa198;
-        }
-
-        .back-to-top {
-            display: block;
-            text-align: center;
-            margin: 20px auto;
-            font-size: 0.9em;
-            background-color: #2a2a2a;
-            width: 100px;
-            border-radius: 15px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            color: #2aa198;
-            font-size: 24px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #268bd2;
-        }
-
-        @media (max-width: 600px) {
-            .intro {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .intro img {
-                width: 50%;
-                margin: 20px 0;
-            }
-        }
-    </style>
-
-    <!-- JavaScript for interactive behavior -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const navLinks = document.querySelectorAll("nav a");
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute("href").substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: "smooth"
-                    });
-                });
-            });
-
-            const backToTopLinks = document.querySelectorAll(".back-to-top");
-
-            backToTopLinks.forEach(link => {
-                link.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-                });
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -199,23 +46,18 @@
 
         <section id="research">
             <h2>Publications</h2>
-            <p>For the publication list , visit my profiles on:
-            <ul>
-                <li><a href="https://orcid.org/0000-0002-8116-5506">ORCID</a></li>
-                <li><a href="http://www.researcherid.com/rid/B-3483-2008">Publons</a></li>
-                <li><a href="https://www.scopus.com/authid/detail.uri?authorId=6508191130">Scopus</a></li>
-                <li><a href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&hl=en&oi=ao">Google Scholar</a></li>
-                <li><a href="https://www.researchgate.net/profile/Anakuthil_Anoop/publications">ResearchGate</a></li>
-            </ul>
-            </p>
+            <p>For the publication list, visit my profiles on:</p>
+            <div class="publication-links">
+                <a href="https://orcid.org/0000-0002-8116-5506" target="_blank" aria-label="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
+                <a href="http://www.researcherid.com/rid/B-3483-2008" target="_blank" aria-label="Publons"><i class="fas fa-certificate"></i> Publons</a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=6508191130" target="_blank" aria-label="Scopus"><i class="fas fa-search"></i> Scopus</a>
+                <a href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&hl=en&oi=ao" target="_blank" aria-label="Google Scholar"><i class="fab fa-google"></i> Google Scholar</a>
+                <a href="https://www.researchgate.net/profile/Anakuthil_Anoop/publications" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i> ResearchGate</a>
+            </div>
             <p>Our group's codes are available on <a href="https://github.com/anooplab" class="external">GitHub</a>.</p>
             <a href="#intro" class="back-to-top">Back to Top</a>
         </section>
 
-        <section id="professional-roles">
-            <h2>Professional Roles</h2>
-            <p>I serve as an <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling/about/editorial-board">Associate Editor</a> for the <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling">Journal of Molecular Graphics and Modelling</a> and the <a href="http://op.niscpr.res.in/index.php/IJC/index">Indian Journal of Chemistry</a>.</p>
-            <p>I am a member of professional organizations, including the <a href="http://nasi.nic.in/">National Academy of Sciences India</a>, the <a href="https://crsi-india.org/">Chemical Research Society of India</a>, and the <a href="https://www.watoc.net/">World Association of Theoretical and Computational Chemists (WATOC)</a>. I also serve on the Board of Studies at Kannur University and Nirmala College (```html
         <section id="professional-roles">
             <h2>Professional Roles</h2>
             <p>I serve as an <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling/about/editorial-board">Associate Editor</a> for the <a href="https://www.sciencedirect.com/journal/journal-of-molecular-graphics-and-modelling">Journal of Molecular Graphics and Modelling</a> and the <a href="http://op.niscpr.res.in/index.php/IJC/index">Indian Journal of Chemistry</a>.</p>
@@ -225,8 +67,7 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>To connect with me, you can email <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a> or connect in
-the following platforms:</p>
+            <p>To connect with me, you can email <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a> or connect on the following platforms:</p>
             <div class="social-icons">
                 <a href="https://twitter.com/A_Anoop_A" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -240,6 +81,8 @@ the following platforms:</p>
             <p>&copy; 2024 Anoop A</p>
         </footer>
     </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
 
 </html>
