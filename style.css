@@ -1,8 +1,9 @@
+
 body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: 'Roboto', Arial, sans-serif;
-    line-height: 1.7;
+    line-height: 1.8; /* Increased line height for better readability */
     margin: 0;
     padding: 0;
 }
@@ -27,11 +28,11 @@ body {
 
 .intro img {
     object-fit: cover;
-    width: auto;
-    height: auto;
-    max-height: 100px;
-    max-width: 100px;
-    border-radius: 15%;  
+    width: 80px; /* Reduced size for better balance */
+    height: 80px; 
+    max-height: 80px;
+    max-width: 80px;
+    border-radius: 15%;
 }
 
 h1, h2 {
@@ -56,6 +57,7 @@ nav {
     top: 0;
     z-index: 1000;
     padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow for distinction */
 }
 
 nav a {
@@ -97,11 +99,12 @@ html {
 .social-icons a {
     color: #2aa198;
     font-size: 1.9em;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s; /* Added transition for hover effect */
 }
 
 .social-icons a:hover {
     color: #268bd2;
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 .publication-links {
@@ -134,14 +137,13 @@ html {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     cursor: pointer;
     z-index: 1000;
-    display: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, background-color 0.3s; /* Added transitions */
 }
 
 #up-arrow:hover {
@@ -163,4 +165,3 @@ html {
         margin: 20px 0;
     }
 }
-
