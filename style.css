@@ -13,27 +13,6 @@ body {
     padding: 20px;
 }
 
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px; 
-    padding: 20px;
-}
-
-.intro div {
-    flex: 1;
-}
-
-.intro img {
-    object-fit: cover;
-    width: 80px; 
-    height: 80px; 
-    max-height: 80px;
-    max-width: 80px;
-    border-radius: 15%;
-}
-
 h1, h2 {
     color: #81A1C1; /* Nord blue */
 }
@@ -47,27 +26,6 @@ a:hover {
     text-decoration: underline;
 }
 
-nav {
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: #3B4252; /* Nord lighter background */
-    border-radius: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow for distinction */
-}
-
-nav a {
-    margin: 0 15px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-section {
-    margin-bottom: 60px;
-}
 
 footer {
     text-align: center;
@@ -153,14 +111,5 @@ html {
 }
 
 @media (max-width: 600px) {
-    .intro {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .intro img {
-        width: 50%;
-        margin: 20px 0;
-    }
 }
 
