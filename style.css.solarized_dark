@@ -1,6 +1,7 @@
+
 body {
-    background-color: #2E3440; /* Nord dark background */
-    color: #D8DEE9; /* Nord text color */
+    background-color: #121212;
+    color: #e0e0e0;
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.8; /* Increased line height for better readability */
     margin: 0;
@@ -27,7 +28,7 @@ body {
 
 .intro img {
     object-fit: cover;
-    width: 80px; 
+    width: 80px; /* Reduced size for better balance */
     height: 80px; 
     max-height: 80px;
     max-width: 80px;
@@ -35,11 +36,11 @@ body {
 }
 
 h1, h2 {
-    color: #81A1C1; /* Nord blue */
+    color: #268bd2;
 }
 
 a {
-    color: #88C0D0; /* Nord cyan */
+    color: #2aa198;
     text-decoration: none;
 }
 
@@ -50,7 +51,7 @@ a:hover {
 nav {
     text-align: center;
     margin-bottom: 40px;
-    background-color: #3B4252; /* Nord lighter background */
+    background-color: #1a1a1a;
     border-radius: 15px;
     position: sticky;
     top: 0;
@@ -74,6 +75,7 @@ footer {
     margin-top: 40px;
 }
 
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
@@ -84,7 +86,7 @@ html {
     font-weight: 900;
     margin-left: 5px;
     font-size: 0.8em;
-    color: #88C0D0; /* Nord cyan */
+    color: #2aa198;
 }
 
 .social-icons {
@@ -95,13 +97,13 @@ html {
 }
 
 .social-icons a {
-    color: #88C0D0; /* Nord cyan */
+    color: #2aa198;
     font-size: 1.9em;
     transition: color 0.3s, transform 0.3s; /* Added transition for hover effect */
 }
 
 .social-icons a:hover {
-    color: #81A1C1; /* Nord blue */
+    color: #268bd2;
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
@@ -112,7 +114,7 @@ html {
 }
 
 .publication-links a {
-    color: #88C0D0; /* Nord cyan */
+    color: #2aa198;
     font-size: 0.9em;
     text-decoration: none;
     transition: color 0.3s;
@@ -122,7 +124,7 @@ html {
 }
 
 .publication-links a:hover {
-    color: #81A1C1; /* Nord blue */
+    color: #268bd2;
 }
 
 #up-arrow {
@@ -130,8 +132,8 @@ html {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #3B4252; /* Nord lighter background */
-    color: #D8DEE9; /* Nord text color */
+    background-color: #1a1a1a;
+    color: white;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -145,7 +147,7 @@ html {
 }
 
 #up-arrow:hover {
-    background-color: #434C5E; /* Darker hover state */
+    background-color: #2a2a2a;
 }
 
 .show {
@@ -163,4 +165,3 @@ html {
         margin: 20px 0;
     }
 }
-
