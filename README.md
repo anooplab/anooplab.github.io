@@ -1,2 +1,0 @@
-# anoop.github.io
-Website
