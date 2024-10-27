@@ -7,28 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 11 Jan 2022 12:34:43 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2024 11:29:04 +0530</lastBuildDate>
     <atom:link href="https://anooplab.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>General talks/Workshops</title>
+      <link>https://anooplab.github.io/publications/presentations/</link>
+      <pubDate>Thu, 24 Oct 2024 11:29:04 +0530</pubDate>
+      <guid>https://anooplab.github.io/publications/presentations/</guid>
+      <description>National Seminar &amp;amp; Discussion Meeting on Simulations in Polymers, Materials, and Biomolecules: Academia and Industry Perspectives 22–24 June 2023, organized by Somaiya Vidyavihar University, Mumbai&#xA;National Seminar on Recent Advances in Chemical Sciences 3–4 April 2023, organized by School of Chemical Sciences, M. G. University&#xA;International Conference on Systems and Processes in Physics, Chemistry and Biology (ICSPPCB-2023) 2–5 March 2023, organized by Assam University, Silchar, Assam&#xA;International Conference on Designing Catalysts on Computer (DCC22) 2–3 December 2022, organized by IACS Kolkata</description>
+    </item>
     <item>
       <title>Preprints</title>
       <link>https://anooplab.github.io/publications/preprints/</link>
       <pubDate>Tue, 11 Jan 2022 12:34:43 +0530</pubDate>
       <guid>https://anooplab.github.io/publications/preprints/</guid>
       <description>These contents are preprints and has not been peer-reviewed.&#xA;Roy, S.; Anoop, A. Insights into the Active Catalyst Formation In Palladium Catalyzed Coupling Reaction From Di-Nuclear Palladium Acetate: A DFT Study. ChemRxiv 2022&#xA;Anoop, A.; Ganesh, V. The Role of Homoaromaticity in the Tropylium-Catalyzed Carboxylic Acid O-H Insertion with Diazoesters. ChemRxiv 2022.&#xA;Khatun, M.; Paul, S.; Roy, S.; Dey, S.; Anoop, A. Small Gold-Thiolate Clusters Au3(SMe)3: Benchmarking of Density Functionals And Bonding Analysis.</description>
-    </item>
-    <item>
-      <title>Conference Presentations</title>
-      <link>https://anooplab.github.io/publications/presentations/conferences/</link>
-      <pubDate>Thu, 23 Apr 2020 23:42:04 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/presentations/conferences/</guid>
-      <description>National Seminar &amp;amp; Discussion Meeting on Simulations in Polymers, Materials, and Biomolecules: Academia and Industry Perspectives 22-24 June, 2023 organized by Somaiya Vidtavihar University, Mumbai National Seminar on Recent Advances in Chemical Sciences organized by School of Chemical Sciences, M. G. University, 3-4 April 2023 International Conference on Systems and Processes in Physics, Chemistry and Biology (ICSPPCB-2023) organized by Assam University Silchar, Assam, 2-5 March 2023 International Conference on Designing Catalysts on Computer (DCC22) organized by IACS Kolkata, 2-3 December 2022 International Conference on Emerging Trends in Chemical Scinences (EFCS 2021) organized by Farook College, Kerala, 29-31 October 2021.</description>
-    </item>
-    <item>
-      <title>General talks/Workshops</title>
-      <link>https://anooplab.github.io/publications/presentations/general/</link>
-      <pubDate>Thu, 23 Apr 2020 23:42:04 +0530</pubDate>
-      <guid>https://anooplab.github.io/publications/presentations/general/</guid>
-      <description>Workshop in Chemistry for PG Students and Teachers organised by Calicut Chemistry Collective, 27 November 2021. Computational Modeling in Chemistry, Biology and Materials&amp;quot;- Making it Mainstream, organized by Cochin University fo Science and Technology (CUSAT), Kerala, 23-26 Novemeber 2021. Lecture in the QIP Workshop Computationally Designing of Materials for Materials Genome organized by Department of Chemistry, IIT Indore, March 1-6 2021. Science Academies sponsored Refresher Course oN “Theoretical and Computational Chemistry” Organized by PG &amp;amp; Research Department of Chemistry, PSGR Krishnammal College for Women, Coimbatore, Tamil NadU, Feb 8-11 2021.</description>
     </item>
     <item>
       <title>Software</title>
