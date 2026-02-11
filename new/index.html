@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Anoop Ayyappan — research, team, publications, presentations, and contact." />
+  <title>Anoop Ayyappan</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#101826;
+      --panel2:#0f1622;
+      --text:#e6edf3;
+      --muted:#a9b4c2;
+      --brand:#8bd5ff;
+      --line:#223043;
+      --shadow: 0 10px 26px rgba(0,0,0,.28);
+      --radius: 18px;
+      --max: 1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: radial-gradient(1200px 600px at 15% 10%, rgba(139,213,255,.12), transparent 55%),
+                  radial-gradient(900px 500px at 85% 15%, rgba(162,142,255,.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a{ color: var(--brand); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
+
+    /* Topbar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(11,15,20,.65);
+      border-bottom: 1px solid rgba(34,48,67,.6);
+    }
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 180px;
+    }
+    .mark{
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(139,213,255,.95), rgba(162,142,255,.85));
+      box-shadow: 0 10px 25px rgba(139,213,255,.18);
+    }
+    .brand h1{
+      font-size: 16px;
+      margin:0;
+      letter-spacing: .2px;
+      font-weight: 650;
+    }
+    .brand p{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      font-size: 13px;
+      color: var(--text);
+      opacity: .9;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav a:hover{
+      text-decoration: none;
+      border-color: rgba(139,213,255,.25);
+      background: rgba(16,24,38,.55);
+    }
+    .nav a.active{
+      border-color: rgba(139,213,255,.35);
+      background: rgba(16,24,38,.75);
+    }
+
+    /* Social icon links (top bar) */
+    .social{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .iconlink{
+      width: 34px;
+      height: 34px;
+      display:grid;
+      place-items:center;
+      border-radius: 12px;
+      border: 1px solid rgba(34,48,67,.65);
+      background: rgba(16,24,38,.20);
+      color: var(--text);
+      text-decoration: none;
+      opacity: .9;
+    }
+    .iconlink:hover{
+      background: rgba(16,24,38,.55);
+      border-color: rgba(139,213,255,.28);
+      text-decoration: none;
+      opacity: 1;
+    }
+    .iconlink:focus-visible{
+      outline: 2px solid rgba(139,213,255,.65);
+      outline-offset: 2px;
+    }
+    .iconlink svg{
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 28px 0 12px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(16,24,38,.88), rgba(15,22,34,.78));
+      border: 1px solid rgba(34,48,67,.7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .hero h2{
+      margin: 0 0 10px;
+      font-size: 36px;
+      letter-spacing: -0.4px;
+      line-height: 1.15;
+    }
+    .hero .lead{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .pill-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .pill{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(34,48,67,.8);
+      background: rgba(11,15,20,.2);
+      color: rgba(230,237,243,.92);
+    }
+    .cta-row{
+      margin-top: 14px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(34,48,67,.8);
+      background: rgba(16,24,38,.55);
+      color: var(--text);
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background: rgba(16,24,38,.8);
+      text-decoration: none;
+    }
+    .btn.primary{
+      border-color: rgba(139,213,255,.35);
+      background: rgba(139,213,255,.12);
+    }
+    .mini{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* Sections */
+    section{
+      padding: 26px 0;
+      scroll-margin-top: 86px;
+    }
+    .section-head{
+      display:flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .section-head h3{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: .15px;
+      position: relative;
+      padding-left: 12px;
+    }
+    .section-head h3::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 18px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, rgba(139,213,255,.95), rgba(162,142,255,.65));
+      opacity: .85;
+    }
+    .section-head p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    ul.clean{ margin: 10px 0 0; padding-left: 18px; }
+    ul.clean li{ margin: 6px 0; color: rgba(230,237,243,.94); }
+    .muted{ color: var(--muted); }
+
+    details{
+      border: 1px solid rgba(34,48,67,.7);
+      background: rgba(11,15,20,.18);
+      border-radius: 14px;
+      padding: 12px 12px;
+      margin-top: 10px;
+    }
+    details summary{
+      cursor: pointer;
+      font-weight: 650;
+      list-style: none;
+      outline: none;
+    }
+    details summary::-webkit-details-marker{ display:none; }
+
+    .kbd{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 7px;
+      border: 1px solid rgba(34,48,67,.8);
+      background: rgba(16,24,38,.6);
+      color: rgba(230,237,243,.9);
+    }
+
+    .list{
+      border-top: 1px solid rgba(34,48,67,.55);
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    .list .item{
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(34,48,67,.35);
+    }
+    .list .item:last-child{ border-bottom: none; }
+    .item-title{
+      font-weight: 650;
+      margin: 0 0 4px;
+    }
+    .item-meta{
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .small{ font-size: 12px; }
+
+    /* Scrollable box for long lists (e.g., full publications) */
+    .scrollbox{
+      max-height: 440px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 10px 10px;
+      margin-top: 10px;
+      border: 1px solid rgba(34,48,67,.7);
+      border-radius: 14px;
+      background: rgba(11,15,20,.18);
+      overscroll-behavior: contain;
+    }
+
+    /* Optional: nicer scrollbar (WebKit + Firefox) */
+    .scrollbox{ scrollbar-width: thin; scrollbar-color: rgba(139,213,255,.35) rgba(16,24,38,.35); }
+    .scrollbox::-webkit-scrollbar{ width: 10px; }
+    .scrollbox::-webkit-scrollbar-track{ background: rgba(16,24,38,.35); border-radius: 999px; }
+    .scrollbox::-webkit-scrollbar-thumb{ background: rgba(139,213,255,.28); border-radius: 999px; border: 2px solid rgba(16,24,38,.35); }
+    .scrollbox::-webkit-scrollbar-thumb:hover{ background: rgba(139,213,255,.40); }
+
+    footer{
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .sep{ height: 1px; background: rgba(34,48,67,.55); margin: 8px 0 0; }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+      .topbar-inner{ align-items: flex-start; flex-direction: column; }
+      .nav{ justify-content: flex-start; }
+    }
+
+    /* Alternating section band for long-page comfort */
+    section.band{
+      position: relative;
+    }
+    section.band::before{
+      content: "";
+      position: absolute;
+      inset: 0 -24px;
+      background: linear-gradient(180deg, rgba(16,24,38,.26), rgba(11,15,20,0));
+      border: 1px solid rgba(34,48,67,.22);
+      border-left: none;
+      border-right: none;
+      pointer-events: none;
+      border-radius: 0;
+    }
+
+    /* Citation-style lists for publications & conferences */
+    .scrollbox ul.clean{
+      padding-left: 0;
+      margin: 8px 0 0;
+      list-style: none;
+    }
+    .scrollbox ul.clean li{
+      margin: 10px 0;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(34,48,67,.55);
+      background: rgba(11,15,20,.22);
+      line-height: 1.55;
+    }
+    .scrollbox ul.clean li:hover{
+      border-color: rgba(139,213,255,.25);
+      background: rgba(16,24,38,.28);
+    }
+    .scrollbox ul.clean li em{
+      color: rgba(230,237,243,.95);
+      font-style: normal;
+      font-weight: 650;
+    }
+    .scrollbox ul.clean li a{
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(139,213,255,.35);
+    }
+    .scrollbox ul.clean li a:hover{
+      border-bottom-color: rgba(139,213,255,.7);
+    }
+
+    /* Fine-tune general list density */
+    ul.clean li{ margin: 7px 0; }
+
+    /* Slightly calmer shadows for an academic-lab feel */
+    .card{ box-shadow: 0 10px 24px rgba(0,0,0,.22); }
+
+    /* Improve long-line readability */
+    .lead{ max-width: 62ch; }
+  
+
+    /* Filter container styling (Publications / Conferences) */
+    .filterbar{
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid rgba(34,48,67,.7);
+      border-radius: 14px;
+      background: rgba(11,15,20,.18);
+    }
+    .filterbar input:focus-visible,
+    .filterbar select:focus-visible,
+    .filterbar button:focus-visible{
+      outline: 2px solid rgba(139,213,255,.65);
+      outline-offset: 2px;
+    }
+
+    /* Skip link (accessibility) */
+    .skip{
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(34,48,67,.8);
+      background: rgba(16,24,38,.92);
+      color: var(--text);
+      transform: translateY(-160%);
+      transition: transform .15s ease;
+      z-index: 999;
+    }
+    .skip:focus{ transform: translateY(0); }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      *{ transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="Site identity">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Anoop Ayyappan</h1>
+          <p>Research · Team · Publications · Talks</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#members">Team</a>
+        <a href="#publications">Publications</a>
+        <a href="#presentations">Talks</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="social" aria-label="Social links">
+        <a class="iconlink" href="https://twitter.com/A_Anoop_A" target="_blank" rel="noreferrer noopener" aria-label="Twitter" title="Twitter">
+          <i data-feather="twitter" aria-hidden="true"></i>
+        </a>
+        <a class="iconlink" href="https://github.com/anooplab" target="_blank" rel="noreferrer noopener" aria-label="GitHub" title="GitHub">
+          <i data-feather="github" aria-hidden="true"></i>
+        </a>
+        <a class="iconlink" href="https://www.linkedin.com/in/anoop-a-9286125/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" title="LinkedIn">
+          <i data-feather="linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="iconlink" href="mailto:anoop.a@duk.ac.in" aria-label="Email" title="Email">
+          <i data-feather="mail" aria-hidden="true"></i>
+        </a>
+
+        <!-- Facebook -->
+        <a class="iconlink" href="https://www.facebook.com/profile.php?id=61555278326807" target="_blank" rel="noreferrer noopener" aria-label="Facebook" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+
+        <!-- ResearchGate -->
+        <a class="iconlink" href="https://www.researchgate.net/profile/Anakuthil-Anoop" target="_blank" rel="noreferrer noopener" aria-label="ResearchGate" title="ResearchGate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 20V4" />
+            <path d="M4 4h9a5 5 0 0 1 0 10H9" />
+            <path d="M9 14h1a6 6 0 0 1 6 6" />
+            <circle cx="17" cy="9" r="3" />
+          </svg>
+        </a>
+
+        <!-- ORCID -->
+        <a class="iconlink" href="https://orcid.org/0000-0002-8116-5506" target="_blank" rel="noreferrer noopener" aria-label="ORCID" title="ORCID">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9 7v10" />
+            <path d="M11 7h3.5a3.5 3.5 0 0 1 0 7H11" />
+          </svg>
+        </a>
+
+        <!-- Google Scholar (neutral cap icon) -->
+        <a class="iconlink" href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer noopener" aria-label="Google Scholar" title="Google Scholar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8l9-4 9 4-9 4-9-4z" />
+            <path d="M7 10v5c0 1 2.5 3 5 3s5-2 5-3v-5" />
+            <path d="M21 8v6" />
+          </svg>
+        </a>
+
+        <a class="iconlink" href="#publications" aria-label="Publications" title="Publications">
+          <i data-feather="file-text" aria-hidden="true"></i>
+        </a>
+        <a class="iconlink" href="#presentations" aria-label="Talks and conferences" title="Talks and conferences">
+          <i data-feather="mic" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" role="main" id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-grid">
+        <div class="card">
+          <h2>Computational chemistry, automated discovery, and molecular design</h2>
+          <p class="lead">
+            Consolidated lab page: research themes, team, full publications, and talks.
+          </p>
+
+          <div class="pill-row" aria-label="Quick topics">
+            <span class="pill">Computational chemistry</span>
+            <span class="pill">Automated workflows</span>
+            <span class="pill">Reaction &amp; aggregate exploration</span>
+            <span class="pill">Nanoclusters &amp; nanoalloys</span>
+            <span class="pill">Prebiotic chemistry</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#publications">Browse publications</a>
+            <a class="btn" href="#members">Meet the team</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+
+          <p class="mini">
+            Search in lists using the filters, or <span class="kbd">Ctrl</span> + <span class="kbd">F</span> for a quick page search.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="section-head">
+            <h3>At a glance</h3>
+            <p>Short profile</p>
+          </div>
+          <ul class="clean">
+            <li>Professor, School of Digital Sciences, Digital University Kerala</li>
+            <li>Interests: prebiotic reaction exploration, nanoclusters, automated chemistry workflows</li>
+            <li>Software: PyAR (Python code for Aggregation and Reaction)</li>
+          </ul>
+
+          <details>
+            <summary>Quick links</summary>
+            <div class="list">
+              <div class="item">
+                <p class="item-title"><a href="https://anooplab.github.io/" target="_blank" rel="noreferrer">Original multi-page site</a></p>
+                <p class="item-meta">Source site this single-page version consolidates</p>
+              </div>
+              <div class="item">
+                <p class="item-title"><a href="https://github.com/anooplab/pyar" target="_blank" rel="noreferrer">PyAR on GitHub</a></p>
+                <p class="item-meta">Install command is included below in Publications → Software</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="band">
+      <div class="section-head">
+        <h3>Research interests</h3>
+        <p>Topics of current interest</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <ul class="clean">
+            <li>Computational exploration of prebiotic reactions.</li>
+            <li>Structural evolution of atomic and nanoclusters.</li>
+            <li>Software development for automated identification of reaction paths and complex structures.</li>
+            <li>Developing automated workflows to study complex reactions.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <p class="muted" style="margin-top:0;">Representative references (as listed on the original Research page):</p>
+          <ul class="clean small">
+            <li>A tabu-search based strategy for modelling molecular aggregates and binary reactions (Computational and Theoretical Chemistry, 2017).</li>
+            <li>Prebiotic chemistry of HCN tetramerisation by automated reaction search (Chemistry—A European Journal, 2018).</li>
+            <li>Exploring the chemical space of C2H3NO isomers and bimolecular reactions (ACS Earth and Space Chemistry, 2023).</li>
+            <li>Potential prebiotic pathways in extraterrestrial atmosphere: HCN and NH3 reactions (ACS Earth and Space Chemistry, 2024).</li>
+            <li>A global optimiser for nanoclusters (Frontiers in Chemistry, 2019).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERS -->
+    <section id="members">
+      <div class="section-head">
+        <h3>Members</h3>
+        <p>Current and former</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 style="margin:0 0 8px;">PhD students</h4>
+          <ul class="clean">
+            <li>Lazumla Sherpa (Jointly with Prof. S. Bandhyopadyay)</li>
+            <li>Pratik Sarkar (Jointly with Prof. Sukanta Mandal)</li>
+            <li>Sandip Giri (Jointly with Prof. Ganesan Mani)</li>
+            <li>Arpita Poddar (Jointly with Prof. P. K. Chattaraj)</li>
+            <li>Sayan Paul (Jointly with Prof. N. D. Pradeep Singh)</li>
+            <li>Bhrigu Chakraborty (Jointly with Prof. P. K. Chattaaraj)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 style="margin:0 0 8px;">Former members</h4>
+          <details open>
+            <summary>PhD</summary>
+            <ul class="clean small">
+              <li>Dr. Saibal Jana</li>
+              <li>Dr. Subhajit Mandal (Jointly with Prof. P. K. Chattaraj)</li>
+              <li>Dr. Surajit Nandi</li>
+              <li>Dr. Davaluri Yogeswara Rao</li>
+              <li>Dr. Eshani Das</li>
+              <li>Dr. Maya Khatun</li>
+              <li>Dr. Saikat Roy</li>
+              <li>Dr. Sunanda Panda (Jointly with Dr. Kiran Gore)</li>
+              <li>Dr. Moumita Banerjee (Jointly with Prof. N. D. Pradeep Singh)</li>
+              <li>Subhasis Dey</li>
+              <li>Tanwi Debnath</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>MSc</summary>
+            <ul class="clean small">
+              <li>Neeladitya Chowdhuri</li>
+              <li>Divyangna Sharma</li>
+              <li>Sahil Das</li>
+              <li>Devesh Avasthi</li>
+              <li>Sumit Nath</li>
+              <li>Rajkumar</li>
+              <li>Ayusman Chiranjivi</li>
+              <li>Sayan Paul</li>
+              <li>Aurodeep Panda</li>
+              <li>Kamal Singh Nayal</li>
+              <li>Dr. Rajat S. Majumder</li>
+              <li>Shubham Bhatt</li>
+              <li>Dr. Debankur Bhattacharyya</li>
+              <li>Rishabh Upadhyay</li>
+              <li>Susovan Ghosh</li>
+              <li>Ved Agnihotri</li>
+              <li>Dr. Viki Kumar Prasad</li>
+              <li>Rekha Banasal</li>
+              <li>Ayushi Maheswari</li>
+              <li>Anurag Sharma</li>
+              <li>Kusal Kishku</li>
+              <li>Parmeet Kaur</li>
+              <li>Rajul Srivastava</li>
+              <li>Dr. Vasudevan S.</li>
+              <li>Lalchhandama V.</li>
+              <li>Shafeek A. S.</li>
+              <li>Chandan Jana</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="band">
+      <div class="section-head">
+        <h3>Publications</h3>
+        <p>Journal articles, preprints, and software</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+         <p class="muted small" style="margin:8px 0 0;">Note for maintenance: if an entry lacks volume/issue/page range, that information is not currently provided here. When final bibliographic details are assigned, update the entry (ideally using the DOI metadata).</p>
+
+          <!-- Publications filter controls (search + year) -->
+          <div class="pub-filter filterbar" aria-label="Filter publications">
+            <div style="display:grid; grid-template-columns: 1.2fr .6fr auto; gap: 10px; align-items: end;">
+              <div>
+                <label for="pubSearch" class="muted small" style="display:block; margin-bottom:6px;">Search (title, author, journal, DOI)</label>
+                <input id="pubSearch" type="search" placeholder="Type to filter…" autocomplete="off" spellcheck="false"
+                       style="width:100%; padding:10px 12px; border-radius: 12px; border: 1px solid rgba(34,48,67,.8); background: rgba(16,24,38,.55); color: var(--text);" />
+              </div>
+              <div>
+                <label for="pubYear" class="muted small" style="display:block; margin-bottom:6px;">Year</label>
+                <select id="pubYear"
+                        style="width:100%; padding:10px 12px; border-radius: 12px; border: 1px solid rgba(34,48,67,.8); background: rgba(16,24,38,.55); color: var(--text);">
+                  <option value="">All</option>
+                </select>
+              </div>
+              <div style="display:flex; gap: 10px; align-items:center; justify-content: flex-end;">
+                <button id="pubClear" class="btn" type="button" aria-label="Clear publication filters">Clear</button>
+                <span id="pubCount" class="muted small" aria-live="polite" style="min-width: 90px; text-align:right;">—</span>
+              </div>
+            </div>
+          </div>
+
+          <details open>
+            <summary>Journal articles</summary>
+            <div class="scrollbox" role="region" aria-label="Journal articles list">
+              <ul class="clean small">
+              <!-- START: Full list copied from https://anooplab.github.io/publications/journal_artcles/ -->
+              <li>Computational discovery of high-performance B–Al–Ga nanoclusters for oxygen reduction reaction catalysis. Pratik Sarkar, Maya Khatun and Anakuthil Anoop. <em>Physical Chemistry Chemical Physics</em> (2025) 27, 25014-25026. DOI: <a href="https://doi.org/10.1039/D5CP03587B" target="_blank" rel="noreferrer">10.1039/D5CP03587B</a></li>
+              <li>Computational Exploration of Small Hydrocarbon Networks: A Stochastic Generation and DFT Refinement Framework. Sandip Giri, Sayon Satpati, Tarun Roy, Subhas Ghosal, Anakuthil Anoop. <em>Journal of Computational Chemistry</em> (2025) 46(25) e70236.</li>
+              <li>Bonding and Stability in Six-Atom Nanoclusters of Boron, Aluminum, and Gallium. Maya Khatun, Pratik Sarkar, Sunanda Panda, and Anakuthil Anoop. <em>Polyhedron</em> (2025) 281, 117703. DOI: <a href="https://doi.org/10.1016/j.poly.2025.117703" target="_blank" rel="noreferrer">10.1016/j.poly.2025.117703</a></li>
+              <li>Computational Investigation of Cytochrome P450-Catalyzed Oxetane Formation in Taxol Biosynthesis. Surajit Nandi, Rohan Sharma, Subhajit Mandal, Pankaz K. Sharma, Parayil Kumaran Ajikumar, Anakuthil Anoop. <em>Biochemistry</em> (2025) 64(15), 3474–348. DOI: <a href="https://doi.org/10.1021/acs.biochem.5c00175" target="_blank" rel="noreferrer">10.1021/acs.biochem.5c00175</a></li>
+              <li>Exploring the therapeutic potential of Zonisamide derivatives through molecular docking and dynamic studies with GABARAP. Megha P. Nambiar, Anakuthil Anoop, Biju A. R. <em>Indian Journal of Biochemistry and Biophysics</em> (2025) 62(7). DOI: <a href="https://doi.org/10.56042/ijbb.v62i7.16596" target="_blank" rel="noreferrer">10.56042/ijbb.v62i7.16596</a></li>
+              <li>Hydrogen Bond-Assisted Excited State Switching and Fluoride Responsive Behavior of Orthogonal Spiroborate Ester Derived from Naturally Occurring α-Mangostin. Swathy Unnikrishnapillai Saraswathy, Lekshmi Chandranpillai Lalithabai, Sandip Giri, Safa Ayoob, Simimole Haleema, Anakuthil Anoop, Sumalekshmy Sarojiniamma. <em>European Journal of Organic Chemistry</em> (2025) e202401411. DOI: <a href="https://doi.org/10.1002/ejoc.202401411" target="_blank" rel="noreferrer">10.1002/ejoc.202401411</a></li>
+              <li>Lattice Modulation on Singlet-Triplet Splitting of Silver Cluster Boosting Near-Unity Photoluminescence Quantum Yield. Wei-Dong Tian, Chengkai Zhang, Sayan Paul, Wei-Dan Si, Zhi Wang, Pan-Pan Sun, Anakuthil Anoop, Chen-Ho Tung, Di Sun. <em>Angewandte Chemie International Edition</em> (2025) 64(11) e202421656. DOI: <a href="https://doi.org/10.1002/anie.202421656" target="_blank" rel="noreferrer">10.1002/anie.202421656</a></li>
+              <li>Exploring the Conformational Space of a Sulfonyl-Based Ionic Liquid on Platinum-Based Mono and Bimetallic Surfaces. Arka Prava Sarkar, Rahul Sahu, Sandip Giri, Anakuthil Anoop, Sandeep K. Reddy. <em>Langmuir</em> (2025) 41, 5, 3187–3198. DOI: <a href="https://doi.org/10.1021/acs.langmuir.4c03883" target="_blank" rel="noreferrer">10.1021/acs.langmuir.4c03883</a></li>
+              <li>Computational Investigation of Meso-Substituted, Heavy Atom-Free BODIPY Derivatives as Photosensitizers: Insights from TDDFT and Dynamics Studies. Moumita Banerjee, Sandip Giri, Anakuthil Anoop. <em>Chemistry – An Asian Journal</em> (2024). DOI: <a href="https://doi.org/10.1002/asia.202401325" target="_blank" rel="noreferrer">10.1002/asia.202401325</a></li>
+              <li>Asymmetric Total Synthesis of Naturally Occurring (R)-2′-Methoxydihydroartemidin, (R)-(E)-3′-Hydroxyartemidin, and Its Structural Congeners: Method Optimization and Mechanistic Analysis. Swagata Das, Sayan Paul, Kishor Kumar Mandal, Anakuthil Anoop, Samik Nanda. <em>The Journal of Organic Chemistry</em> (2024) 89(21) 15764–15776. DOI: <a href="https://doi.org/10.1021/acs.joc.4c01868" target="_blank" rel="noreferrer">10.1021/acs.joc.4c01868</a></li>
+              <li>Rh(III)-Catalyzed Chemoselective [4 + 2] Annulations for the Synthesis of [1,3]Oxazinoindolones: A Combined Experimental and Computational Study. Perla Bharath Kumar, Chittala Emmaniel Raju, Saikat Roy, Anakuthil Anoop, Rajesh Chandra, Balasubramanian Sridhar, Galla V. Karunakar. <em>Organic Letters</em> (2024) 26(41) 8680–8685. DOI: <a href="https://doi.org/10.1021/acs.orglett.4c02770" target="_blank" rel="noreferrer">10.1021/acs.orglett.4c02770</a></li>
+              <li>Riboflavin-Induced DNA Damage and Anticancer Activity in Breast Cancer Cells under Visible Light: A TD-DFT and In Vitro Study. Ranabir Majumder, Shreya Banerjee, Sayan Paul, Saugat Mondal, Madhurima Mandal, Priya Ghosh, Debjit Maity, Anakuthil Anoop, N. D. Pradeep Singh, Mahitosh Mandal. <em>Journal of Chemical Information and Modeling</em> (2024) 64(14) 5580–5589. DOI: <a href="https://doi.org/10.1021/acs.jcim.4c01104" target="_blank" rel="noreferrer">10.1021/acs.jcim.4c01104</a></li>
+              <li>Structure of Small Yttrium Monoxide Clusters, Chemical Bonding, and Photoionization: Threshold Photoionization and Density Functional Theory Investigations. Varun Vinayak Deshpande, Vaibhav Chauhan, Debankur Bhattacharyya, Anakuthil Anoop, Soumen Bhattacharyya. <em>Physical Chemistry Chemical Physics</em> (2024) 26, 20123–20133. DOI: <a href="https://doi.org/10.1039/D4CP02351J" target="_blank" rel="noreferrer">10.1039/D4CP02351J</a></li>
+              <li>Boosting CPL and Decagram-Scale Mechanochemistry Synthesis of Atomically Precise Superstructure from Achiral Silver Cluster and Chiral Cyclodextrin. Tianyang Xu, Sayan Paul, Chengkai Zhang, Mohammad Azam, Bao-Liang Han, Wei-Dan Si, Zhi Wang, Zhi-Yong Gao, Anakuthil Anoop, Chen-Ho Tung, Di Sun. <em>CCS Chemistry</em> (2024). DOI: <a href="https://doi.org/10.31635/ccschem.024.202404301" target="_blank" rel="noreferrer">10.31635/ccschem.024.202404301</a></li>
+              <li>Two-Photon-Responsive “TICT + AIE” Active Naphthyridine-BF2 Photoremovable Protecting Group: Application for Specific Staining and Killing of Cancer Cells. Mamata Ojha, Moumita Banerjee, Madhurima Mandal, Tara Singha, Souvik Ray, Prasanta K. Datta, Mahitosh Mandal, Anakuthil Anoop, N. D. Pradeep Singh. <em>ACS Applied Materials &amp; Interfaces</em> (2024) 16(17) 21486–21497. DOI: <a href="https://doi.org/10.1021/acsami.4c0029" target="_blank" rel="noreferrer">10.1021/acsami.4c0029</a></li>
+              <li>Energetic and Spectroscopic Properties of Astrophysically Relevant MgC4H Radicals using High-Level Ab Initio Calculations. Tarun Roy, Sayon Satpati, Aland Sinjari, Anakuthil Anoop, Venkatesan S. Thimmakondu, Subhas Ghosal. <em>The Journal of Physical Chemistry A</em> (2024) 128(8) 1466–1476. DOI: <a href="https://doi.org/10.1021/acs.jpca.3c06828" target="_blank" rel="noreferrer">10.1021/acs.jpca.3c06828</a></li>
+              <li>Exploring the Theoretical Foundations of Thermally Activated Delayed Fluorescence (TADF) Emission: A Comprehensive TD-DFT Study on Phenothiazine Systems. Moumita Banerjee, Anakuthil Anoop. <em>Chemistry – A European Journal</em> (2024). DOI: <a href="https://doi.org/10.1002/chem.202304206" target="_blank" rel="noreferrer">10.1002/chem.202304206</a></li>
+              <li>Potential Prebiotic Pathways in Extraterrestrial Atmosphere: A Computational Exploration of HCN and NH3 Reactions. Sunanda Panda, Anakuthil Anoop. <em>ACS Earth and Space Chemistry</em> (2024) 8(2) 348–360. DOI: <a href="https://doi.org/10.1021/acsearthspacechem.3c00321" target="_blank" rel="noreferrer">10.1021/acsearthspacechem.3c00321</a></li>
+              <li>Repurposing Bial’s Reaction to Engender Donor–Acceptor Stenhouse Adducts: A Computational Investigation. Moumita Banerjee, Prakash R. Chandran, Sobha Vijayan Nair, Anakuthil Anoop. <em>Journal of Photochemistry and Photobiology A: Chemistry</em> (2024) 449, 115408. DOI: <a href="https://doi.org/10.1016/j.jphotochem.2023.115408" target="_blank" rel="noreferrer">10.1016/j.jphotochem.2023.115408</a></li>
+              <li>Photochromism and Photomagnetism in 1,4-bis(4,5-diphenyl-imidazolyl)benzene Chromophores: Water-Assisted π-Stacks for the Generation of Stable Free Radicals in the Solid State. Subhajit Saha, Sudipta Khamrui, Rajib Moi, Anakuthil Anoop, Vladimir V. Chernyshev, Debamalya Banerjee, Kumar Biradha. <em>ACS Applied Optical Materials</em> (2023) 1(12) 2031–2041. DOI: <a href="https://doi.org/10.1021/acsaom.3c00337" target="_blank" rel="noreferrer">10.1021/acsaom.3c00337</a></li>
+              <li>Computational Studies on the Tropylium-Catalyzed Carboxylic Acid O–H Insertion with Diazoesters: The Role of Homoaromaticity. Anakuthil Anoop, Venkataraman Ganesh. <em>European Journal of Organic Chemistry</em> (2023). DOI: <a href="https://doi.org/10.1002/ejoc.202300658" target="_blank" rel="noreferrer">10.1002/ejoc.202300658</a></li>
+              <li>Interrogating bioinspired ESIPT/PCET-based Ir(III)-complexes as organelle-targeted phototherapeutics: a redox-catalysis under hypoxia to evoke synergistic ferroptosis/apoptosis. Maniklal Shee, Dan Zhang, Moumita Banerjee, Samrat Roy, Bipul Pal, Anakuthil Anoop, Youyong Yuan, N. D. Pradeep Singh. <em>Chemical Science</em> (2023) 14, 9872–9884. DOI: <a href="https://doi.org/10.1039/D3SC03096B" target="_blank" rel="noreferrer">10.1039/D3SC03096B</a></li>
+              <li>Energetic and Spectroscopic Properties of the Low-lying Isomers of C5H: A High-level Ab Initio Study. Sayon Satpati, Tarun Roy, Anakuthil Anoop, Venkatesan S. Thimmakondu, Subhas Ghosal. <em>Atoms</em> (2023) 11(9) 115. DOI: <a href="https://doi.org/10.3390/atoms11090115" target="_blank" rel="noreferrer">10.3390/atoms11090115</a></li>
+              <li>Exploring the Chemical Space of C2H3NO Isomers and Bimolecular Reactions with Hydrogen Cyanide and Formaldehyde: Insights into the Emergence of Life. Sunanda Panda, Ayusman Chiranjibi, Devesh Awasthi, Subhas Ghosal, Anakuthil Anoop. <em>ACS Earth and Space Chemistry</em> (2023) 7(9) 1739–1752. DOI: <a href="https://doi.org/10.1021/acsearthspacechem.3c00113" target="_blank" rel="noreferrer">10.1021/acsearthspacechem.3c00113</a></li>
+              <li>Nanoclusters and Nanoalloys of Group 13 Elements (B, Al, and Ga): Benchmarking of Methods and Analysis of their Structures and Energies. Maya Khatun, Pratik Sarkar, Sunanda Panda, Lazumla T. Sherpa, Anakuthil Anoop. <em>Physical Chemistry Chemical Physics</em> (2023) 25, 19986–20000. DOI: <a href="https://doi.org/10.1039/D2CP05833B" target="_blank" rel="noreferrer">10.1039/D2CP05833B</a></li>
+              <li>Structure and Bonding Patterns in C5H4 Isomers: Pyramidane, Planar Tetracoordinate Carbon, and Spiro Molecules. Sayon Satpati, Tarun Roy, Sandip Giri, Anakuthil Anoop, Venkatesan S. Thimmakondu, Subhas Ghosal. <em>Atoms</em> (2023) 11, 96.</li>
+              <li>Performance of Density Functionals and Semiempirical 3c Methods for Small Gold–Thiolate Clusters. Maya Khatun, Sayan Paul, Saikat Roy, Subhasis Dey, Anakuthil Anoop. <em>The Journal of Physical Chemistry A</em> (2023) 127(10) 2242–2257. DOI: <a href="https://doi.org/10.1021/acs.jpca.2c07561" target="_blank" rel="noreferrer">10.1021/acs.jpca.2c07561</a></li>
+              <li>Binding energy analysis and molecular dynamic simulation studies of the designed orally active, non-toxic GABARAP modulators. Megha P. Nambiar, N. Ashwanikumar, Anakuthil Anoop, A. R. Biju. <em>Journal of Biomolecular Structure and Dynamics</em> (2023) 41(13) 6394–6412. DOI: <a href="https://doi.org/10.1080/07391102.2022.2107571" target="_blank" rel="noreferrer">10.1080/07391102.2022.2107571</a></li>
+              <li>Insights into the Active Catalyst Formation from Di-nuclear Palladium Acetate in Pd Catalyzed Coupling Reactions: A DFT study. Saikat Roy, Anakuthil Anoop. <em>The Journal of Physical Chemistry A</em> (2022) 126(46) 8562–8576. DOI: <a href="https://doi.org/10.1021/acs.jpca.2c03762" target="_blank" rel="noreferrer">10.1021/acs.jpca.2c03762</a></li>
+              <li>Planar pentacoordinate carbon in [XC7H2]2+ (X = Be and Mg) and its derivatives. Pratik Sarkar, Krishnan Thirumoorthy, Anakuthil Anoop, Venkatesan S. Thimmakondu. <em>Physical Chemistry Chemical Physics</em> (2022) 24, 27606–27611. DOI: <a href="https://doi.org/10.1039/D2CP03299F" target="_blank" rel="noreferrer">10.1039/D2CP03299F</a></li>
+              <li>Why Are MgC3H Isomers Missing in the Interstellar Medium? Sunanda Panda, Devipriya Sivadasan, Nisha Job, Aland Sinjari, Krishnan Thirumoorthy, Anakuthil Anoop, Venkatesan S. Thimmakondu. <em>The Journal of Physical Chemistry A</em> (2022) 126(27) 4465–4475. DOI: <a href="https://doi.org/10.1021/acs.jpca.2c02220" target="_blank" rel="noreferrer">10.1021/acs.jpca.2c02220</a></li>
+              <li>CSi<sub>n</sub>Ge<sub>4−n</sub><sup>2+</sup> (n = 1–3): Prospective Systems Containing Planar Tetracoordinate Carbon (ptC). Prasenjit Das, Maya Khatun, Anakuthil Anoop, Pratim Kumar Chattaraj. <em>Physical Chemistry Chemical Physics</em> (2022) 24, 16701–16711. DOI: <a href="https://doi.org/10.1039/D2CP01494G" target="_blank" rel="noreferrer">10.1039/D2CP01494G</a></li>
+              <li>Why an integrated approach between search algorithms and chemical intuition is necessary? Venkatesan S. Thimmakondu, Aland Sinjari, Diego Inostroza, P. Vairaprakash, Krishnan Thirumoorthy, Saikat Roy, Anakuthil Anoop, William Tiznado. <em>Physical Chemistry Chemical Physics</em> (2022) 24, 11680–11686. DOI: <a href="https://doi.org/10.1039/D2CP00315E" target="_blank" rel="noreferrer">10.1039/D2CP00315E</a></li>
+              <li>Relativistic Effects in Platinum Nanocluster Catalysis: A Statistical Ensemble-Based Analysis. Akhil S. Nair, Anakuthil Anoop, Rajeev Ahuja, Biswarup Pathak. <em>The Journal of Physical Chemistry A</em> (2022) 126(8) 1345–1359. DOI: <a href="https://doi.org/10.1021/acs.jpca.1c09981" target="_blank" rel="noreferrer">10.1021/acs.jpca.1c09981</a></li>
+              <li>Oxygenolysis of a series of copper(II)-flavonolate adducts varying the electronic factors on supporting ligands as a mimic of quercetin 2,4-dioxygenase-like activity. Nirmalya Podder, Subhasis Dey, Anakuthil Anoop, Sukanta Mandal. <em>Dalton Transactions</em> (2022) 51, 4338–4353. DOI: <a href="https://doi.org/10.1039/D1DT04151G" target="_blank" rel="noreferrer">10.1039/D1DT04151G</a></li>
+              <li>Stereochemistry of the Benzylidene γ-Butyrolactone Dictates the Reductive Heck Cyclization Mode in the Asymmetric Synthesis of Aryltetralin Lignans: A Detailed Experimental and Theoretical Study. Biswajit Sen, Saikat Roy, Sujay Garai, Sayan Roy, Anakuthil Anoop, Saumen Hajra. <em>The Journal of Organic Chemistry</em> (2022) 87(6) 3910–3921. DOI: <a href="https://doi.org/10.1021/acs.joc.1c02174" target="_blank" rel="noreferrer">10.1021/acs.joc.1c02174</a></li>
+              <li>Switching photorelease to singlet oxygen generation by oxygen functionalization of phenothiazine photocages. Mamata Ojha, Moumita Banerjee, Souvik Ray, Amit Kumar Singh, Anakuthil Anoop, N. D. Pradeep Singh. <em>Chemical Communications</em> (2022) 58, 2754–2757. DOI: <a href="https://doi.org/10.1039/D1CC06950K" target="_blank" rel="noreferrer">10.1039/D1CC06950K</a></li>
+              <li>Effect of ancillary ligand on DNA and protein interaction of the two Zn(II) and Co(III) complexes: experimental and theoretical study. Manik Dasa, Paola Brandao, Soumya Sundar Mati, Saikat Roy, Anakuthil Anoop, Anjima James, Susmita De, Uttam Kumar Das, Soumik Laha, Jisu Mondal, Bidhan Chandra Samanta, Tithi Maity. <em>Journal of Biomolecular Structure and Dynamics</em> (2021). DOI: <a href="https://doi.org/10.1080/07391102.2021.2001377" target="_blank" rel="noreferrer">10.1080/07391102.2021.2001377</a></li>
+              <li>BAl4Mg−/0/+: Global Minima with a Planar Tetracoordinate or Hypercoordinate Boron Atom. Maya Khatun, Saikat Roy, Sandip Giri, Sasanka Sankhar Reddy CH, Anakuthil Anoop, Venkatesan S. Thimmakondu. <em>Atoms</em> (2021) 9(4) 89. DOI: <a href="https://doi.org/10.3390/atoms9040089" target="_blank" rel="noreferrer">10.3390/atoms9040089</a></li>
+              <li>Organomagnesium Crown Ethers and Their Binding Affinities with Li+, Na+, K+, Be2+, Mg2+, and Ca2+ Ions – A Theoretical Study. Saikat Roy, Krishnan Thirumoorthy, Uday Kumar Padidela, Pothiappan Vairapprakash, Anakuthil Anoop, Venkatesan S. Thimmakondu. <em>ChemistrySelect</em> (2021). DOI: <a href="https://doi.org/10.1002/slct.202102317" target="_blank" rel="noreferrer">10.1002/slct.202102317</a></li>
+              <li>Iridium(III)-Catalyzed Intermolecular Mild N-Arylation of Aliphatic Amides Using Quinoid Carbene: A Migratory Insertion-Based Approach. Satabdi Bera, Saikat Roy, Shyam Chand Pal, Anakuthil Anoop, Rajarshi Samanta. <em>ACS Catalysis</em> (2021). DOI: <a href="https://doi.org/10.1021/acscatal.1c02653" target="_blank" rel="noreferrer">10.1021/acscatal.1c02653</a></li>
+              <li>Role of atomicity in the oxygen reduction reaction activity of platinum sub nanometer clusters: A global optimization study. Akhil S. Nair, Anakuthil Anoop, Rajeev Ahuja, Biswarup Pathak. <em>Journal of Computational Chemistry</em> (2021) 42(27) 1944–1958.</li>
+              <li>CAl4Mg0/−: Global Minima with a Planar Tetracoordinate Carbon Atom. Nisha Job, Maya Khatun, Krishnan Thirumoorthy, Sasanka Sankhar Reddy CH, Vijayanand Chandrasekaran, Anakuthil Anoop, Venkatesan S. Thimmakondu. <em>Atoms</em> (2021) 9(2) 24.</li>
+              <li>Detonation properties and impact sensitivities of trinitromethane derivatives of three-membered heterocyclic ring compounds. Rahana Ameen, Fasila P. M., Anakuthil Anoop, Biju A. R. <em>Journal of Molecular Graphics and Modelling</em> (2021) 105, 107863.</li>
+              <li>A Natural Alkaloid, β-Carboline, as a One- and Two-Photon Responsive Fluorescent Photoremovable Protecting Group: Sequential Release of the Same or Different Carboxylic Acids. Antara Sikder, Moumita Banerjee, Tara Singha, Saugat Mondal, P. K. Datta, Anakuthil Anoop, N. D. Pradeep Singh. <em>Organic Letters</em> (2020) 22(17) 6998–7002.</li>
+              <li>Mononuclear Ruthenium-Based Water Oxidation Catalyst Supported by Anionic, Redox-Non-Innocent Ligand: Heterometallic O–O Bond Formation via Radical Coupling Pathway. Animesh Kundu, Suman Kr Dey, Subhasis Dey, Anakuthil Anoop, Sukanta Mandal. <em>Inorganic Chemistry</em> (2020) 59(2) 1461–1470.</li>
+              <li>Significance of Conformational Analysis in the Computational Studies of the reactions in a Flexible Substrate: Tandem C–C Coupling and C–H Activation Reaction of a Diene. Davuluri Yogeswara Rao, Anakuthil Anoop. <em>The Journal of Physical Chemistry C</em> (2020) 124(1) 582–593.</li>
+              <li>A Global Optimizer for Nanoclusters. Maya Khatun, Rajat Shubhro Majumdar, Anakuthil Anoop. <em>Frontiers in Chemistry</em> (2019) 7, 644.</li>
+              <li>Density Functional Theory Study on the Formation of the Active Catalysts in Palladium Catalysed Reactions (Special Issue: Theoretical and Computational Chemistry). Davuluri Yogeswara Rao, Anakuthil Anoop. <em>Journal of the Indian Chemical Society</em> (2019) 96, 909–919.</li>
+              <li>Palladium-catalyzed expedient Heck annulations in 1-bromo-1,5-dien-3-ols: Exceptional formation of fused bicycles. Jayanta K. Ray, Raju Singha, Devalina Ray, Paramita Ray, Davuluri Yogeswara Rao, Anakuthil Anoop. <em>Tetrahedron Letters</em> (2019) 60(13) 931–935.</li>
+              <li>How to achieve high regioselectivity in barrier-less nucleophilic addition to p-benzynes generated via Bergman Cyclization of unsymmetrical cyclic azaenediyne? Eshani Das, Shyam Basak, Anakuthil Anoop, Santanu Chand, Amit Basak. <em>The Journal of Organic Chemistry</em> (2019) 84(5) 2911–2921.</li>
+              <li>Synthesis and Physicochemical Properties of Ruthenium(II) Complexes Having Pentadentate Scaffolds: Water Oxidation Activity and Deactivation Pathway. Animesh Kundu, Srimoyee Khan, Subhasis Dey, Chiranjit Dutta, Anakuthil Anoop, Sukanta Mandal. <em>European Journal of Inorganic Chemistry</em> (2019) 2019(2) 164–177.</li>
+              <li>Prebiotic Chemistry of HCN Tetramerization by Automated Reaction Search. Surajit Nandi, Debankur Bhattacharyya, Anakuthil Anoop. <em>Chemistry – A European Journal</em> (2018) 24(19) 4885.</li>
+              <li>An Experiment and Computational Study on the Regioselectivity of Nucleophilic Addition to Unsymmetrical p-Benzynes Derived from Bergman Cyclization of Enediynes. Eshani Das, Syam Basak, Anakuthil Anoop, Amit Basak. <em>The Journal of Organic Chemistry</em> (2018) 83(15) 7730–7740.</li>
+              <li>Bis-Acetyl Carbazole: A Photoremovable Protecting Group for Sequential Release of Two Different Functional Groups and Its Application in Therapeutic Release. Yarra Venkatesh, Surajit Nandi, Maniklal Shee, Biswajit Saha, A. Anoop, N. D. Pradeep Singh. <em>European Journal of Organic Chemistry</em> (2017) 2017(41) 6121–6130.</li>
+              <li>A tabu-search based strategy for modeling molecular aggregates and binary reactions. Surajit Nandi, Suzanne R. McAnanama-Brereton, Mark Paul Waller, Anakuthil Anoop. <em>Computational and Theoretical Chemistry</em> (2017) 1111, 69–81.</li>
+              <li>ESIPT-induced fluorescent o-hydroxycinnamate: a self-monitoring phototrigger for prompt image-guided uncaging of alcohols. Amrita Paul, Rakesh Mengji, Olive Abraham Chandy, Surajit Nandi, Manoranjan Bera, Avijit Jana, Anakuthil Anoop, N. D. Pradeep Singh. <em>Organic &amp; Biomolecular Chemistry</em> (2017) 15(40) 8544–8552.</li>
+              <li>Pd-catalyzed intramolecular sequential Heck cyclization and oxidation reactions: a facile pathway for the synthesis of substituted cycloheptenone evaluated using computational studies. Jayanta K. Ray, Sunanda Paul, Paramita Ray, Raju Singha, Davaluri Yogeswara Rao, Surajit Nandi, Anakuthil Anoop. <em>New Journal of Chemistry</em> (2017) 41(1) 278–284.</li>
+              <li>The pyrrole ring η2-hapticity bridged binuclear tricarbonyl Mo(0) and W(0) complexes: catalysis of regioselective hydroamination reactions and DFT calculations. Vikesh Kumar Jha, Ganesan Mani, Davuluri Yogeswara Rao, Anakuthil Anoop. <em>Dalton Transactions</em> (2017) 46(6) 1840–1847.</li>
+              <li>Molecular engineering of triphenylamine based aggregation enhanced emissive fluorophore: Structure-dependent mechanochromism and self-reversible fluorescence switching. Palamarneri Sivaraman Hariharan, Viki Kumar Prasad, Surajit Nandi, Anakuthil Anoop, Dohyun Moon, Savarimuthu Philip Anthony. <em>Crystal Growth &amp; Design</em> (2017) 17(1) 146–155.</li>
+              <li>Does the Mechanism of the Garratt-Braverman Cyclization Differ with Substrates? A Computational Study on Bispropargyl Sulfones, Sulfides, Ethers, Amines and Methanes. Saibal Jana, Anakuthil Anoop. <em>The Journal of Organic Chemistry</em> (2016) 81(17) 7411–7428.</li>
+              <li>Complexation Behaviour of Tri-n-butyl Phosphate Ligand with Pu(IV) and Zr(IV): A Computational Study. Gopinadhanpillai Gopakumar, B. Sreenivasulu, A. Suresh, C. V. S. Brahmmananda Rao, N. Sivaraman, M. Joseph, Anakuthil Anoop. <em>The Journal of Physical Chemistry A</em> (2016) 120(24) 4201–4210.</li>
+              <li>A p-Hydroxyphenacyl–Benzothiazole–Chlorambucil Conjugate as a Real-Time-Monitoring Drug-Delivery System Assisted by Excited-State Intramolecular Proton Transfer. Shrabani Barman, Sourav K. Mukhopadhyay, Sandipan Biswas, Surajit Nandi, Moumita Gangopadhyay, Satlahari Dey, Anakuthil Anoop, N. D. Pradeep Singh. <em>Angewandte Chemie International Edition</em> (2016) 55(13) 4194–4198.</li>
+              <li>Viability of aromatic all-pnictogen anions. Subhajit Mandal, Surajit Nandi, Anakuthil Anoop, Pratim Kumar Chattaraj. <em>Physical Chemistry Chemical Physics</em> (2016) 18, 11738–11745.</li>
+              <li>Shifting the Reactivity of Bis-propargyl Ethers from Garratt-Braverman Cyclization Mode to 1,5-H Shift Pathway to Yield 3,4-Disubstituted Furans: A Combined Experimental and Computational Study. Joyee Das, Eshani Das, Saibal Jana, Anakuthil Anoop, Amit Basak. <em>The Journal of Organic Chemistry</em> (2016) 81(2) 450–457.</li>
+              <li>Effect of π-π Interaction in Bergman cyclisation. Saibal Jana, Anakuthil Anoop. <em>Physical Chemistry Chemical Physics</em> (2015) 17(44) 29793–29802.</li>
+              <li>Cooperativity in bimetallic glutathione complexes. Sadhana Kumbhar, Saibal Jana, Anakuthil Anoop, Mark P. Waller. <em>Journal of Molecular Graphics and Modelling</em> (2015) 62(2) 1–10.</li>
+              <li>A Rationally Designed Thymidine-Based Self-Assembled Monolayer on a Gold Electrode for Electroanalytical Applications. Dhrubajyoti Datta, Raj Kumar Bera, Saibal Jana, Bhaskar Manna, Debayan Roy, Anakuthil Anoop, C. Retna Raj, Tanmaya Pathak. <em>Chemistry – An Asian Journal</em> (2015) 10(7) 1554–1560.</li>
+              <li>Three-dimensional networks containing rectangular Sr4 and Ba4 units: Synthesis, structure, bonding, and potential application for Ne gas separation. Subhajit Mandal, Sudip Pan, Dibakar Deb, Santanab Giri, Soma Duley, Slavko Radenković, David L. Cooper, Patrick Bultinck, Anakuthil Anoop, Manish Bhattacharjee, Pratim K. Chattaraj. <em>International Journal of Quantum Chemistry</em> (2015) 115(20) 1501–1509.</li>
+              <li>Unique bonding pattern and resulting bond stretch isomerism in Be3<sup>2−</sup>. Tamal Goswami, S. Paul, Subhajit Mandal, Anirban Mishra, Anakuthil Anoop, Pratim Kumar Chattaraj. <em>International Journal of Quantum Chemistry</em> (2015) 115(7) 426–433.</li>
+              <li>Structure-selectivity relationship in ruthenium-catalyzed regio- and stereoselective addition of alkynes to pyrazoles: An experimental and theoretical investigation. Uttam K. Das, Subhajit Mandal, Anakuthil Anoop, Manish Bhattacharjee. <em>The Journal of Organic Chemistry</em> (2014) 79(21).</li>
+              <li>Asymmetric Garratt-Braverman cyclization: A route to axially chiral aryl naphthalene-amino acid hybrids. Tapobrata Mitra, Saibal Jana, Sharmila Pandey, Prabuddha Bhattacharya, Uttam K. Khamrai, Anakuthil Anoop, Amit Basak. <em>The Journal of Organic Chemistry</em> (2014) 79(12) 5608–5616.</li>
+              <li>Trienediynes on a 1,3,5-trisubstituted benzene template: A new approach for enhancement of reactivity. Ishita Hatial, Saibal Jana, Srabani Bisai, Manasmita Das, Ananta Kumar Ghosh, Anakuthil Anoop, Amit Basak. <em>RSC Advances</em> (2014) 4(53) 28041–28045.</li>
+              <li>Synthetic and Computational Evaluation of Regiodivergent Epoxide Opening for Diol and Polyol Synthesis. Andreas Gansäuer, Peter Karbaum, David Schmauch, Martin Einig, Lili Shi, Anakuthil Anoop, Frank Neese. <em>Chemistry – An Asian Journal</em> (2014).</li>
+              <li>Reactivity of conformationally constrained bispropargyl sulfones: complete preference for 6π-electrocyclization process. Debaki Ghosh, Saibal Jana, Arpita Panja, Anakuthil Anoop, Amit Basak. <em>Tetrahedron</em> (2013) 69, 8724–8730.</li>
+              <li>Photochemical Steps in Prebiotic Synthesis of Purine Precursors from HCN. Eliot Boulanger, Anakuthil Anoop, Dana Nachtigallova, Walter Thiel, Mario Barbatti. <em>Angewandte Chemie International Edition</em> (2013) 52, 8000–8003.</li>
+              <li>A coordination-assisted general approach to nickel-based nano metallogels. Santu Dey, Dhrubajyoti Datta, Kaustav Chakraborty, Surajit Nandi, Anakuthil Anoop, Tanmaya Pathak. <em>RSC Advances</em> (2013) 3, 9163–9166.</li>
+              <li>Palladium-Catalyzed Intramolecular Oxidative Heck Cyclization and Its Application toward a Synthesis of (±)-β-Cuparenone Derivatives Supported by Computational Studies. Devalina Ray, Yasmin Nasima, Mal K. Sajal, Priyanka Ray, Sharmistha Urinda, Anakuthil Anoop, Jayanta K. Ray. <em>Synthesis</em> (2013) 45(9) 1261–1269.</li>
+              <li>Synthesis, photophysical and photochemical properties of Photoacid Generators based on N-hydroxy anthracene-1,9-dicarboxyimide and their application towards modification of silicon surface. Mohammed Ikbal, Rakesh Banerjee, Sanghamitra Atta, Dibakar Dhara, Anakuthil Anoop, N. D. Pradeep Singh. <em>The Journal of Organic Chemistry</em> (2012) 77(23) 10557–10567.</li>
+              <li>A Tripyrrolylmethane-Based Macrobicyclic Triazacryptand: X-ray Structure, Size-Selective Anion Binding, and Fluoride-Ion-Mediated Proton–Deuterium Exchange Studies. Tapas Guchhait, Ganesan Mani, Carola Schulzke, Anakuthil Anoop. <em>Inorganic Chemistry</em> (2012) 51(21) 11635–11644.</li>
+              <li>An interesting competition between 6π-electro- and Garratt–Braverman cyclization in bis-diene-allene sulfones: synergy between experiment and theory. Sayantan Mondal, Amit Basak, Saibal Jana, Anakuthil Anoop. <em>Tetrahedron</em> (2012) 68, 7202–7210.</li>
+              <li>Azido carbonyl compounds as DNA cleaving agents. Nilanjana Chowdhury, Sansa Dutta, S. Karthick, Anakuthil Anoop, Swagata Dasgupta, N. D. Pradeep Singh. <em>Journal of Photochemistry and Photobiology B: Biology</em> (2012) 115, 25–34.</li>
+              <li>Development of 1-Hydroxy-2(1H)-quinolone based photoacid generators and photoresponsive polymer surfaces. Mohammed Ikbal, Rakesh Banerjee, Dibakar Dhara, Anakuthil Anoop, N. D. Pradeep Singh. <em>Chemistry – A European Journal</em> (2012) 18(38) 11968–11975.</li>
+              <li>O-alkyl-N-acyl-N-phenylhydroxylamines as photochemical alkoxy radical precursors. Nilanjana Chowdhury, Anakuthil Anoop, N. D. Pradeep Singh. <em>Synthesis</em> (2012) 44(11) 1745–1754.</li>
+              <li>Enzyme-free colorimetric assay of serum uric acid. Raj Kumar Bera, Anakuthil Anoop, C. Retna Raj. <em>Chemical Communications</em> (2011) 47, 11498–11500.</li>
+              <li>Aromaticity in all-metal annular systems: the counter-ion effect. Arindam Chakraborty, Santanab Giri, Soma Duley, Anakuthil Anoop, Patrick Bultinck, Pratim K. Chattaraj. <em>Physical Chemistry Chemical Physics</em> (2011) 13, 14865–14878.</li>
+              <li>Density functional theory prediction of geometry and vibrational circular dichroism of bridged triarylamine helicenes. Altaf Hussain Pandith, Nasarul Islam, Zeeshan Fatima Syed, Suhail-ul Rehman, Sateesh Bandaru, Anakuthil Anoop. <em>Chemical Physics Letters</em> (2011) 516(4–6) 199–203.</li>
+              <li>Synthesis of Angularly Fused Aromatic Compounds from Alkenyl Enediynes by a Tandem Radical Cyclization Process. Snigdha Roy, Anakuthil Anoop, Kumar Biradha, Amit Basak. <em>Angewandte Chemie International Edition</em> (2011) 50(36) 8316–8319. DOI: <a href="https://doi.org/10.1002/anie.201103318" target="_blank" rel="noreferrer">10.1002/anie.201103318</a>.</li>
+              <li>Selectivity in Garratt–Braverman Cyclization: An Experimental and Computational Study. Manasi Maji, Dibyendu Mallick, Sayantan Mondal, Anakuthil Anoop, Subhendu Sekhar Bag, Amit Basak, Eluvathingal D. Jemmis. <em>Organic Letters</em> (2011) 13(5) 888–891.</li>
+              <li>A Local Pair Natural Orbital Coupled Cluster Study of Rh Catalyzed Asymmetric Olefin Hydrogenation. Anakuthil Anoop, Walter Thiel, Frank Neese. <em>Journal of Chemical Theory and Computation</em> (2010) 6, 3137–3144.</li>
+              <li>Insights into the Chemistry of Transient P-Chlorophosphanyl Complexes. Aysel Özbolat-Schön, Maren Bode, Gregor Schnakenburg, Anakuthil Anoop, Maurice van Gastel, Frank Neese, Rainer Streubel. <em>Angewandte Chemie International Edition</em> (2010) 49, 6894–6898.</li>
+              <li>Steering the Surprisingly Modular π-Acceptor Properties of N-Heterocyclic Carbenes: Implications for Gold Catalysis. Manuel Alcarazo, Timon Stork, Anakuthil Anoop, Walter Thiel, Alois Fürstner. <em>Angewandte Chemie International Edition</em> (2010) 122(14) 2596–2600.</li>
+              <li>Catalysis via Homolytic Substitutions with C–O and Ti–O Bonds: Oxidative Additions and Reductive Eliminations in Single Electron Steps. Andreas Gansäuer, Andre Fleckhaus, Manuel Alejandre Lafont, Andreas Okkel, Konstantinos Kotsis, Anakuthil Anoop, Frank Neese. <em>Journal of the American Chemical Society</em> (2009) 131(46) 16989–16999.</li>
+              <li>Coordination Chemistry at Carbon. Manuel Alcarazo, Christian W. Lehmann, Anakuthil Anoop, Walter Thiel, Alois Fürstner. <em>Nature Chemistry</em> (2009) 1, 295–301.</li>
+              <li>Structure and Bonding in Neutral and Cationic 14-Electron Gold Complexes Alkyne π-Complexes. Susanne Flügge, Anakuthil Anoop, Richard Goddard, Walter Thiel, Alois Fürstner. <em>Chemistry – A European Journal</em> (2009) 15, 8558–8565.</li>
+              <li>Condensed two- and three-dimensional aromatic systems: relative stabilities of isomers of CB19H16+, B2H15Cl, and B20H14Cl2 and comparison to B12H10Cl22−, C6H4Cl2, C10H7Cl, and C10H6Cl2. Eluvathingal D. Jemmis, Biswarup Pathak, Anakuthil Anoop. <em>Inorganic Chemistry</em> (2005) 44(20) 7184–7188.</li>
+              <li>Effect of metal complexation on ring opening of bowl-shaped hydrocarbons: Theoretical study. Eluvathingal D. Jemmis, Pattiyil Parameswaran, Anakuthil Anoop. <em>International Journal of Quantum Chemistry</em> (2003) 95(6) 810–815.</li>
+              <li>Face-selectivity in [4+2]-cycloadditions to novel polycyclic benzoquinones: stereodirecting effects of a remote cyclopropane ring and an olefinic bond. Goverdhan Mehta, Celine Le Droumaguet, Kabirul Islam, Anakuthil Anoop, Eluvathingal D. Jemmis. <em>Tetrahedron Letters</em> (2003) 44(15) 3109–3113.</li>
+              <li>Nonplanarity at tri-coordinated aluminum and gallium: Cyclic structures for X3Hn<sup>m</sup> (X = B, Al, Ga). Gantasala N. Srinivas, Anakuthil Anoop, Eluvathingal D. Jemmis, Tracy P. Hamilton, Koop Lammertsma, Jerzy Leszczynski, Henry F. Schaefer III. <em>Journal of the American Chemical Society</em> (2003) 125(52) 16397–16407.</li>
+              <li>Control of stability through overlap matching: closo-carborynes and closo-silaborynes. Boggavarapu Kiran, Anakuthil Anoop, Eluvathingal D. Jemmis. <em>Journal of the American Chemical Society</em> (2002) 124(16) 4402–4407.</li>
+              <!-- END: Full list -->
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="card">
+          <h4 style="margin:0 0 6px;">Preprints</h4>
+          <p class="muted small" style="margin-top:0;">Preprints have not been peer-reviewed.</p>
+          <ul class="clean small">
+            <li>Roy, S.; Anoop, A. Active catalyst formation in Pd coupling from di-nuclear palladium acetate (ChemRxiv 2022).</li>
+            <li>Anoop, A.; Ganesh, V. Homoaromaticity in tropylium-catalysed O–H insertion with diazoesters (ChemRxiv 2022).</li>
+            <li>Khatun, M. et al. Small gold–thiolate clusters Au3(SMe)3 benchmarking and bonding (ChemRxiv 2022).</li>
+            <li>Rao, D. Y.; Anoop, A. Tandem C–C coupling and C–H activation of a flexible substrate (ChemRxiv 2019).</li>
+          </ul>
+
+          <div class="sep"></div>
+
+          <h4 style="margin:14px 0 6px;">Software</h4>
+          <p style="margin:0 0 8px;"><strong>PyAR</strong> — Python code for Aggregation and Reaction.</p>
+          <p class="muted small" style="margin:0 0 10px;">A free software for automated exploration of reactions between two reactants, and an automated workflow for predicting geometries of molecular aggregates and clusters.</p>
+          <p class="small" style="margin:0 0 6px;"><a href="https://github.com/anooplab/pyar" target="_blank" rel="noreferrer">Download from GitHub</a></p>
+          <pre class="kbd" style="display:block; padding:10px; white-space:pre-wrap; margin:0;">python3 -m pip install git+https://github.com/anooplab/pyar.git
+
+python3 -m pip install --upgrade git+https://github.com/anooplab/pyar.git</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTATIONS -->
+    <section id="presentations">
+      <div class="section-head">
+        <h3>Presentations &amp; conferences</h3>
+        <p>Full list (from the original Conferences/Workshops page)</p>
+      </div>
+
+      <div class="card">
+        <h4 style="margin:0 0 6px;">Conferences/Workshops</h4>
+        <p class="muted small" style="margin-top:0;">Search and filter by year. This list is scrollable.</p>
+
+        <!-- Conferences filter controls (search + year) -->
+        <div class="conf-filter filterbar" aria-label="Filter conferences"
+             style="display:grid; grid-template-columns: 1.2fr .6fr auto; gap: 10px; align-items: end; margin-top: 10px;">
+          <div>
+            <label for="confSearch" class="muted small" style="display:block; margin-bottom:6px;">Search (conference, venue, city)</label>
+            <input id="confSearch" type="search" placeholder="Type to filter…" autocomplete="off" spellcheck="false"
+                   style="width:100%; padding:10px 12px; border-radius: 12px; border: 1px solid rgba(34,48,67,.8); background: rgba(16,24,38,.55); color: var(--text);" />
+          </div>
+          <div>
+            <label for="confYear" class="muted small" style="display:block; margin-bottom:6px;">Year</label>
+            <select id="confYear"
+                    style="width:100%; padding:10px 12px; border-radius: 12px; border: 1px solid rgba(34,48,67,.8); background: rgba(16,24,38,.55); color: var(--text);">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div style="display:flex; gap: 10px; align-items:center; justify-content: flex-end;">
+            <button id="confClear" class="btn" type="button" aria-label="Clear conference filters">Clear</button>
+            <span id="confCount" class="muted small" aria-live="polite" style="min-width: 90px; text-align:right;">—</span>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Conferences/Workshops (expand/collapse)</summary>
+          <div class="scrollbox" role="region" aria-label="Conferences and workshops list">
+            <ul class="clean small">
+              <!-- START: Full list copied from https://anooplab.github.io/conferences/ -->
+              <li>Recent Advances in Chemical Sciences 2025, August 21-23, School of Chemical Sciences, Mahatma Gandhi University, Kottayam , Kerala.</li>
+              <li>Emerging Frontiers in Chemical Sciences (EFCS 2025), May 1-3 2025, Farook College, Kozhikode</li>
+              <li>11th Conference of Asia-Pacific Association of Theoretical and Computational Chemists (APATCC11), Kobe International Conference Center, Kobe, Hyogo, Japan, 21 to 25 April 2025.</li>
+              <li>Hands on Training on Computational Chemistry using Free (Open-source) Softwares, 3-4 March 2025, Sree Sankara College Kalady</li>
+              <li>Machine Learning for Molecular Sciences 2025, 6-8 February 2025, Shillong</li>
+              <li>SciFusion2025 - Science Workshop funded by DBT Star program at Sree Narayana College Thrissur, 28 January 2025.</li>
+              <li>Modern Trends in Inorganic Chemistry (MTIC-XXI 2024) 14-17 December 2024, IIT Kharagpur.</li>
+              <li>Society of Physical Chemistry Symposium SoPhyC 2024, 22-25 October 2024, IIT Bombay, Mumbai</li>
+              <li>Orientation Program, 17 October 2024, Government Medical College Kollam, Kerala</li>
+              <li>Orientation programme (FOCUS 2024), 8 October 2024, School of Chemical Sciences, Kannur University, Payyanur Campus.</li>
+              <li>Workshop on Strategic Plan for Research Activities at Centre of Excellence in AI, ML, Robotics and Automation, 27-28 October 2024, Model Engineering College, Ernakulam, Kerala</li>
+              <li>Current Trends in Theoretical Chemistry CTTC2024, 26-28 September 2024, Bhabha Atomic Research Centre (BARC) Mumbai.</li>
+              <li>Workshop on Strategic Plan Preparation of Centre of Excellence on Emerging Materials and Infrastructure, 30-31 August 2024, Rajiv Gandhi Institute of Technology, Kottayam, Kerala.</li>
+              <li>Workshop on Computational Chemistry, 14 March 2024, Department of Applied Chemistry, Cochin University of Science and Technology, Kochi, Kerala.</li>
+              <li>Workshop on Python Programming, February 2024, Bharath Matha College, Ernakulam, Kerala.</li>
+              <li>National Seminar &amp; Discussion Meeting on Simulations in Polymers, Materials, and Biomolecules: Academia and Industry Perspectives 22–24 June 2023, organized by Somaiya Vidyavihar University, Mumbai</li>
+              <li>National Seminar on Recent Advances in Chemical Sciences 3–4 April 2023, organized by School of Chemical Sciences, M. G. University</li>
+              <li>International Conference on Systems and Processes in Physics, Chemistry and Biology (ICSPPCB-2023) 2–5 March 2023, organized by Assam University, Silchar, Assam</li>
+              <li>International Conference on Designing Catalysts on Computer (DCC22) 2–3 December 2022, organized by IACS Kolkata</li>
+              <li>Computational Modeling in Chemistry, Biology and Materials - Making it Mainstream 23–26 November 2021, organized by Cochin University of Science and Technology (CUSAT), Kerala</li>
+              <li>Workshop in Chemistry for PG Students and Teachers 27 November 2021, organized by Calicut Chemistry Collective</li>
+              <li>National Seminar on Recent Trends in Computational Chemistry-2021 11–12 August 2021, organized by Somaiya Vidyavihar University, Mumbai</li>
+              <li>Computationally Designing of Materials for Materials Genome 1–6 March 2021, Department of Chemistry, IIT Indore</li>
+              <li>Science Academies Sponsored Refresher Course on “Theoretical and Computational Chemistry” 8–11 February 2021, organized by PG &amp; Research Department of Chemistry, PSGR Krishnammal College for Women, Coimbatore, Tamil Nadu</li>
+              <li>Recent Trends in Chemistry RTC2020 26–29 February 2020, NIT Calicut</li>
+              <li>Organised TEQIP Workshop on “Applications of Computers in Chemistry” March 2020, jointly with Dr. S. Mishra</li>
+              <li>Workshop on Computational Chemistry 9 October 2020, Srinivasa Ramanujan Institute for Basic Sciences, Kerala</li>
+              <li>Webinar Lecture Series, Lecture 7 7 October 2020, Department of Chemistry, Kashmir University</li>
+              <li>Application of Computational Methods in Modern Sciences 27 September 2019, Bajkul M. Mahavidyalaya</li>
+              <li>Role of DFT in Studying Electronic Structure and Reaction Pathway 29 August 2019, St. Xavier’s College</li>
+              <li>IC-CBSDD-2019 8–10 March 2019, Berhampur, Odisha</li>
+              <li>Theoretical Chemistry Symposium 2019 16–19 February 2019, BITS Pilani, Pilani, Rajasthan, India</li>
+              <li>RDC-2018 December 2018, NIT Durgapur, Durgapur, West Bengal, India</li>
+              <li>CCM2017 December 2017, BITS Hyderabad, Hyderabad, India</li>
+              <li>APCTCC8 December 2017, IIT Bombay, Mumbai, India</li>
+              <li>IC-RTCBSMNNPDD-2017 3–5 March 2017, Berhampur, Odisha</li>
+              <li>11th Triennial Congress of the World Association of Theoretical and Computational Chemists (WATOC 2017) 27–31 August 2017, Munich, Germany</li>
+              <li>“High Performance Computing - Latest Trends and Applications” 9–11 March 2017, NIT Calicut</li>
+              <li>Theoretical Chemistry Symposium 2016 December 2016, Hyderabad, India</li>
+              <li>Theoretical Chemistry Symposium 2014 December 2014, Pune, India</li>
+              <li>Symposium on Theoretical and Computational Chemistry - Frontiers and Challenges (STCC-FC) June 2013, Trichy, India</li>
+              <li>The 3rd Indo-German Symposium on Modeling Chemical and Biological (Re)activity February 2013, Chandigarh, India</li>
+              <li>Theoretical Chemistry Symposium 2012 19–22 December 2012, IIT Guwahati, India</li>
+              <li>Introduction to Computational Chemistry, National Workshop in Quantum Mechanics 15 December 2012, Government College of Engineering Kannur</li>
+              <li>Computational Chemistry: An Overview 10 November 2012, Dr. Mathew Thottiyil Endowment Lecture, Nirmala College, Muvattupuzha, Kerala</li>
+              <li>Computational Methods in Physical, Geological Modelling and Drug Designing 29 September – 1 October 2011, NASI, Allahabad</li>
+              <li>Applied Theory on Molecular Systems 2011 2–5 November 2011, IICT, Hyderabad</li>
+              <li>Ninth Triennial Congress of the World Association of Theoretical and Computational Chemists (WATOC 2011) 17–22 July 2011, Santiago de Compostela, Spain</li>
+              <li>Basic Principles and Applications of Computational Chemistry 20–27 May 2011, Institute for Intensive Research in Basic Sciences, M. G. University, Kottayam, Kerala</li>
+              <li>Theoretical Chemistry Symposium 2010 8–12 December 2010, IIT Kanpur, India</li>
+              <li>International Symposium in Theoretical and Computational Chemistry 28 February – 2 March 2010, Mülheim an der Ruhr, Germany</li>
+              <li>The 2nd Indo-German Symposium on Modeling Chemical and Biological (Re)activity 4–7 October 2009, Wildbad Kreuth, Germany</li>
+              <li>Molecular Quantum Mechanics - Analytic Gradients and Beyond: An International Conference in Honor of Professor Peter Pulay 29 May – 3 June 2007, Budapest, Hungary</li>
+              <li>Fifth CRSI National Symposium 2003, Chennai, India</li>
+              <!-- END: Full list -->
+            </ul>
+          </div>
+          <p class="muted small" style="margin:10px 0 0;">Source: <a href="https://anooplab.github.io/conferences/" target="_blank" rel="noreferrer">Conferences/Workshops</a></p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="band">
+      <div class="section-head">
+        <h3>About</h3>
+        <p>Profiles, memberships, experience, awards, education</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 style="margin:0 0 8px;">Online profiles</h4>
+          <ul class="clean small">
+            <li><a href="https://www.iitkgp.ac.in/" target="_blank" rel="noreferrer">Institute profile</a></li>
+            <li><a href="https://orcid.org/" target="_blank" rel="noreferrer">ORCID</a></li>
+            <li><a href="https://www.researcherid.com/" target="_blank" rel="noreferrer">Publons</a></li>
+            <li><a href="https://www.scopus.com/" target="_blank" rel="noreferrer">Scopus author ID</a></li>
+            <li><a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a></li>
+            <li><a href="https://www.researchgate.net/" target="_blank" rel="noreferrer">ResearchGate</a></li>
+            <li><a href="https://iitkgp.irins.org/" target="_blank" rel="noreferrer">IRINS profile</a></li>
+          </ul>
+
+          <div class="sep"></div>
+
+          <h4 style="margin:14px 0 8px;">Professional memberships</h4>
+          <ul class="clean small">
+            <li>National Academy of Sciences India (NASI)</li>
+            <li>Chemical Research Society of India (CRSI)</li>
+            <li>World Association of Theoretical and Computational Chemists (WATOC)</li>
+          </ul>
+
+          <h4 style="margin:14px 0 8px;">Editorial roles</h4>
+          <ul class="clean small">
+            <li>Journal of Molecular Graphics and Modelling</li>
+            <li>Indian Journal of Chemistry</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 style="margin:0 0 8px;">Professional experience</h4>
+          <ul class="clean small">
+            <li>2023–present: Professor, Digital University Kerala</li>
+            <li>2016–2023: Associate Professor, IIT Kharagpur</li>
+            <li>2012 (Jun–Jul): Visiting Professor, University of Münster, Germany (SFB858)</li>
+            <li>2010–2016: Assistant Professor, IIT Kharagpur</li>
+            <li>2009–2010: Postdoctoral fellow, University of Bonn (Prof. Frank Neese)</li>
+            <li>2006–2009: Postdoctoral fellow, MPI KoFo Mülheim (Prof. Walter Thiel)</li>
+          </ul>
+
+          <div class="sep"></div>
+
+          <h4 style="margin:14px 0 8px;">Award</h4>
+          <ul class="clean small">
+            <li>Linus Pauling Lecture Award (2021), School of Chemical Sciences, Mahatma Gandhi University, Kottayam</li>
+          </ul>
+
+          <h4 style="margin:14px 0 8px;">Education</h4>
+          <ul class="clean small">
+            <li>1999–2005: PhD, University of Hyderabad (Prof. E. D. Jemmis)</li>
+            <li>1996–1998: MSc Chemistry, School of Chemical Sciences, M. G. University</li>
+            <li>1993–1996: BSc (Chemistry), Nirmala College, Muvattupuzha</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-head">
+        <h3>Contact</h3>
+        <p>Digital University Kerala</p>
+      </div>
+
+      <div class="card">
+        <p style="margin:0 0 10px;">
+          Professor<br />
+          School of Digital Sciences<br />
+          Kerala University of Digital Sciences, Innovation, and Technology (Digital University Kerala)<br />
+          Technopark Phase-IV, Pallipuram, Thiruvananthapuram, India – 691357
+        </p>
+        <p class="muted small" style="margin:0;">
+          Email: <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a> ·
+          Phone: <a href="tel:+914712788027">+91-471-2788027</a> ·
+          Office: Room No. 32, Ground floor
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="sep"></div>
+      <p style="margin:10px 0 0;">CC BY-NC 4.0</p>
+    </footer>
+  </main>
+
+  <!-- Feather icons (SVG injection) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <script>
+    // Publications filtering (search + year)
+    (function initPublicationsFilter(){
+      const listRoot = document.querySelector('#publications .scrollbox ul');
+      if(!listRoot) return;
+
+      const input = document.getElementById('pubSearch');
+      const yearSel = document.getElementById('pubYear');
+      const clearBtn = document.getElementById('pubClear');
+      const countEl = document.getElementById('pubCount');
+      if(!input || !yearSel || !clearBtn || !countEl) return;
+
+      const items = Array.from(listRoot.querySelectorAll('li'));
+
+      function normalise(s){
+        return String(s || '')
+          .toLowerCase()
+          .replace(/\s+/g,' ')
+          .trim();
+      }
+
+      function extractYearParen(txt){
+        if(!txt) return '';
+        // match a year presented as (2024)
+        for(let i=0; i<txt.length-5; i++){
+          if(txt[i] !== '(') continue;
+          const a = txt.charCodeAt(i+1), b = txt.charCodeAt(i+2), c = txt.charCodeAt(i+3), d = txt.charCodeAt(i+4);
+          if(a<48||a>57||b<48||b>57||c<48||c>57||d<48||d>57) continue;
+          if(txt[i+5] !== ')') continue;
+          return txt.slice(i+1, i+5);
+        }
+        return '';
+      }
+
+      // Tag each item with year and build the Year dropdown
+      const yearsSet = new Set();
+      items.forEach(li => {
+        const y = extractYearParen(li.textContent || '');
+        li.dataset.year = y;
+        if(y) yearsSet.add(y);
+      });
+
+      Array.from(yearsSet)
+        .sort((a,b) => Number(b) - Number(a))
+        .forEach(y => {
+          const opt = document.createElement('option');
+          opt.value = y;
+          opt.textContent = y;
+          yearSel.appendChild(opt);
+        });
+
+      function applyFilter(){
+        const q = normalise(input.value);
+        const y = yearSel.value;
+        let shown = 0;
+
+        items.forEach(li => {
+          const text = normalise(li.textContent);
+          const okQ = !q || text.includes(q);
+          const okY = !y || li.dataset.year === y;
+          const show = okQ && okY;
+          li.style.display = show ? '' : 'none';
+          if(show) shown += 1;
+        });
+
+        countEl.textContent = shown + '/' + items.length;
+      }
+
+      applyFilter();
+
+      input.addEventListener('input', applyFilter);
+      yearSel.addEventListener('change', applyFilter);
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        yearSel.value = '';
+        applyFilter();
+        input.focus();
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape'){
+          input.value = '';
+          applyFilter();
+        }
+      });
+
+      // Lightweight self-tests (run once, no UI impact)
+      (function runPubFilterTests(){
+        try{
+          console.assert(normalise('  A\nB\tC  ') === 'a b c', 'normalise should collapse whitespace');
+          console.assert(normalise('A  B    C') === 'a b c', 'normalise should collapse multiple spaces');
+          console.assert(extractYearParen('Something (2024) here') === '2024', 'extractYearParen should find (YYYY)');
+          console.assert(extractYearParen('No year here') === '', 'extractYearParen should return empty when missing');
+          console.assert(extractYearParen('Weird (20A4)') === '', 'extractYearParen should reject non-digits');
+
+          // ensure the year dropdown is populated (at least "All")
+          console.assert(yearSel.querySelectorAll('option').length >= 1, 'Year dropdown should have options');
+
+          // ensure applyFilter hides something when filtering to an unlikely token
+          const original = input.value;
+          input.value = 'zzzz-unlikely-token';
+          applyFilter();
+          const visible = items.filter(li => li.style.display !== 'none').length;
+          console.assert(visible === 0, 'Filtering by an unlikely token should hide all');
+          input.value = original;
+          applyFilter();
+        }catch(err){
+          console.warn('Publication filter tests skipped:', err);
+        }
+      })();
+    })();
+
+    // Conferences filtering (search + year)
+    (function initConferencesFilter(){
+      const listRoot = document.querySelector('#presentations .scrollbox ul');
+      if(!listRoot) return;
+
+      const input = document.getElementById('confSearch');
+      const yearSel = document.getElementById('confYear');
+      const clearBtn = document.getElementById('confClear');
+      const countEl = document.getElementById('confCount');
+      if(!input || !yearSel || !clearBtn || !countEl) return;
+
+      const items = Array.from(listRoot.querySelectorAll('li'));
+
+      function normalise(s){
+        return String(s || '')
+          .toLowerCase()
+          .replace(/\s+/g,' ')
+          .trim();
+      }
+
+      function extractYearLoose(txt){
+        const m = String(txt || '').match(/(?:19|20)\d{2}/);
+        return m ? m[0] : '';
+      }
+
+      const yearsSet = new Set();
+      items.forEach(li => {
+        const y = extractYearLoose(li.textContent || '');
+        li.dataset.year = y;
+        if(y) yearsSet.add(y);
+      });
+
+      Array.from(yearsSet).sort((a,b)=> Number(b)-Number(a)).forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        yearSel.appendChild(opt);
+      });
+
+      function applyFilter(){
+        const q = normalise(input.value);
+        const y = yearSel.value;
+        let shown = 0;
+
+        items.forEach(li => {
+          const text = normalise(li.textContent);
+          const okQ = !q || text.includes(q);
+          const okY = !y || li.dataset.year === y;
+          const show = okQ && okY;
+          li.style.display = show ? '' : 'none';
+          if(show) shown += 1;
+        });
+
+        countEl.textContent = shown + '/' + items.length;
+      }
+
+      applyFilter();
+
+      input.addEventListener('input', applyFilter);
+      yearSel.addEventListener('change', applyFilter);
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        yearSel.value = '';
+        applyFilter();
+        input.focus();
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape'){
+          input.value = '';
+          applyFilter();
+        }
+      });
+
+      // Lightweight self-tests (run once, no UI impact)
+      (function runConfFilterTests(){
+        try{
+          console.assert(extractYearLoose('SoPhyC 2024, IIT Bombay') === '2024', 'extractYearLoose should find a year');
+          console.assert(extractYearLoose('WATOC 2017 (Munich)') === '2017', 'extractYearLoose should find another year');
+          console.assert(extractYearLoose('No year') === '', 'extractYearLoose should return empty when missing');
+          console.assert(normalise('  A\nB\tC  ') === 'a b c', 'normalise should collapse whitespace');
+          console.assert(yearSel.querySelectorAll('option').length >= 1, 'Conference year dropdown should have options');
+        }catch(err){
+          console.warn('Conference filter tests skipped:', err);
+        }
+      })();
+    })();
+
+    // Active nav highlighting
+    const navLinks = Array.from(document.querySelectorAll('.nav a'));
+    const sections = navLinks
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    function setActive(hash){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+    }
+
+    setActive('#home');
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          setActive('#' + entry.target.id);
+        }
+      });
+    }, { root: null, threshold: 0.25 });
+
+    sections.forEach(sec => obs.observe(sec));
+
+    // Render Feather icons into inline SVGs
+    if(window.feather){
+      feather.replace({ width: 18, height: 18, 'stroke-width': 2 });
+    }
+  </script>
+</body>
+</html>
+
