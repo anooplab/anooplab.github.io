@@ -192,6 +192,29 @@
     .hero p{ margin: 0 0 14px; }
     .hero-actions{ display:flex; gap: 10px; flex-wrap: wrap; }
 
+    .hero-layout{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+      flex-wrap:wrap;
+      width:100%;
+    }
+    .hero-text{ flex:1 1 420px; min-width:0; }
+    .hero-media{ flex:0 1 240px; text-align:center; width:100%; max-width:240px; }
+    .hero-image{
+      width:100%;
+      max-width:240px;
+      height:auto;
+      aspect-ratio: 1 / 1;
+      object-fit:cover;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(255,255,255,0.04);
+    }
+
     .section-head{
       display:flex;
       justify-content: space-between;
@@ -386,9 +409,19 @@
       .wrap{ padding: 16px; }
       .topbar-inner{ padding: 12px 16px; }
       .hero h1{ font-size: 28px; }
-      .scrollbox{ max-height: none; }
+      .hero-layout{ flex-direction: column; align-items: flex-start; gap: 18px; }
+      .hero-text{ flex-basis: auto; width: 100%; }
+      .hero-media{ max-width: 220px; }
+      .scrollbox{ max-height: none; overflow-y: visible; }
       .pub-filter{ grid-template-columns: 1fr !important; }
       .conf-filter{ grid-template-columns: 1fr !important; }
+    }
+
+    @media (hover: none) and (pointer: coarse){
+      .scrollbox{
+        max-height: none;
+        overflow-y: visible;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -404,8 +437,6 @@
       text-decoration: none;
     }
   </style>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Anoop Ayyappan is a computational chemist working on machine learning-enabled chemical space exploration, global optimisation, ML potentials, and quantum chemistry at Digital University Kerala.">
   <link rel="canonical" href="https://anooplab.github.io/">
 
   <!-- Open Graph / LinkedIn -->
@@ -469,12 +500,12 @@
     </div>
   </header>
 
-  <main class="wrap" role="main" id="home">
-    <section id="hero" class="card">
-  <div style="display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+  <main class="wrap" role="main" id="main">
+    <section id="home" class="card">
+  <div class="hero-layout">
 
     <!-- Text block -->
-    <div style="flex:1 1 420px; min-width:260px;">
+    <div class="hero-text">
       <h1>Machine Learning Enabled Chemical Space Exploration</h1>
       <p class="lead">
         Building automated discovery workflows that combine global optimisation,
@@ -483,23 +514,14 @@
     </div>
 
     <!-- Profile photo -->
-    <div style="flex:0 0 240px; text-align:center;">
+    <div class="hero-media">
       <img
         src="anoop.png"
         alt="Anoop Ayyappan, Professor, Digital University Kerala"
         width="240"
         height="240"
         loading="eager"
-        style="
-          width:240px;
-          height:240px;
-          object-fit:cover;
-          border-radius:18px;
-          border:1px solid rgba(255,255,255,0.08);
-          box-shadow:
-            0 8px 24px rgba(0,0,0,0.45),
-            0 0 0 1px rgba(255,255,255,0.04);
-        "
+        class="hero-image"
       >
       </div>
 
@@ -593,15 +615,15 @@
           <details open>
             <summary>PhD</summary>
             <ul class="clean small">
-              <li>Dr. Saibal Jana</li>
-              <li>Dr. Subhajit Mandal (Jointly with Prof. P. K. Chattaraj)</li>
-              <li>Dr. Surajit Nandi</li>
-              <li>Dr. Davaluri Yogeswara Rao</li>
-              <li>Dr. Eshani Das</li>
-              <li>Dr. Maya Khatun</li>
-              <li>Dr. Saikat Roy</li>
-              <li>Dr. Sunanda Panda (Jointly with Dr. Kiran Gore)</li>
-              <li>Dr. Moumita Banerjee (Jointly with Prof. N. D. Pradeep Singh)</li>
+              <li><a href="https://www.int.kit.edu/staff_7373.php" target="_blank" rel="noreferrer noopener">Dr. Saibal Jana</a></li>
+              <li><a href="https://scholar.google.com/citations?user=MkiKY0kAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Subhajit Mandal</a> (Jointly with Prof. P. K. Chattaraj)</li>
+              <li><a href="https://scholar.google.com/citations?user=g7bAmuYAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Surajit Nandi</a></li>
+              <li><a href="https://www.researchgate.net/profile/Davuluri-Yogeswara-Rao" target="_blank" rel="noreferrer noopener">Dr. Davaluri Yogeswara Rao</a></li>
+              <li><a href="https://chemistry.brown.edu/people/eshani-das" target="_blank" rel="noreferrer noopener">Dr. Eshani Das</a></li>
+              <li><a href="https://www.jyu.fi/en/people/maya-khatun" target="_blank" rel="noreferrer noopener">Dr. Maya Khatun</a></li>
+              <li><a href="https://saikat248.github.io/" target="_blank" rel="noreferrer noopener">Dr. Saikat Roy</a></li>
+              <li><a href="https://scholar.google.com/citations?hl=en&amp;user=Ob_wY0EAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Sunanda Panda</a> (Jointly with Dr. Kiran Gore)</li>
+              <li><a href="https://scholar.google.com/citations?hl=en&amp;user=Ay6U1kAAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Moumita Banerjee</a> (Jointly with Prof. N. D. Pradeep Singh)</li>
               <li>Subhasis Dey</li>
               <li>Tanwi Debnath</li>
             </ul>
