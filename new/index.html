@@ -411,7 +411,7 @@
     }
     .stat-value{ display:block; font-size: 22px; font-weight: 700; color: #f5fbff; }
 .stat-label{ display:block; margin-top: 2px; color: var(--muted); font-size: 12px; }
-    .student-grid{ display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 12px; }
+    .student-grid{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
     .student-card{
       overflow: hidden;
       border: 1px solid rgba(34,48,67,.62);
@@ -421,7 +421,7 @@
     }
     .student-photo{
       position: relative;
-      aspect-ratio: 4 / 4.5;
+      aspect-ratio: 1 / 1.05;
       overflow: hidden;
       background: radial-gradient(circle at 30% 20%, rgba(126,216,255,.22), transparent 38%), linear-gradient(135deg, rgba(20,30,48,.96), rgba(34,20,52,.88));
     }
@@ -454,19 +454,18 @@
       font-size: 24px;
       font-weight: 700;
     }
-    .student-body{ padding: 14px; }
+    .student-body{ padding: 11px 12px 12px; }
     .student-body h5{
-      margin: 0 0 6px;
-      font-size: 17px;
+      margin: 0 0 4px;
+      font-size: 15px;
       color: #f5fbff;
     }
     .student-body p{
       margin: 0;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.45;
     }
-
     ul.clean{ margin: 10px 0 0; padding-left: 18px; }
     ul.clean li{ margin: 7px 0; color: rgba(230,237,243,.94); }
 
@@ -628,7 +627,7 @@
 .grid-2{ grid-template-columns: 1fr; }
       .grid-3{ grid-template-columns: 1fr; }
 .stat-grid{ grid-template-columns: 1fr; }
-      .student-grid{ grid-template-columns: 1fr; }
+      .student-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .brand{ min-width: auto; }
       .topbar-inner{ align-items: flex-start; flex-direction: column; }
       .nav{ justify-content: flex-start; }
@@ -645,7 +644,7 @@
       .scrollbox{ max-height: none; overflow-y: visible; }
       .pub-filter{ grid-template-columns: 1fr !important; }
       .conf-filter{ grid-template-columns: 1fr !important; }
-    }
+      .student-grid{ grid-template-columns: 1fr; }
 
     @media (hover: none) and (pointer: coarse){
       .scrollbox{
@@ -674,13 +673,13 @@
   <meta property="og:description" content="Machine learning-enabled chemical space exploration. Automation, ML interatomic potentials, and quantum chemistry.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anooplab.github.io/">
-  <meta property="og:image" content="https://anooplab.github.io/new/anoop.png">
+  <meta property="og:image" content="https://anooplab.github.io/new/images/anoop.png">
 
   <!-- Twitter/X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anoop Ayyappan | Computational Chemistry &amp; ML">
   <meta name="twitter:description" content="Automated discovery workflows for molecules and functional materials.">
-  <meta name="twitter:image" content="https://anooplab.github.io/new/anoop.png">
+  <meta name="twitter:image" content="https://anooplab.github.io/new/images/anoop.png">
 
   <!-- Structured data for academic identity -->
   <script type="application/ld+json">
@@ -694,7 +693,7 @@
       "name": "Digital University Kerala"
     },
     "url": "https://anooplab.github.io/",
-    "image": "https://anooplab.github.io/new/anoop.png",
+    "image": "https://anooplab.github.io/new/images/anoop.png",
     "sameAs": [
       "https://duk.ac.in/personnel/anoop-ayyappan/",
       "https://twitter.com/A_Anoop_A",
@@ -746,7 +745,7 @@
     <!-- Profile photo -->
     <div class="hero-media">
       <img
-        src="anoop.png"
+        src="images/anoop.png"
         alt="Anoop Ayyappan, Professor, Digital University Kerala"
         width="240"
         height="240"
@@ -830,7 +829,6 @@
 <section id="members" aria-label="Members">
       <div class="section-head">
         <h3>Members</h3>
-        <p>Current PhD students as profile cards, with alumni tucked into lighter archive panels</p>
       </div>
 
       <div class="grid-2">
@@ -850,7 +848,7 @@
 
             <article class="student-card">
               <div class="student-photo">
-                <div class="student-placeholder"><div><strong>LS</strong>Photo to be added</div></div>
+                <img src="images/lazumla-sherpa.png" alt="Lazumla Sherpa" loading="lazy" />
               </div>
               <div class="student-body">
                 <h5>Lazumla Sherpa</h5>
@@ -860,7 +858,7 @@
 
             <article class="student-card">
               <div class="student-photo">
-                <div class="student-placeholder"><div><strong>PS</strong>Photo to be added</div></div>
+                <img src="images/pratik-sarkar.png" alt="Pratik Sarkar" loading="lazy" />
               </div>
               <div class="student-body">
                 <h5>Pratik Sarkar</h5>
@@ -870,7 +868,7 @@
 
             <article class="student-card">
               <div class="student-photo">
-                <div class="student-placeholder"><div><strong>SG</strong>Photo to be added</div></div>
+                <img src="images/sandip-giri.png" alt="Sandip Giri" loading="lazy" />
               </div>
               <div class="student-body">
                 <h5>Sandip Giri</h5>
@@ -880,7 +878,7 @@
 
             <article class="student-card">
               <div class="student-photo">
-                <div class="student-placeholder"><div><strong>AP</strong>Photo to be added</div></div>
+                <img src="images/arpita-poddar.png" alt="Arpita Poddar" loading="lazy" />
               </div>
               <div class="student-body">
                 <h5>Arpita Poddar</h5>
@@ -903,22 +901,94 @@
         <div class="card">
           <span class="eyebrow">Archive</span>
           <h4 style="margin:0 0 8px;">Former members</h4>
-          <p class="compact-meta">The alumni list is preserved, but the page now leads with the active group.</p>
           <details class="details-card" open>
             <summary>PhD</summary>
-            <ul class="clean small">
-              <li><a href="https://www.int.kit.edu/staff_7373.php" target="_blank" rel="noreferrer noopener">Dr. Saibal Jana</a></li>
-              <li><a href="https://scholar.google.com/citations?user=MkiKY0kAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Subhajit Mandal</a> (Jointly with Prof. P. K. Chattaraj)</li>
-              <li><a href="https://scholar.google.com/citations?user=g7bAmuYAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Surajit Nandi</a></li>
-              <li><a href="https://www.researchgate.net/profile/Davuluri-Yogeswara-Rao" target="_blank" rel="noreferrer noopener">Dr. Davaluri Yogeswara Rao</a></li>
-              <li><a href="https://chemistry.brown.edu/people/eshani-das" target="_blank" rel="noreferrer noopener">Dr. Eshani Das</a></li>
-              <li><a href="https://www.jyu.fi/en/people/maya-khatun" target="_blank" rel="noreferrer noopener">Dr. Maya Khatun</a></li>
-              <li><a href="https://saikat248.github.io/" target="_blank" rel="noreferrer noopener">Dr. Saikat Roy</a></li>
-              <li><a href="https://scholar.google.com/citations?hl=en&amp;user=Ob_wY0EAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Sunanda Panda</a> (Jointly with Dr. Kiran Gore)</li>
-              <li><a href="https://scholar.google.com/citations?hl=en&amp;user=Ay6U1kAAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Moumita Banerjee</a> (Jointly with Prof. N. D. Pradeep Singh)</li>
-              <li>Subhasis Dey</li>
-              <li>Tanwi Debnath</li>
-            </ul>
+            <div class="student-grid">
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/saibal-jana.png" alt="Saibal Jana" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://www.int.kit.edu/staff_7373.php" target="_blank" rel="noreferrer noopener">Dr. Saibal Jana</a></h5>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/subhajit-mandal.png" alt="Subhajit Mandal" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://scholar.google.com/citations?user=MkiKY0kAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Subhajit Mandal</a></h5>
+                  <p>Jointly with Prof. P. K. Chattaraj.</p>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/surajit-nandi.png" alt="Surajit Nandi" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://scholar.google.com/citations?user=g7bAmuYAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Surajit Nandi</a></h5>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/yogeswara-rao.png" alt="Davaluri Yogeswara Rao" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://www.researchgate.net/profile/Davuluri-Yogeswara-Rao" target="_blank" rel="noreferrer noopener">Dr. Davaluri Yogeswara Rao</a></h5>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/eshani-das.png" alt="Eshani Das" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://chemistry.brown.edu/people/eshani-das" target="_blank" rel="noreferrer noopener">Dr. Eshani Das</a></h5>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/maya-khatun.png" alt="Maya Khatun" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://www.jyu.fi/en/people/maya-khatun" target="_blank" rel="noreferrer noopener">Dr. Maya Khatun</a></h5>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/saikat-roy.png" alt="Saikat Roy" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://saikat248.github.io/" target="_blank" rel="noreferrer noopener">Dr. Saikat Roy</a></h5>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/sunanda-panda.png" alt="Sunanda Panda" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://scholar.google.com/citations?hl=en&amp;user=Ob_wY0EAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Sunanda Panda</a></h5>
+                  <p>Jointly with Dr. Kiran Gore.</p>
+                </div>
+              </article>
+
+              <article class="student-card">
+                <div class="student-photo">
+                  <img src="images/moumita-banerjee.png" alt="Moumita Banerjee" loading="lazy" />
+                </div>
+                <div class="student-body">
+                  <h5><a href="https://scholar.google.com/citations?hl=en&amp;user=Ay6U1kAAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Moumita Banerjee</a></h5>
+                  <p>Jointly with Prof. N. D. Pradeep Singh.</p>
+                </div>
+              </article>
+
+            </div>
           </details>
 
           <details class="details-card">
