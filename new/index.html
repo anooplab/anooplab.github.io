@@ -100,7 +100,10 @@
       gap: 10px;
       flex-wrap: wrap;
       justify-content: flex-end;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
+    .nav::-webkit-scrollbar{ display:none; }
     .nav a{
       font-size: 13px;
       color: var(--text);
@@ -624,19 +627,24 @@
     }
 
     @media (max-width: 900px){
-.grid-2{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
       .grid-3{ grid-template-columns: 1fr; }
-.stat-grid{ grid-template-columns: 1fr; }
+      .stat-grid{ grid-template-columns: 1fr; }
       .student-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .topbar{ position: static; }
       .brand{ min-width: auto; }
-      .topbar-inner{ align-items: flex-start; flex-direction: column; }
-      .nav{ justify-content: flex-start; }
+      .topbar-inner{ align-items: flex-start; flex-direction: column; gap: 12px; }
+      .nav{ width: 100%; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+      .nav a{ flex: 0 0 auto; white-space: nowrap; }
       .footer-grid{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px){
       .wrap{ padding: 16px; }
       .topbar-inner{ padding: 12px 16px; }
+      .brand h1{ font-size: 15px; }
+      .brand p{ font-size: 11px; }
+      .nav a{ padding: 8px 11px; font-size: 12px; }
       .hero h1{ font-size: 28px; }
       .hero-layout{ flex-direction: column; align-items: flex-start; gap: 18px; }
       .hero-text{ flex-basis: auto; width: 100%; }
@@ -645,6 +653,7 @@
       .pub-filter{ grid-template-columns: 1fr !important; }
       .conf-filter{ grid-template-columns: 1fr !important; }
       .student-grid{ grid-template-columns: 1fr; }
+    }
 
     @media (hover: none) and (pointer: coarse){
       .scrollbox{
@@ -705,15 +714,13 @@
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
   <header class="topbar" role="banner">
     <div class="topbar-inner">
       <div class="brand" aria-label="Site identity">
         <div class="mark" aria-hidden="true"></div>
         <div>
           <h1>Anoop Ayyappan</h1>
-          <p>Research � Team � Publications � Talks</p>
+          <p>Research | Team | Publications | Talks</p>
         </div>
       </div>
 
@@ -728,6 +735,10 @@
       </nav>
     </div>
   </header>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main class="wrap" role="main" id="main">
     <section id="home" class="card">
@@ -735,11 +746,17 @@
 
     <!-- Text block -->
     <div class="hero-text">
-      <h1>Machine Learning Enabled Chemical Space Exploration</h1>
+      <p class="eyebrow" style="margin-bottom:10px;">Computational Chemistry and Molecular Discovery</p>
+      <h1>Anoop Ayyappan</h1>
+      <p class="lead" style="font-size:18px; color:#f5fbff; margin-bottom:8px;">Professor, Digital University Kerala</p>
       <p class="lead">
-        Building automated discovery workflows that combine global optimisation,
-        ML interatomic potentials, and quantum chemistry validation.
+        I work in computational chemistry, with interests spanning chemical space exploration, molecular and nanocluster structure prediction, reaction discovery, and theoretical methods that connect machine learning with quantum chemistry.
       </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#research" aria-label="Jump to research">Research</a>
+        <a class="btn ghost" href="#publications" aria-label="Jump to publications">Publications</a>
+        <a class="btn ghost" href="#contact" aria-label="Jump to contact">Contact</a>
+      </div>
     </div>
 
     <!-- Profile photo -->
