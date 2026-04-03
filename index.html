@@ -68,41 +68,9 @@
       padding: 14px 24px;
       display:flex;
       align-items:center;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 16px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 180px;
-    }
-    .mark{
-      width: 34px; height: 34px;
-      border-radius: 10px;
-      border: 1px solid rgba(216,179,139,.26);
-      background:
-        linear-gradient(180deg, rgba(240,229,215,.08), transparent 48%),
-        linear-gradient(135deg, rgba(198,154,107,.92), rgba(141,101,70,.96));
-      box-shadow:
-        0 10px 24px rgba(0,0,0,.28),
-        inset 0 1px 0 rgba(255,244,230,.16);
-    }
-    .brand h1{
-      font-family: var(--serif);
-      font-size: 18px;
-      margin:0;
-      letter-spacing: .02em;
-      font-weight: 600;
-    }
-    .brand p{
-      margin:0;
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
     .nav{
       display:flex;
       align-items:center;
@@ -340,7 +308,7 @@
 
     .section-head{
       display:flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: baseline;
       gap: 10px;
       margin-bottom: 10px;
@@ -573,6 +541,19 @@
       gap: 12px;
       margin-top: 14px;
     }
+    .selected-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .selected-head p{
+      margin:0;
+      max-width: 58ch;
+      color: var(--muted);
+    }
     .selected-item{
       padding: 16px;
       border-radius: 16px;
@@ -596,9 +577,8 @@
     }
     .selected-actions{
       display:flex;
-      justify-content:flex-start;
+      justify-content:flex-end;
       gap: 10px;
-      margin-top: 14px;
       flex-wrap: wrap;
     }
     .featured-links{
@@ -740,7 +720,7 @@
       border-top: 1px solid rgba(72,53,37,.45);
       display:flex;
       align-items:center;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 14px;
       flex-wrap: wrap;
     }
@@ -918,12 +898,6 @@
     <div class="topbar-inner">
       <div class="brand" aria-label="Site identity">
         <div class="mark" aria-hidden="true"></div>
-        <div>
-          <h1>Anoop Ayyappan</h1>
-          <p>Professor | Digital University Kerala</p>
-        </div>
-      </div>
-
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
         <span aria-hidden="true"></span>
         Menu
@@ -935,7 +909,7 @@
         <a href="#software">Software</a>
         <a href="#selected-work">Selected Work</a>
         <a href="#members">Team</a>
-        <a href="#publications">Publications</a>
+        <a href="/publications/">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -956,7 +930,6 @@
       <div class="hero-actions">
         <a class="btn primary" href="#research" aria-label="Jump to research">Research</a>
         <a class="btn ghost" href="#selected-work" aria-label="Jump to selected work">Publications</a>
-        <a class="btn ghost" href="#contact" aria-label="Jump to contact">Contact</a>
       </div>
     </div>
 
@@ -1067,16 +1040,17 @@
       </div>
     </section>
     <section id="selected-work" aria-label="Selected work">
-      <div class="section-head">
-        <h3>Selected Work</h3>
-        <p>A brief preview of recent papers before the full archive.</p>
-      </div>
       <div class="card">
-        <span class="eyebrow">Selected publications</span>
-        <div class="selected-list" id="selectedWorkList"></div>
-        <div class="selected-actions">
-          <a class="btn" href="#publications" aria-label="Jump to full publications">Browse full publications</a>
+        <div class="selected-head">
+          <div>
+            <h3 style="margin:0 0 6px;">Selected Work</h3>
+            <p>A curated mix of recent papers and representative earlier work.</p>
+          </div>
+          <div class="selected-actions">
+            <a class="btn ghost" href="/publications/" aria-label="Open the full publications archive">Full publications</a>
+          </div>
         </div>
+        <div class="selected-list" id="selectedWorkList"></div>
       </div>
     </section>
     <script type="application/json" id="selectedWorkData">
@@ -1289,257 +1263,6 @@
           </div>
         </div>
       </details>
-    </section>
-
-    <section id="publications" class="band" aria-label="Publications">
-      <div class="section-head">
-        <h3>Full Publications</h3>
-        <p>The complete archive remains on this page, lower down for reference.</p>
-      </div>
-      <details class="details-card archive-panel" id="publications-archive">
-        <summary>Browse the full archive</summary>
-        <p class="archive-note">Search and filter remain available inside the archive.</p>
-      <div>
-        <div class="card">
-          <span class="eyebrow">Archive</span>
-          <h4 style="margin:0 0 6px;">Journal articles</h4>
-          <p class="muted small" style="margin-top:0;">Search and filter by year. This list is scrollable.</p>
-
-          <div class="pub-filter filterbar" aria-label="Filter publications" style="display:grid; grid-template-columns: 1.2fr .6fr auto; gap: 10px; align-items: end; margin-top: 10px;">
-            <div>
-              <label for="pubSearch" class="muted small" style="display:block; margin-bottom:6px;">Search (title, author, journal)</label>
-              <input id="pubSearch" type="search" placeholder="Type to filter..." autocomplete="off" spellcheck="false" />
-            </div>
-            <div>
-              <label for="pubYear" class="muted small" style="display:block; margin-bottom:6px;">Year</label>
-              <select id="pubYear">
-                <option value="">All</option>
-              </select>
-            </div>
-            <div style="display:flex; gap: 10px; align-items:center; justify-content: flex-end;">
-              <button id="pubClear" class="btn" type="button" aria-label="Clear publication filters">Clear</button>
-              <span id="pubCount" class="muted small" aria-live="polite" style="min-width: 90px; text-align:right;">-</span>
-            </div>
-          </div>
-
-          <div class="scrollbox" role="region" aria-label="Journal articles list">
-            <ul class="clean small" id="pubList">
-                <!-- START: Full list copied from https://anooplab.github.io/publications/journal_artcles/ -->
-
-                <li>Sherpa, L. T.; Khatun, M.; Panda, S.; Anoop, A. Cooperative many-body interactions and spectroscopic signatures in (HCN) <sub> <i>n</i> </sub> and (HNC) <sub> <i>n</i> </sub> clusters up to <i>n</i> = 15. <em>Physical Chemistry Chemical Physics</em> <strong>2026</strong>, 28 (3), 2227-2238. DOI: <a href="https://doi.org/10.1039/D5CP03273C" target="_blank" rel="noreferrer noopener">10.1039/D5CP03273C</a></li>
-
-                <li>Prabhu, P. V.; Darshan, V.; Divya, I. S.; Banerjee, M.; Varughese, S.; Anoop, A.; Unni, K. N. N.; Joseph, J. Phenothiazine-based TADF emitters with dual conformations for single-molecule white OLEDs. <em>Chemical Science</em> <strong>2026</strong>, 17 (2), 1002-1015. DOI: <a href="https://doi.org/10.1039/D5SC04370K" target="_blank" rel="noreferrer noopener">10.1039/D5SC04370K</a></li>
-
-                <li>Sarkar, P.; Khatun, M.; Anoop, A. Computational discovery of high-performance B–Al–Ga nanoclusters for oxygen reduction reaction catalysis. <em>Physical Chemistry Chemical Physics</em> <strong>2025</strong>, 27 (46), 25014-25026. DOI: <a href="https://doi.org/10.1039/D5CP03587B" target="_blank" rel="noreferrer noopener">10.1039/D5CP03587B</a></li>
-
-                <li>Giri, S.; Satpati, S.; Roy, T.; Ghosal, S.; Anoop, A. Computational Exploration of Small Hydrocarbon Networks: A Stochastic Generation and DFT Refinement Framework. <em>Journal of Computational Chemistry</em> <strong>2025</strong>, 46 (25), e70236. DOI: <a href="https://doi.org/10.1002/jcc.70236" target="_blank" rel="noreferrer noopener">10.1002/jcc.70236</a></li>
-
-                <li>Khatun, M.; Sarkar, P.; Panda, S.; Anoop, A. Bonding and stability in six-atom nanoclusters of boron, aluminum, and gallium. <em>Polyhedron</em> <strong>2025</strong>, 281, 117703. DOI: <a href="https://doi.org/10.1016/j.poly.2025.117703" target="_blank" rel="noreferrer noopener">10.1016/j.poly.2025.117703</a></li>
-
-                <li>Nandi, S.; Sharma, R.; Mandal, S.; Sharma, P. K.; Ajikumar, P. K.; Anoop, A. Computational Investigation of Cytochrome P450-Catalyzed Oxetane Formation in Taxol Biosynthesis. <em>Biochemistry</em> <strong>2025</strong>, 64 (15), 3474-3484. DOI: <a href="https://doi.org/10.1021/acs.biochem.5c00175" target="_blank" rel="noreferrer noopener">10.1021/acs.biochem.5c00175</a></li>
-
-                <li>Megha P. Nambiar, Anakuthil Anoop, Biju A. R. Exploring the therapeutic potential of Zonisamide derivatives through molecular docking and dynamic studies with GABARAP. <em>Indian Journal of Biochemistry and Biophysics</em> <strong>2025</strong>. DOI: <a href="https://doi.org/10.56042/ijbb.v62i7.16596" target="_blank" rel="noreferrer noopener">10.56042/ijbb.v62i7.16596</a></li>
-
-                <li>Saraswathy, S. U.; Lalithabai, L. C.; Giri, S.; Ayoob, S.; Haleema, S.; Anoop, A.; Sarojiniamma, S. Hydrogen Bond‐Assisted Excited State Switching and Fluoride Responsive Behavior of Orthogonal Spiroborate Ester Derived from Naturally Occurring α‐Mangostin. <em>European Journal of Organic Chemistry</em> <strong>2025</strong>, 28 (21), e202401411. DOI: <a href="https://doi.org/10.1002/ejoc.202401411" target="_blank" rel="noreferrer noopener">10.1002/ejoc.202401411</a></li>
-
-                <li>Tian, W.; Zhang, C.; Paul, S.; Si, W.; Wang, Z.; Sun, P.; Anoop, A.; Tung, C.; Sun, D. Lattice Modulation on Singlet‐Triplet Splitting of Silver Cluster Boosting Near‐Unity Photoluminescence Quantum Yield. <em>Angewandte Chemie International Edition</em> <strong>2025</strong>, 64 (11), e202421656. DOI: <a href="https://doi.org/10.1002/anie.202421656" target="_blank" rel="noreferrer noopener">10.1002/anie.202421656</a></li>
-
-                <li>Sarkar, A. P.; Sahu, R.; Giri, S.; Anoop, A.; Reddy, S. K. Exploring the Conformational Space of a Sulfonyl-Based Ionic Liquid on Platinum-Based Mono and Bimetallic Surfaces. <em>Langmuir</em> <strong>2025</strong>, 41 (5), 3187-3198. DOI: <a href="https://doi.org/10.1021/acs.langmuir.4c03883" target="_blank" rel="noreferrer noopener">10.1021/acs.langmuir.4c03883</a></li>
-
-                <li>Banerjee, M.; Giri, S.; Anoop, A. Computational Investigation of Meso‐Substituted, Heavy Atom‐Free BODIPY Derivatives as Photosensitizers: Insights From TDDFT and Dynamics Studies. <em>Chemistry – An Asian Journal</em> <strong>2025</strong>, 20 (4), e202401325. DOI: <a href="https://doi.org/10.1002/asia.202401325" target="_blank" rel="noreferrer noopener">10.1002/asia.202401325</a></li>
-
-                <li>Das, S.; Paul, S.; Mandal, K. K.; Anoop, A.; Nanda, S. Asymmetric Total Synthesis of Naturally Occurring (<i>R</i>)-2′-Methoxydihydroartemidin, (<i>R</i>)-(<i>E</i>)-3′-Hydroxyartemidin, and Its Structural Congeners: Method Optimization and Mechanistic Analysis. <em>The Journal of Organic Chemistry</em> <strong>2024</strong>, 89 (21), 15764-15776. DOI: <a href="https://doi.org/10.1021/acs.joc.4c01868" target="_blank" rel="noreferrer noopener">10.1021/acs.joc.4c01868</a></li>
-
-                <li>Bharath Kumar, P.; Raju, C. E.; Roy, S.; Anoop, A.; Chandra, R.; Sridhar, B.; Karunakar, G. V. Rh(III)-Catalyzed Chemoselective [4 + 2] Annulations for the Synthesis of [1,3]Oxazinoindolones: A Combined Experimental and Computational Study. <em>Organic Letters</em> <strong>2024</strong>, 26 (41), 8680-8685. DOI: <a href="https://doi.org/10.1021/acs.orglett.4c02770" target="_blank" rel="noreferrer noopener">10.1021/acs.orglett.4c02770</a></li>
-
-                <li>Majumder, R.; Banerjee, S.; Paul, S.; Mondal, S.; Mandal, M.; Ghosh, P.; Maity, D.; Anoop, A.; Singh, N. D. P.; Mandal, M. Riboflavin-Induced DNA Damage and Anticancer Activity in Breast Cancer Cells under Visible Light: A TD-DFT and <i>In Vitro</i> Study. <em>Journal of Chemical Information and Modeling</em> <strong>2024</strong>, 64 (14), 5580-5589. DOI: <a href="https://doi.org/10.1021/acs.jcim.4c01104" target="_blank" rel="noreferrer noopener">10.1021/acs.jcim.4c01104</a></li>
-
-                <li>Deshpande, V. V.; Chauhan, V.; Bandyopadhyay, D.; Anoop, A.; Bhattacharyya, S. Structure of small yttrium monoxide clusters, chemical bonding, and photoionization: threshold photoionization and density functional theory investigations. <em>Physical Chemistry Chemical Physics</em> <strong>2024</strong>, 26 (29), 20123-20133. DOI: <a href="https://doi.org/10.1039/D4CP02351J" target="_blank" rel="noreferrer noopener">10.1039/D4CP02351J</a></li>
-
-                <li>Xu, T.; Paul, S.; Zhang, C.; Azam, M.; Han, B. L.; Si, W. D.; Wang, Z.; Gao, Z. Y.; Anoop, A.; Tung, C. H.; Sun, D. Boosting Circularly Polarized Luminescent and Decagram-Scale Mechanochemistry Synthesis of Atomically Precise Superstructure from Achiral Silver Cluster and Chiral Cyclodextrin. <em>CCS Chemistry</em> <strong>2025</strong>, 7 (2), 519-531. DOI: <a href="https://doi.org/10.31635/ccschem.024.202404301" target="_blank" rel="noreferrer noopener">10.31635/ccschem.024.202404301</a></li>
-
-                <li>Ojha, M.; Banerjee, M.; Mandal, M.; Singha, T.; Ray, S.; Datta, P. K.; Mandal, M.; Anoop, A.; Singh, N. D. P. Two-Photon-Responsive “TICT + AIE” Active Naphthyridine-BF<sub>2</sub> Photoremovable Protecting Group: Application for Specific Staining and Killing of Cancer Cells. <em>ACS Applied Materials &amp; Interfaces</em> <strong>2024</strong>, 16 (17), 21486-21497. DOI: <a href="https://doi.org/10.1021/acsami.4c00299" target="_blank" rel="noreferrer noopener">10.1021/acsami.4c00299</a></li>
-
-                <li>Roy, T.; Satpati, S.; Sinjari, A.; Anoop, A.; Thimmakondu, V. S.; Ghosal, S. Energetic and Spectroscopic Properties of Astrophysically Relevant MgC<sub>4</sub>H Radicals Using High-Level Ab Initio Calculations. <em>The Journal of Physical Chemistry A</em> <strong>2024</strong>, 128 (8), 1466-1476. DOI: <a href="https://doi.org/10.1021/acs.jpca.3c06828" target="_blank" rel="noreferrer noopener">10.1021/acs.jpca.3c06828</a></li>
-
-                <li>Banerjee, M.; Anoop, A. Exploring the Theoretical Foundations of Thermally Activated Delayed Fluorescence (TADF) Emission: A Comprehensive TD‐DFT Study on Phenothiazine Systems. <em>Chemistry – A European Journal</em> <strong>2024</strong>, 30 (20), e202304206. DOI: <a href="https://doi.org/10.1002/chem.202304206" target="_blank" rel="noreferrer noopener">10.1002/chem.202304206</a></li>
-
-                <li>Panda, S.; Anoop, A. Potential Prebiotic Pathways in Extraterrestrial Atmosphere: A Computational Exploration of HCN and NH<sub>3</sub> Reactions. <em>ACS Earth and Space Chemistry</em> <strong>2024</strong>, 8 (2), 348-360. DOI: <a href="https://doi.org/10.1021/acsearthspacechem.3c00321" target="_blank" rel="noreferrer noopener">10.1021/acsearthspacechem.3c00321</a></li>
-
-                <li>Banerjee, M.; Chandran, P. R.; Nair, S. V.; Anoop, A. Repurposing Bial’s Reaction to Engender Donor–Acceptor Stenhouse Adducts: A Computational Investigation. <em>Journal of Photochemistry and Photobiology A: Chemistry</em> <strong>2024</strong>, 449, 115408. DOI: <a href="https://doi.org/10.1016/j.jphotochem.2023.115408" target="_blank" rel="noreferrer noopener">10.1016/j.jphotochem.2023.115408</a></li>
-
-                <li>Saha, S.; Khamrui, S.; Moi, R.; Anoop, A.; Chernyshev, V. V.; Banerjee, D.; Biradha, K. Photochromism and Photomagnetism in 1,4-bis(4,5-diphenyl-imidazolyl)benzene Chromophores: Water-Assisted π-Stacks for the Generation of Stable Free Radicals in the Solid State. <em>ACS Applied Optical Materials</em> <strong>2023</strong>, 1 (12), 2031-2041. DOI: <a href="https://doi.org/10.1021/acsaom.3c00337" target="_blank" rel="noreferrer noopener">10.1021/acsaom.3c00337</a></li>
-
-                <li>Anoop, A.; Ganesh, V. Computational Studies on the Tropylium‐Catalyzed Carboxylic Acid O−H Insertion with Diazoesters: The Role of Homoaromaticity. <em>European Journal of Organic Chemistry</em> <strong>2024</strong>, 27 (2), e202300658. DOI: <a href="https://doi.org/10.1002/ejoc.202300658" target="_blank" rel="noreferrer noopener">10.1002/ejoc.202300658</a></li>
-
-                <li>Shee, M.; Zhang, D.; Banerjee, M.; Roy, S.; Pal, B.; Anoop, A.; Yuan, Y.; Singh, N. D. P. Interrogating bioinspired ESIPT/PCET-based Ir( iii )-complexes as organelle-targeted phototherapeutics: a redox-catalysis under hypoxia to evoke synergistic ferroptosis/apoptosis. <em>Chemical Science</em> <strong>2023</strong>, 14 (36), 9872-9884. DOI: <a href="https://doi.org/10.1039/D3SC03096B" target="_blank" rel="noreferrer noopener">10.1039/D3SC03096B</a></li>
-
-                <li>Satpati, S.; Roy, T.; Anoop, A.; Thimmakondu, V. S.; Ghosal, S. Energetic and Spectroscopic Properties of the Low-Lying Isomers of C5H: A High-Level Ab Initio Study. <em>Atoms</em> <strong>2023</strong>, 11 (9), 115. DOI: <a href="https://doi.org/10.3390/atoms11090115" target="_blank" rel="noreferrer noopener">10.3390/atoms11090115</a></li>
-
-                <li>Panda, S.; Chiranjibi, A.; Awasthi, D.; Ghosal, S.; Anoop, A. Exploring the Chemical Space of C <sub>2</sub> H <sub>3</sub> NO Isomers and Bimolecular Reactions with Hydrogen Cyanide and Formaldehyde: Insights into the Emergence of Life. <em>ACS Earth and Space Chemistry</em> <strong>2023</strong>, 7 (9), 1739-1752. DOI: <a href="https://doi.org/10.1021/acsearthspacechem.3c00113" target="_blank" rel="noreferrer noopener">10.1021/acsearthspacechem.3c00113</a></li>
-
-                <li>Khatun, M.; Sarkar, P.; Panda, S.; Sherpa, L. T.; Anoop, A. Nanoclusters and nanoalloys of group 13 elements (B, Al, and Ga): benchmarking of methods and analysis of their structures and energies. <em>Physical Chemistry Chemical Physics</em> <strong>2023</strong>, 25 (29), 19986-20000. DOI: <a href="https://doi.org/10.1039/D2CP05833B" target="_blank" rel="noreferrer noopener">10.1039/D2CP05833B</a></li>
-
-                <li>Satpati, S.; Roy, T.; Giri, S.; Anoop, A.; Thimmakondu, V. S.; Ghosal, S. Structure and Bonding Patterns in C5H4 Isomers: Pyramidane, Planar Tetracoordinate Carbon, and Spiro Molecules. <em>Atoms</em> <strong>2023</strong>, 11 (6), 96. DOI: <a href="https://doi.org/10.3390/atoms11060096" target="_blank" rel="noreferrer noopener">10.3390/atoms11060096</a></li>
-
-                <li>Khatun, M.; Paul, S.; Roy, S.; Dey, S.; Anoop, A. Performance of Density Functionals and Semiempirical 3c Methods for Small Gold–Thiolate Clusters. <em>The Journal of Physical Chemistry A</em> <strong>2023</strong>, 127 (10), 2242-2257. DOI: <a href="https://doi.org/10.1021/acs.jpca.2c07561" target="_blank" rel="noreferrer noopener">10.1021/acs.jpca.2c07561</a></li>
-
-                <li>Nambiar, M. P.; Ashwanikumar, N.; Anoop, A.; Biju, A. R. Binding energy analysis and molecular dynamic simulation studies of the designed orally active, non-toxic GABARAP modulators. <em>Journal of Biomolecular Structure and Dynamics</em> <strong>2023</strong>, 41 (13), 6394-6412. DOI: <a href="https://doi.org/10.1080/07391102.2022.2107571" target="_blank" rel="noreferrer noopener">10.1080/07391102.2022.2107571</a></li>
-
-                <li>Roy, S.; Anoop, A. Insights into the Active Catalyst Formation from Dinuclear Palladium Acetate in Pd-Catalyzed Coupling Reactions: A DFT Study. <em>The Journal of Physical Chemistry A</em> <strong>2022</strong>, 126 (46), 8562-8576. DOI: <a href="https://doi.org/10.1021/acs.jpca.2c03762" target="_blank" rel="noreferrer noopener">10.1021/acs.jpca.2c03762</a></li>
-
-                <li>Sarkar, P.; Thirumoorthy, K.; Anoop, A.; Thimmakondu, V. S. Planar pentacoordinate carbon in [XC<sub>7</sub>H<sub>2</sub>]<sup>2+</sup>(X = Be and Mg) and its derivatives. <em>Physical Chemistry Chemical Physics</em> <strong>2022</strong>, 24 (45), 27606-27611. DOI: <a href="https://doi.org/10.1039/D2CP03299F" target="_blank" rel="noreferrer noopener">10.1039/D2CP03299F</a></li>
-
-                <li>Panda, S.; Sivadasan, D.; Job, N.; Sinjari, A.; Thirumoorthy, K.; Anoop, A.; Thimmakondu, V. S. Why Are MgC<sub>3</sub>H Isomers Missing in the Interstellar Medium?. <em>The Journal of Physical Chemistry A</em> <strong>2022</strong>, 126 (27), 4465-4475. DOI: <a href="https://doi.org/10.1021/acs.jpca.2c02220" target="_blank" rel="noreferrer noopener">10.1021/acs.jpca.2c02220</a></li>
-
-                <li>Das, P.; Khatun, M.; Anoop, A.; Chattaraj, P. K. CSi<sub><i>n</i></sub>Ge<sub>4<i>−n</i></sub><sup>2+</sup>(<i>n</i>= 1–3): prospective systems containing planar tetracoordinate carbon (ptC). <em>Physical Chemistry Chemical Physics</em> <strong>2022</strong>, 24 (27), 16701-16711. DOI: <a href="https://doi.org/10.1039/D2CP01494G" target="_blank" rel="noreferrer noopener">10.1039/D2CP01494G</a></li>
-
-                <li>Thimmakondu, V. S.; Sinjari, A.; Inostroza, D.; Vairaprakash, P.; Thirumoorthy, K.; Roy, S.; Anoop, A.; Tiznado, W. Why an integrated approach between search algorithms and chemical intuition is necessary?. <em>Physical Chemistry Chemical Physics</em> <strong>2022</strong>, 24 (19), 11680-11686. DOI: <a href="https://doi.org/10.1039/D2CP00315E" target="_blank" rel="noreferrer noopener">10.1039/D2CP00315E</a></li>
-
-                <li>Nair, A. S.; Anoop, A.; Ahuja, R.; Pathak, B. Relativistic Effects in Platinum Nanocluster Catalysis: A Statistical Ensemble-Based Analysis. <em>The Journal of Physical Chemistry A</em> <strong>2022</strong>, 126 (8), 1345-1359. DOI: <a href="https://doi.org/10.1021/acs.jpca.1c09981" target="_blank" rel="noreferrer noopener">10.1021/acs.jpca.1c09981</a></li>
-
-                <li>Podder, N.; Dey, S.; Anoop, A.; Mandal, S. Oxygenolysis of a series of copper(ii)-flavonolate adducts varying the electronic factors on supporting ligands as a mimic of quercetin 2,4-dioxygenase-like activity. <em>Dalton Transactions</em> <strong>2022</strong>, 51 (11), 4338-4353. DOI: <a href="https://doi.org/10.1039/D1DT04151G" target="_blank" rel="noreferrer noopener">10.1039/D1DT04151G</a></li>
-
-                <li>Sen, B.; Roy, S.; Garai, S.; Roy, S.; Anoop, A.; Hajra, S. Stereochemistry of the Benzylidene γ-Butyrolactone Dictates the Reductive Heck Cyclization Mode in the Asymmetric Synthesis of Aryltetralin Lignans: A Detailed Experimental and Theoretical Study. <em>The Journal of Organic Chemistry</em> <strong>2022</strong>, 87 (6), 3910-3921. DOI: <a href="https://doi.org/10.1021/acs.joc.1c02174" target="_blank" rel="noreferrer noopener">10.1021/acs.joc.1c02174</a></li>
-
-                <li>Ojha, M.; Banerjee, M.; Ray, S.; Singh, A. K.; Anoop, A.; Singh, N. D. P. Switching photorelease to singlet oxygen generation by oxygen functionalization of phenothiazine photocages. <em>Chemical Communications</em> <strong>2022</strong>, 58 (16), 2754-2757. DOI: <a href="https://doi.org/10.1039/D1CC06950K" target="_blank" rel="noreferrer noopener">10.1039/D1CC06950K</a></li>
-
-                <li>Das, M.; Brandao, P.; Mati, S. S.; Roy, S.; Anoop, A.; James, A.; De, S.; Das, U. K.; Laha, S.; Mondal, J.; Samanta, B. C.; Maity, T. Effect of ancillary ligand on DNA and protein interaction of the two Zn (II) and Co (III) complexes: experimental and theoretical study. <em>Journal of Biomolecular Structure and Dynamics</em> <strong>2022</strong>, 40 (24), 14188-14203. DOI: <a href="https://doi.org/10.1080/07391102.2021.2001377" target="_blank" rel="noreferrer noopener">10.1080/07391102.2021.2001377</a></li>
-
-                <li>Khatun, M.; Roy, S.; Giri, S.; CH, S. S. R.; Anoop, A.; Thimmakondu, V. S. BAl4Mg−/0/+: Global Minima with a Planar Tetracoordinate or Hypercoordinate Boron Atom. <em>Atoms</em> <strong>2021</strong>, 9 (4), 89. DOI: <a href="https://doi.org/10.3390/atoms9040089" target="_blank" rel="noreferrer noopener">10.3390/atoms9040089</a></li>
-
-                <li>Roy, S.; Thirumoorthy, K.; Padidela, U. K.; Vairaprakash, P.; Anoop, A.; Thimmakondu, V. S. Organomagnesium Crown Ethers and Their Binding Affinities with Li <sup>+</sup> , Na <sup>+</sup> , K <sup>+</sup> , Be <sup>2+</sup> , Mg <sup>2+</sup> , and Ca <sup>2+</sup> Ions – A Theoretical Study. <em>ChemistrySelect</em> <strong>2021</strong>, 6 (33), 8782-8790. DOI: <a href="https://doi.org/10.1002/slct.202102317" target="_blank" rel="noreferrer noopener">10.1002/slct.202102317</a></li>
-
-                <li>Bera, S.; Roy, S.; Pal, S. C.; Anoop, A.; Samanta, R. Iridium(III)-Catalyzed Intermolecular Mild N-Arylation of Aliphatic Amides Using Quinoid Carbene: A Migratory Insertion-Based Approach. <em>ACS Catalysis</em> <strong>2021</strong>, 11 (17), 10847-10854. DOI: <a href="https://doi.org/10.1021/acscatal.1c02653" target="_blank" rel="noreferrer noopener">10.1021/acscatal.1c02653</a></li>
-
-                <li>Nair, A. S.; Anoop, A.; Ahuja, R.; Pathak, B. Role of atomicity in the oxygen reduction reaction activity of platinum sub nanometer clusters: A global optimization study. <em>Journal of Computational Chemistry</em> <strong>2021</strong>, 42 (27), 1944-1958. DOI: <a href="https://doi.org/10.1002/jcc.26725" target="_blank" rel="noreferrer noopener">10.1002/jcc.26725</a></li>
-
-                <li>Job, N.; Khatun, M.; Thirumoorthy, K.; CH, S. S. R.; Chandrasekaran, V.; Anoop, A.; Thimmakondu, V. S. CAl4Mg0/−: Global Minima with a Planar Tetracoordinate Carbon Atom. <em>Atoms</em> <strong>2021</strong>, 9 (2), 24. DOI: <a href="https://doi.org/10.3390/atoms9020024" target="_blank" rel="noreferrer noopener">10.3390/atoms9020024</a></li>
-
-                <li>Ameen, R.; M, F. P.; Anoop, A.; R, B. A. Detonation properties and impact sensitivities of trinitromethane derivatives of three-membered heterocyclic ring compounds. <em>Journal of Molecular Graphics and Modelling</em> <strong>2021</strong>, 105, 107863. DOI: <a href="https://doi.org/10.1016/j.jmgm.2021.107863" target="_blank" rel="noreferrer noopener">10.1016/j.jmgm.2021.107863</a></li>
-
-                <li>Sikder, A.; Banerjee, M.; Singha, T.; Mondal, S.; Datta, P. K.; Anoop, A.; Singh, N. D. P. A Natural Alkaloid, β-Carboline, as a One- and Two-Photon Responsive Fluorescent Photoremovable Protecting Group: Sequential Release of the Same or Different Carboxylic Acids. <em>Organic Letters</em> <strong>2020</strong>, 22 (17), 6998-7002. DOI: <a href="https://doi.org/10.1021/acs.orglett.0c02549" target="_blank" rel="noreferrer noopener">10.1021/acs.orglett.0c02549</a></li>
-
-                <li>Kundu, A.; Dey, S. K.; Dey, S.; Anoop, A.; Mandal, S. Mononuclear Ruthenium-Based Water Oxidation Catalyst Supported by Anionic, Redox-Non-Innocent Ligand: Heterometallic O–O Bond Formation via Radical Coupling Pathway. <em>Inorganic Chemistry</em> <strong>2020</strong>, 59 (2), 1461-1470. DOI: <a href="https://doi.org/10.1021/acs.inorgchem.9b03258" target="_blank" rel="noreferrer noopener">10.1021/acs.inorgchem.9b03258</a></li>
-
-                <li>Rao, D. Y.; Anoop, A. Significance of Conformational Analysis in the Computational Studies of the Reactions in a Flexible Substrate: Tandem C–C Coupling and C–H Activation Reaction of a Diene. <em>The Journal of Physical Chemistry C</em> <strong>2020</strong>, 124 (1), 582-593. DOI: <a href="https://doi.org/10.1021/acs.jpcc.9b09316" target="_blank" rel="noreferrer noopener">10.1021/acs.jpcc.9b09316</a></li>
-
-                <li>Khatun, M.; Majumdar, R. S.; Anoop, A. A Global Optimizer for Nanoclusters. <em>Frontiers in Chemistry</em> <strong>2019</strong>, 7, 644. DOI: <a href="https://doi.org/10.3389/fchem.2019.00644" target="_blank" rel="noreferrer noopener">10.3389/fchem.2019.00644</a></li>
-
-                <li>Density Functional Theory Study on the Formation of the Active Catalysts in Palladium Catalysed Reactions (Special Issue: Theoretical and Computational Chemistry). Davuluri Yogeswara Rao, Anakuthil Anoop. <em>Journal of the Indian Chemical Society</em> (2019) 96, 909-919.</li>
-
-                <li>Ray, J. K.; Singha, R.; Ray, D.; Ray, P.; Rao, D. Y.; Anoop, A. Palladium-catalyzed expedient Heck annulations in 1-bromo-1,5-dien-3-ols: Exceptional formation of fused bicycles. <em>Tetrahedron Letters</em> <strong>2019</strong>, 60 (13), 931-935. DOI: <a href="https://doi.org/10.1016/j.tetlet.2019.02.043" target="_blank" rel="noreferrer noopener">10.1016/j.tetlet.2019.02.043</a></li>
-
-                <li>Das, E.; Basak, S.; Anoop, A.; Chand, S.; Basak, A. How To Achieve High Regioselectivity in Barrier-less Nucleophilic Addition to <i>p</i>-Benzynes Generated via Bergman Cyclization of Unsymmetrical Cyclic Azaenediyne? <em>The Journal of Organic Chemistry</em> <strong>2019</strong>, 84 (5), 2911-2921. DOI: <a href="https://doi.org/10.1021/acs.joc.9b00060" target="_blank" rel="noreferrer noopener">10.1021/acs.joc.9b00060</a></li>
-
-                <li>Kundu, A.; Khan, S.; Dey, S.; Dutta, C.; Anoop, A.; Mandal, S. Synthesis and Physicochemical Properties of Ruthenium(II) Complexes Having Pentadentate Scaffolds: Water Oxidation Activity and Deactivation Pathway. <em>European Journal of Inorganic Chemistry</em> <strong>2019</strong>, 2019 (2), 164-177. DOI: <a href="https://doi.org/10.1002/ejic.201801099" target="_blank" rel="noreferrer noopener">10.1002/ejic.201801099</a></li>
-
-                <li>Nandi, S.; Bhattacharyya, D.; Anoop, A. Prebiotic Chemistry of HCN Tetramerization by Automated Reaction Search. <em>Chemistry – A European Journal</em> <strong>2018</strong>, 24 (19), 4885-4894. DOI: <a href="https://doi.org/10.1002/chem.201705492" target="_blank" rel="noreferrer noopener">10.1002/chem.201705492</a></li>
-
-                <li>Das, E.; Basak, S.; Anoop, A.; Basak, A. Experiment and Computational Study on the Regioselectivity of Nucleophilic Addition to Unsymmetrical <i>p</i>-Benzynes Derived from Bergman Cyclization of Enediynes. <em>The Journal of Organic Chemistry</em> <strong>2018</strong>, 83 (15), 7730-7740. DOI: <a href="https://doi.org/10.1021/acs.joc.8b00624" target="_blank" rel="noreferrer noopener">10.1021/acs.joc.8b00624</a></li>
-
-                <li>Venkatesh, Y.; Nandi, S.; Shee, M.; Saha, B.; Anoop, A.; Pradeep Singh, N. D. Bis‐Acetyl Carbazole: A Photoremovable Protecting Group for Sequential Release of Two Different Functional Groups and Its Application in Therapeutic Release. <em>European Journal of Organic Chemistry</em> <strong>2017</strong>, 2017 (41), 6121-6130. DOI: <a href="https://doi.org/10.1002/ejoc.201701253" target="_blank" rel="noreferrer noopener">10.1002/ejoc.201701253</a></li>
-
-                <li>Nandi, S.; McAnanama-Brereton, S. R.; Waller, M. P.; Anoop, A. A tabu-search based strategy for modeling molecular aggregates and binary reactions. <em>Computational and Theoretical Chemistry</em> <strong>2017</strong>, 1111, 69-81. DOI: <a href="https://doi.org/10.1016/j.comptc.2017.03.040" target="_blank" rel="noreferrer noopener">10.1016/j.comptc.2017.03.040</a></li>
-
-                <li>Paul, A.; Mengji, R.; Chandy, O. A.; Nandi, S.; Bera, M.; Jana, A.; Anoop, A.; Singh, N. D. P. ESIPT-induced fluorescent o-hydroxycinnamate: a self-monitoring phototrigger for prompt image-guided uncaging of alcohols. <em>Org. Biomol. Chem.</em> <strong>2017</strong>, 15 (40), 8544-8552. DOI: <a href="https://doi.org/10.1039/c7ob02280h" target="_blank" rel="noreferrer noopener">10.1039/c7ob02280h</a></li>
-
-                <li>Ray, J. K.; Paul, S.; Ray, P.; Singha, R.; Rao, D. Y.; Nandi, S.; Anoop, A. Pd-catalyzed intramolecular sequential Heck cyclization and oxidation reactions: a facile pathway for the synthesis of substituted cycloheptenone evaluated using computational studies. <em>New Journal of Chemistry</em> <strong>2017</strong>, 41 (1), 278-284. DOI: <a href="https://doi.org/10.1039/c6nj02694j" target="_blank" rel="noreferrer noopener">10.1039/c6nj02694j</a></li>
-
-                <li>Jha, V. K.; Mani, G.; Davuluri, Y. R.; Anoop, A. The pyrrole ring η<sup>2</sup>-hapticity bridged binuclear tricarbonyl Mo(0) and W(0) complexes: catalysis of regioselective hydroamination reactions and DFT calculations. <em>Dalton Transactions</em> <strong>2017</strong>, 46 (6), 1840-1847. DOI: <a href="https://doi.org/10.1039/c6dt04458a" target="_blank" rel="noreferrer noopener">10.1039/c6dt04458a</a></li>
-
-                <li>Hariharan, P. S.; Prasad, V. K.; Nandi, S.; Anoop, A.; Moon, D.; Anthony, S. P. Molecular Engineering of Triphenylamine Based Aggregation Enhanced Emissive Fluorophore: Structure-Dependent Mechanochromism and Self-Reversible Fluorescence Switching. <em>Crystal Growth &amp; Design</em> <strong>2017</strong>, 17 (1), 146-155. DOI: <a href="https://doi.org/10.1021/acs.cgd.6b01363" target="_blank" rel="noreferrer noopener">10.1021/acs.cgd.6b01363</a></li>
-
-                <li>Jana, S.; Anoop, A. Does the Mechanism of the Garratt–Braverman Cyclization Differ with Substrates? A Computational Study on Bispropargyl Sulfones, Sulfides, Ethers, Amines, and Methanes. <em>The Journal of Organic Chemistry</em> <strong>2016</strong>, 81 (17), 7411-7418. DOI: <a href="https://doi.org/10.1021/acs.joc.6b01053" target="_blank" rel="noreferrer noopener">10.1021/acs.joc.6b01053</a></li>
-
-                <li>Gopakumar, G.; Sreenivasulu, B.; Suresh, A.; Brahmmananda Rao, C. V. S.; Sivaraman, N.; Joseph, M.; Anoop, A. Complexation Behavior of the Tri-<i>n</i>-butyl Phosphate Ligand with Pu(IV) and Zr(IV): A Computational Study. <em>The Journal of Physical Chemistry A</em> <strong>2016</strong>, 120 (24), 4201-4210. DOI: <a href="https://doi.org/10.1021/acs.jpca.6b02668" target="_blank" rel="noreferrer noopener">10.1021/acs.jpca.6b02668</a></li>
-
-                <li>Barman, S.; Mukhopadhyay, S. K.; Biswas, S.; Nandi, S.; Gangopadhyay, M.; Dey, S.; Anoop, A.; Pradeep Singh, N. D. A <i>p</i>‐Hydroxyphenacyl–Benzothiazole–Chlorambucil Conjugate as a Real‐Time‐Monitoring Drug‐Delivery System Assisted by Excited‐State Intramolecular Proton Transfer. <em>Angewandte Chemie</em> <strong>2016</strong>, 128 (13), 4266-4270. DOI: <a href="https://doi.org/10.1002/ange.201508901" target="_blank" rel="noreferrer noopener">10.1002/ange.201508901</a></li>
-
-                <li>Mandal, S.; Nandi, S.; Anoop, A.; Chattaraj, P. K. Viability of aromatic all-pnictogen anions. <em>Physical Chemistry Chemical Physics</em> <strong>2016</strong>, 18 (17), 11738-11745. DOI: <a href="https://doi.org/10.1039/c5cp07236k" target="_blank" rel="noreferrer noopener">10.1039/c5cp07236k</a></li>
-
-                <li>Das, J.; Das, E.; Jana, S.; Addy, P. S.; Anoop, A.; Basak, A. Shifting the Reactivity of Bis-propargyl Ethers from Garratt–Braverman Cyclization Mode to 1,5-H Shift Pathway To Yield 3,4-Disubstituted Furans: A Combined Experimental and Computational Study. <em>The Journal of Organic Chemistry</em> <strong>2016</strong>, 81 (2), 450-457. DOI: <a href="https://doi.org/10.1021/acs.joc.5b02246" target="_blank" rel="noreferrer noopener">10.1021/acs.joc.5b02246</a></li>
-
-                <li>Jana, S.; Anoop, A. Effect of π–π interaction in Bergman cyclisation. <em>Physical Chemistry Chemical Physics</em> <strong>2015</strong>, 17 (44), 29793-29802. DOI: <a href="https://doi.org/10.1039/c5cp05395a" target="_blank" rel="noreferrer noopener">10.1039/c5cp05395a</a></li>
-
-                <li>Kumbhar, S.; Jana, S.; Anoop, A.; Waller, M. P. Cooperativity in bimetallic glutathione complexes. <em>Journal of Molecular Graphics and Modelling</em> <strong>2015</strong>, 62, 1-10. DOI: <a href="https://doi.org/10.1016/j.jmgm.2015.05.003" target="_blank" rel="noreferrer noopener">10.1016/j.jmgm.2015.05.003</a></li>
-
-                <li>Datta, D.; Bera, R. K.; Jana, S.; Manna, B.; Roy, D.; Anoop, A.; Raj, C. R.; Pathak, T. A Rationally Designed Thymidine‐Based Self‐Assembled Monolayer on a Gold Electrode for Electroanalytical Applications. <em>Chemistry – An Asian Journal</em> <strong>2015</strong>, 10 (7), 1554-1560. DOI: <a href="https://doi.org/10.1002/asia.201500045" target="_blank" rel="noreferrer noopener">10.1002/asia.201500045</a></li>
-
-                <li>Mandal, S.; Pan, S.; Deb, D.; Giri, S.; Duley, S.; Radenković, S.; Cooper, D. L.; Bultinck, P.; Anoop, A.; Bhattacharjee, M.; Chattaraj, P. K. Three-dimensional networks containing rectangular Sr<sub>4</sub>and Ba<sub>4</sub>units: Synthesis, structure, bonding, and potential application for Ne gas separation. <em>International Journal of Quantum Chemistry</em> <strong>2015</strong>, 115 (20), 1501-1510. DOI: <a href="https://doi.org/10.1002/qua.24970" target="_blank" rel="noreferrer noopener">10.1002/qua.24970</a></li>
-
-                <li>Goswami, T.; Paul, S.; Mandal, S.; Misra, A.; Anoop, A.; Chattaraj, P. K. Unique bonding pattern and resulting bond stretch isomerism in Be32−. <em>International Journal of Quantum Chemistry</em> <strong>2015</strong>, 115 (7), 426-433. DOI: <a href="https://doi.org/10.1002/qua.24866" target="_blank" rel="noreferrer noopener">10.1002/qua.24866</a></li>
-
-                <li>Das, U. K.; Mandal, S.; Anoop, A.; Bhattacharjee, M. Structure–Selectivity Relationship in Ruthenium-Catalyzed Regio- and Stereoselective Addition of Alkynes to Pyrazoles: An Experimental and Theoretical Investigation. <em>The Journal of Organic Chemistry</em> <strong>2014</strong>, 79 (21), 9979-9991. DOI: <a href="https://doi.org/10.1021/jo502151z" target="_blank" rel="noreferrer noopener">10.1021/jo502151z</a></li>
-
-                <li>Mitra, T.; Jana, S.; Pandey, S.; Bhattacharya, P.; Khamrai, U. K.; Anoop, A.; Basak, A. Asymmetric Garratt–Braverman Cyclization: A Route to Axially Chiral Aryl Naphthalene–Amino Acid Hybrids. <em>The Journal of Organic Chemistry</em> <strong>2014</strong>, 79 (12), 5608-5616. DOI: <a href="https://doi.org/10.1021/jo500771g" target="_blank" rel="noreferrer noopener">10.1021/jo500771g</a></li>
-
-                <li>Hatial, I.; Jana, S.; Bisai, S.; Das, M.; Ghosh, A. K.; Anoop, A.; Basak, A. Trienediynes on a 1,3,5-trisubstituted benzene template: a new approach for enhancement of reactivity. <em>RSC Advances</em> <strong>2014</strong>, 4 (53), 28041. DOI: <a href="https://doi.org/10.1039/c4ra04794j" target="_blank" rel="noreferrer noopener">10.1039/c4ra04794j</a></li>
-
-                <li>Gans&#228;uer, A.; Karbaum, P.; Schmauch, D.; Einig, M.; Shi, L.; Anoop, A.; Neese, F. Synthetic and Computational Evaluation of Regiodivergent Epoxide Opening for Diol and Polyol Synthesis. <em>Chemistry – An Asian Journal</em> <strong>2014</strong>, 9 (8), 2289-2294. DOI: <a href="https://doi.org/10.1002/asia.201402159" target="_blank" rel="noreferrer noopener">10.1002/asia.201402159</a></li>
-
-                <li>Ghosh, D.; Jana, S.; Panja, A.; Anoop, A.; Basak, A. Reactivity of conformationally constrained bispropargyl sulfones: complete preference for 6π-electrocyclization process. <em>Tetrahedron</em> <strong>2013</strong>, 69 (41), 8724-8730. DOI: <a href="https://doi.org/10.1016/j.tet.2013.07.099" target="_blank" rel="noreferrer noopener">10.1016/j.tet.2013.07.099</a></li>
-
-                <li>Boulanger, E.; Anoop, A.; Nachtigallova, D.; Thiel, W.; Barbatti, M. Photochemical Steps in the Prebiotic Synthesis of Purine Precursors from HCN. <em>Angewandte Chemie</em> <strong>2013</strong>, 125 (31), 8158-8161. DOI: <a href="https://doi.org/10.1002/ange.201303246" target="_blank" rel="noreferrer noopener">10.1002/ange.201303246</a></li>
-
-                <li>Dey, S.; Datta, D.; Chakraborty, K.; Nandi, S.; Anoop, A.; Pathak, T. A coordination-assisted general approach to nickel-based nano metallogels. <em>RSC Advances</em> <strong>2013</strong>, 3 (24), 9163. DOI: <a href="https://doi.org/10.1039/c3ra41178h" target="_blank" rel="noreferrer noopener">10.1039/c3ra41178h</a></li>
-
-                <li>Anoop, A.; Ray, J.; Ray, D.; Nasima, Y.; Sajal, M.; Ray, P.; Urinda, S. Palladium-Catalyzed Intramolecular Oxidative Heck Cyclization and Its Application toward a Synthesis of (&#177;)-β-Cuparenone Derivatives Supported by Computational Studies. <em>Synthesis</em> <strong>2013</strong>, 45 (09), 1261-1269. DOI: <a href="https://doi.org/10.1055/s-0032-1316884" target="_blank" rel="noreferrer noopener">10.1055/s-0032-1316884</a></li>
-
-                <li>Ikbal, M.; Banerjee, R.; Atta, S.; Dhara, D.; Anoop, A.; Singh, N. D. P. Synthesis, Photophysical and Photochemical Properties of Photoacid Generators Based on <i>N-</i>Hydroxyanthracene-1,9-dicarboxyimide and Their Application toward Modification of Silicon Surfaces. <em>The Journal of Organic Chemistry</em> <strong>2012</strong>, 77 (23), 10557-10567. DOI: <a href="https://doi.org/10.1021/jo301367y" target="_blank" rel="noreferrer noopener">10.1021/jo301367y</a></li>
-
-                <li>Guchhait, T.; Mani, G.; Schulzke, C.; Anoop, A. A Tripyrrolylmethane-Based Macrobicyclic Triazacryptand: X-ray Structure, Size-Selective Anion Binding, and Fluoride-Ion-Mediated Proton–Deuterium Exchange Studies. <em>Inorganic Chemistry</em> <strong>2012</strong>, 51 (21), 11635-11644. DOI: <a href="https://doi.org/10.1021/ic301546v" target="_blank" rel="noreferrer noopener">10.1021/ic301546v</a></li>
-
-                <li>Mondal, S.; Basak, A.; Jana, S.; Anoop, A. An interesting competition between 6π-electro- and Garratt–Braverman cyclization in bis-diene-allene sulfones: synergy between experiment and theory. <em>Tetrahedron</em> <strong>2012</strong>, 68 (35), 7202-7210. DOI: <a href="https://doi.org/10.1016/j.tet.2012.06.001" target="_blank" rel="noreferrer noopener">10.1016/j.tet.2012.06.001</a></li>
-
-                <li>Chowdhury, N.; Dutta, S.; Karthick, S.; Anoop, A.; Dasgupta, S.; Pradeep Singh, N. Azido carbonyl compounds as DNA cleaving agents. <em>Journal of Photochemistry and Photobiology B: Biology</em> <strong>2012</strong>, 115, 25-34. DOI: <a href="https://doi.org/10.1016/j.jphotobiol.2012.06.006" target="_blank" rel="noreferrer noopener">10.1016/j.jphotobiol.2012.06.006</a></li>
-
-                <li>Ikbal, M.; Banerjee, R.; Atta, S.; Jana, A.; Dhara, D.; Anoop, A.; Singh, N. D. P. Development of 1‐Hydroxy‐2(1<i>H</i>)‐quinolone‐Based Photoacid Generators and Photoresponsive Polymer Surfaces. <em>Chemistry – A European Journal</em> <strong>2012</strong>, 18 (38), 11968-11975. DOI: <a href="https://doi.org/10.1002/chem.201104065" target="_blank" rel="noreferrer noopener">10.1002/chem.201104065</a></li>
-
-                <li>Anoop, A.; Singh, N.; Chowdhury, N. O-Alkyl-N-acyl-N-phenylhydroxylamines as Photochemical Alkoxy Radical Precursors. <em>Synthesis</em> <strong>2012</strong>, 44 (11), 1745-1754. DOI: <a href="https://doi.org/10.1055/s-0031-1290824" target="_blank" rel="noreferrer noopener">10.1055/s-0031-1290824</a></li>
-
-                <li>Bera, R. K.; Anoop, A.; Raj, C. R. Enzyme-free colorimetric assay of serum uric acid. <em>Chemical Communications</em> <strong>2011</strong>, 47 (41), 11498. DOI: <a href="https://doi.org/10.1039/c1cc13349g" target="_blank" rel="noreferrer noopener">10.1039/c1cc13349g</a></li>
-
-                <li>Chakraborty, A.; Giri, S.; Duley, S.; Anoop, A.; Bultinck, P.; Chattaraj, P. K. Aromaticity in all-metal annular systems: the counter-ion effect. <em>Physical Chemistry Chemical Physics</em> <strong>2011</strong>, 13 (33), 14865. DOI: <a href="https://doi.org/10.1039/c1cp21430f" target="_blank" rel="noreferrer noopener">10.1039/c1cp21430f</a></li>
-
-                <li>Pandith, A. H.; Islam, N.; Syed, Z. F.; Rehman, S. U.; Bandaru, S.; Anoop, A. Density functional theory prediction of geometry and vibrational circular dichroism of bridged triarylamine helicenes. <em>Chemical Physics Letters</em> <strong>2011</strong>, 516 (4-6), 199-203. DOI: <a href="https://doi.org/10.1016/j.cplett.2011.09.074" target="_blank" rel="noreferrer noopener">10.1016/j.cplett.2011.09.074</a></li>
-
-                <li>Roy, S.; Anoop, A.; Biradha, K.; Basak, A. Synthesis of Angularly Fused Aromatic Compounds from Alkenyl Enediynes by a Tandem Radical Cyclization Process. <em>Angewandte Chemie International Edition</em> <strong>2011</strong>, 50 (36), 8316-8319. DOI: <a href="https://doi.org/10.1002/anie.201103318" target="_blank" rel="noreferrer noopener">10.1002/anie.201103318</a></li>
-
-                <li>Maji, M.; Mallick, D.; Mondal, S.; Anoop, A.; Bag, S. S.; Basak, A.; Jemmis, E. D. Selectivity in Garratt−Braverman Cyclization: An Experimental and Computational Study. <em>Organic Letters</em> <strong>2011</strong>, 13 (5), 888-891. DOI: <a href="https://doi.org/10.1021/ol102861j" target="_blank" rel="noreferrer noopener">10.1021/ol102861j</a></li>
-
-                <li>Anoop, A.; Thiel, W.; Neese, F. A Local Pair Natural Orbital Coupled Cluster Study of Rh Catalyzed Asymmetric Olefin Hydrogenation. <em>Journal of Chemical Theory and Computation</em> <strong>2010</strong>, 6 (10), 3137-3144. DOI: <a href="https://doi.org/10.1021/ct100337m" target="_blank" rel="noreferrer noopener">10.1021/ct100337m</a></li>
-
-                <li>&#214;zbolat‐Sch&#246;n, A.; Bode, M.; Schnakenburg, G.; Anoop, A.; van Gastel, M.; Neese, F.; Streubel, R. Insights into the Chemistry of Transient <i>P</i>‐Chlorophosphanyl Complexes. <em>Angewandte Chemie International Edition</em> <strong>2010</strong>, 49 (38), 6894-6898. DOI: <a href="https://doi.org/10.1002/anie.201002885" target="_blank" rel="noreferrer noopener">10.1002/anie.201002885</a></li>
-
-                <li>Alcarazo, M.; Stork, T.; Anoop, A.; Thiel, W.; F&#252;rstner, A. Steering the Surprisingly Modular π‐Acceptor Properties of N‐Heterocyclic Carbenes: Implications for Gold Catalysis. <em>Angewandte Chemie</em> <strong>2010</strong>, 122 (14), 2596-2600. DOI: <a href="https://doi.org/10.1002/ange.200907194" target="_blank" rel="noreferrer noopener">10.1002/ange.200907194</a></li>
-
-                <li>Gans&#228;uer, A.; Fleckhaus, A.; Lafont, M. A.; Okkel, A.; Kotsis, K.; Anoop, A.; Neese, F. Catalysis via Homolytic Substitutions with C−O and Ti−O Bonds: Oxidative Additions and Reductive Eliminations in Single Electron Steps. <em>Journal of the American Chemical Society</em> <strong>2009</strong>, 131 (46), 16989-16999. DOI: <a href="https://doi.org/10.1021/ja907817y" target="_blank" rel="noreferrer noopener">10.1021/ja907817y</a></li>
-
-                <li>Alcarazo, M.; Lehmann, C. W.; Anoop, A.; Thiel, W.; F&#252;rstner, A. Coordination chemistry at carbon. <em>Nature Chemistry</em> <strong>2009</strong>, 1 (4), 295-301. DOI: <a href="https://doi.org/10.1038/nchem.248" target="_blank" rel="noreferrer noopener">10.1038/nchem.248</a></li>
-
-                <li>Fl&#252;gge, S.; Anoop, A.; Goddard, R.; Thiel, W.; F&#252;rstner, A. Structure and Bonding in Neutral and Cationic 14‐Electron Gold Alkyne π Complexes. <em>Chemistry – A European Journal</em> <strong>2009</strong>, 15 (34), 8558-8565. DOI: <a href="https://doi.org/10.1002/chem.200901062" target="_blank" rel="noreferrer noopener">10.1002/chem.200901062</a></li>
-
-                <li>Jemmis, E. D.; Pathak, B.; Anoop, A. Condensed Two- and Three-Dimensional Aromatic Systems: A Theoretical Study on the Relative Stabilities of Isomers of CB<sub>19</sub>H<sub>16</sub><sup>+</sup>, B<sub>20</sub>H<sub>15</sub>Cl, and B<sub>20</sub>H<sub>14</sub>Cl<sub>2</sub> and Comparison to B<sub>12</sub>H<sub>10</sub>Cl<sub>2</sub><sup>2-</sup>, C<sub>6</sub>H<sub>4</sub>Cl<sub>2</sub>, C<sub>10</sub>H<sub>7</sub>Cl, and C<sub>10</sub>H<sub>6</sub>Cl<sub>2</sub>. <em>Inorganic Chemistry</em> <strong>2005</strong>, 44 (20), 7184-7188. DOI: <a href="https://doi.org/10.1021/ic050730d" target="_blank" rel="noreferrer noopener">10.1021/ic050730d</a></li>
-
-                <li>Jemmis, E. D.; Parameswaran, P.; Anoop, A. Effect of metal complexation on ring opening of bowl‐shaped hydrocarbons: Theoretical study. <em>International Journal of Quantum Chemistry</em> <strong>2003</strong>, 95 (6), 810-815. DOI: <a href="https://doi.org/10.1002/qua.10606" target="_blank" rel="noreferrer noopener">10.1002/qua.10606</a></li>
-
-                <li>Mehta, G.; Le Droumaguet, C.; Islam, K.; Anoop, A.; Jemmis, E. D. Face-selectivity in [4+2]-cycloadditions to novel polycyclic benzoquinones. Remarkable stereodirecting effects of a remote cyclopropane ring and an olefinic bond. <em>Tetrahedron Letters</em> <strong>2003</strong>, 44 (15), 3109-3113. DOI: <a href="https://doi.org/10.1016/s0040-4039(03)00504-5" target="_blank" rel="noreferrer noopener">10.1016/s0040-4039(03)00504-5</a></li>
-
-                <li>Srinivas, G. N.; Anoop, A.; Jemmis, E. D.; Hamilton, T. P.; Lammertsma, K.; Leszczynski, J.; Schaefer. Nonplanarity at Tri-coordinated Aluminum and Gallium: Cyclic Structures for X<sub>3</sub>H<i><sub>n</sub></i><i><sup>m</sup></i> (X = B, Al, Ga). <em>Journal of the American Chemical Society</em> <strong>2003</strong>, 125 (52), 16397-16407. DOI: <a href="https://doi.org/10.1021/ja036868h" target="_blank" rel="noreferrer noopener">10.1021/ja036868h</a></li>
-
-                <li>Kiran, B.; Anoop, A.; Jemmis, E. D. Control of Stability through Overlap Matching: <i>c</i><i>loso</i>-Carborynes and<i>c</i><i>loso</i>-Silaborynes. <em>Journal of the American Chemical Society</em> <strong>2002</strong>, 124 (16), 4402-4407. DOI: <a href="https://doi.org/10.1021/ja016843n" target="_blank" rel="noreferrer noopener">10.1021/ja016843n</a></li>
-
-                
-
-                <!-- END: Full list -->
-
-            
-
-            </ul>
-          </div>
-        </details>
-      </div>
     </section>
 
     <section id="about" class="band" aria-label="About">
@@ -1908,7 +1631,6 @@
         if(location.hash === '#publications') openPublications();
       }, { passive: true });
     }
-
     function initSelectedWork(){
       const list = document.getElementById('selectedWorkList');
       const dataEl = document.getElementById('selectedWorkData');
@@ -1924,11 +1646,13 @@
 
       const permanentItems = Array.isArray(items) ? items : [];
       const seenTitles = new Set(permanentItems.map(item => norm(item && item.title)));
-      const recentItems = [];
 
-      if(pubList){
-        Array.from(pubList.querySelectorAll('li')).forEach((li) => {
-          if(recentItems.length >= 2) return;
+      function collectRecentItems(source, limit){
+        const recentItems = [];
+        if(!source) return recentItems;
+
+        Array.from(source.querySelectorAll('li')).forEach((li) => {
+          if(recentItems.length >= limit) return;
 
           const titleNode = li.childNodes[0];
           const title = titleNode ? String(titleNode.textContent || '').trim().replace(/\.$/, '') : '';
@@ -1949,26 +1673,48 @@
           });
           seenTitles.add(norm(title));
         });
+
+        return recentItems;
       }
 
-      items = [...recentItems, ...permanentItems].slice(0, 6);
-      list.innerHTML = '';
-      items.forEach((item) => {
-        if(!item || !item.title || !item.meta) return;
-        const article = document.createElement('article');
-        article.className = 'selected-item';
+      function renderSelected(itemsToRender){
+        list.innerHTML = '';
+        itemsToRender.forEach((item) => {
+          if(!item || !item.title || !item.meta) return;
+          const article = document.createElement('article');
+          article.className = 'selected-item';
 
-        const title = item.url
-          ? `<a href="${item.url}" target="_blank" rel="noreferrer noopener">${item.title}</a>`
-          : item.title;
+          const title = item.url
+            ? `<a href="${item.url}" target="_blank" rel="noreferrer noopener">${item.title}</a>`
+            : item.title;
 
-        article.innerHTML = `
-          <h4>${title}</h4>
-          <div class="selected-meta">${item.meta}</div>
-        `;
+          article.innerHTML = `
+            <h4>${title}</h4>
+            <div class="selected-meta">${item.meta}</div>
+          `;
 
-        list.appendChild(article);
-      });
+          list.appendChild(article);
+        });
+      }
+
+      async function load(){
+        let recentItems = collectRecentItems(pubList, 2);
+
+        if(recentItems.length < 2){
+          try{
+            const response = await fetch('/publications/index.html', { credentials: 'same-origin' });
+            if(response.ok){
+              const html = await response.text();
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              recentItems = collectRecentItems(doc.getElementById('pubList'), 2);
+            }
+          }catch(_e){}
+        }
+
+        renderSelected([...recentItems, ...permanentItems].slice(0, 6));
+      }
+
+      load();
     }
 
     function activeNav(){
@@ -2039,5 +1785,8 @@
   </script>
 </body>
 </html>
+
+
+
 
 
