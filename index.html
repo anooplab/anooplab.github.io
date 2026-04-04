@@ -233,12 +233,7 @@
       --section-accent-2: rgba(216,179,139,.78);
       --section-halo: rgba(166,111,77,.12);
     }
-    #publications{
-      --section-accent: rgba(198,154,107,.95);
-      --section-accent-2: rgba(166,111,77,.76);
-      --section-halo: rgba(198,154,107,.12);
-    }
-    #presentations{
+    #engagements{
       --section-accent: rgba(111,122,103,.95);
       --section-accent-2: rgba(198,154,107,.76);
       --section-halo: rgba(111,122,103,.11);
@@ -581,6 +576,63 @@
       gap: 10px;
       flex-wrap: wrap;
     }
+    .engagement-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .engagement-card{
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(72,53,37,.62);
+      background: linear-gradient(165deg, rgba(22,17,13,.90), rgba(16,12,10,.78));
+    }
+    .engagement-card h4{
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    .engagement-card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .engagement-series{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .engagement-series article{
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(72,53,37,.55);
+      background: rgba(17,13,10,.34);
+    }
+    .engagement-series h5{
+      margin: 0 0 4px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .engagement-series p{
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .engagement-list{
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(240,229,215,.95);
+    }
+    .engagement-list li{ margin: 0 0 10px; }
+    .engagement-list li:last-child{ margin-bottom: 0; }
+    .engagement-list strong{
+      display:block;
+      margin-bottom: 2px;
+      font-size: 14px;
+      color: var(--text);
+    }
     .featured-links{
       display:flex;
       gap: 10px;
@@ -747,6 +799,8 @@
       .stat-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .student-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .selected-list{ grid-template-columns: 1fr; }
+      .engagement-grid{ grid-template-columns: 1fr; }
+      .engagement-series{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .topbar{ position: static; }
       .brand{ min-width: auto; }
       .topbar-inner{ align-items: center; flex-wrap: wrap; gap: 12px; }
@@ -787,6 +841,7 @@
       .conf-filter{ grid-template-columns: 1fr !important; }
       .stat-grid{ grid-template-columns: 1fr; }
       .student-grid{ grid-template-columns: 1fr; }
+      .engagement-series{ grid-template-columns: 1fr; }
       .group-gallery{ grid-template-columns: 1fr; }
       .group-gallery-main{ min-height: 240px; }
       .group-gallery-side{
@@ -907,9 +962,9 @@
         <a href="#home">Home</a>
         <a href="#research">Research</a>
         <a href="#software">Software</a>
-        <a href="#selected-work">Selected Work</a>
+        <a href="#selected-work">Publications</a>
         <a href="#members">Team</a>
-        <a href="/publications/">Publications</a>
+        <a href="#engagements">Engagements</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -929,7 +984,7 @@
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#research" aria-label="Jump to research">Research</a>
-        <a class="btn ghost" href="#selected-work" aria-label="Jump to selected work">Publications</a>
+        <a class="btn ghost" href="#selected-work" aria-label="Jump to publications preview">Publications</a>
       </div>
     </div>
 
@@ -980,7 +1035,7 @@
 
         <div class="cta-row" style="align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#publications" aria-label="Jump to publications">Publications</a>
+            <a class="btn" href="#selected-work" aria-label="Jump to publications">Publications</a>
             <a class="btn ghost" href="#about" aria-label="Jump to about">About</a>
           </div>
           <div class="social" aria-label="Research profiles" style="justify-content:flex-end;">
@@ -1039,15 +1094,15 @@
         </div>
       </div>
     </section>
-    <section id="selected-work" aria-label="Selected work">
+    <section id="selected-work" aria-label="Publications">
       <div class="card">
         <div class="selected-head">
           <div>
-            <h3 style="margin:0 0 6px;">Selected Work</h3>
+            <h3 style="margin:0 0 6px;">Publications</h3>
             <p>A curated mix of recent papers and representative earlier work.</p>
           </div>
           <div class="selected-actions">
-            <a class="btn ghost" href="/publications/" aria-label="Open the full publications archive">Full publications</a>
+            <a class="btn ghost" href="/publications/" aria-label="Open the full publications archive">Full Publications</a>
           </div>
         </div>
         <div class="selected-list" id="selectedWorkList"></div>
@@ -1263,6 +1318,78 @@
           </div>
         </div>
       </details>
+    </section>
+
+    <section id="engagements" class="band" aria-label="Engagements">
+      <div class="section-head">
+        <h3>Engagements</h3>
+        <p>Conferences, invited talks, and teaching-focused workshops.</p>
+      </div>
+
+      <div class="card">
+        <div class="selected-head">
+          <div>
+            <h3 style="margin:0 0 6px;">Academic engagement</h3>
+            <p>A compact view of recurring conference participation, invited talks, and workshop-led teaching activity.</p>
+          </div>
+          <div class="selected-actions">
+            <a class="btn ghost" href="/engagements/" aria-label="Open the full engagements archive">Full events list</a>
+          </div>
+        </div>
+
+        <div class="engagement-grid">
+          <article class="engagement-card">
+            <h4>Conferences</h4>
+            <p>Recurring participation in theoretical and computational chemistry meetings through conference attendance, talks, invited contributions, and chairing roles.</p>
+            <div class="engagement-series">
+              <article>
+                <h5>TCS</h5>
+                <p>Theoretical Chemistry Symposium</p>
+              </article>
+              <article>
+                <h5>WATOC</h5>
+                <p>World Association of Theoretical and Computational Chemists</p>
+              </article>
+              <article>
+                <h5>SoPhyC</h5>
+                <p>Society of Physical Chemistry Symposium</p>
+              </article>
+              <article>
+                <h5>APATCC</h5>
+                <p>Asia-Pacific theoretical and computational chemistry meetings</p>
+              </article>
+              <article>
+                <h5>ML4Sciences</h5>
+                <p>Machine learning and molecular-sciences meetings</p>
+              </article>
+            </div>
+          </article>
+
+          <article class="engagement-card">
+            <h4>Invited talks</h4>
+            <p>Invitations from colleges and academic institutions for lectures and interactions with students and faculty.</p>
+            <ul class="engagement-list">
+              <li><strong>Government Medical College, Kollam</strong><span>Orientation Program</span></li>
+              <li><strong>Kannur University, Payyanur Campus</strong><span>Orientation programme (FOCUS 2024)</span></li>
+              <li><strong>Kashmir University</strong><span>Webinar Lecture Series</span></li>
+              <li><strong>St. Xavier’s College</strong><span>Role of DFT in Studying Electronic Structure and Reaction Pathway</span></li>
+              <li><strong>Nirmala College, Muvattupuzha</strong><span>Computational Chemistry: An Overview</span></li>
+            </ul>
+          </article>
+
+          <article class="engagement-card">
+            <h4>Workshops</h4>
+            <p>Teaching-oriented engagements focused on computation, methods, and training.</p>
+            <ul class="engagement-list">
+              <li><strong>Model Engineering College, Ernakulam</strong><span>Workshop on Strategic Plan for Research Activities</span></li>
+              <li><strong>Rajiv Gandhi Institute of Technology, Kottayam</strong><span>Workshop on Strategic Plan Preparation</span></li>
+              <li><strong>Cochin University of Science and Technology</strong><span>Workshop on Computational Chemistry</span></li>
+              <li><strong>Bharath Matha College, Ernakulam</strong><span>Workshop on Python Programming</span></li>
+              <li><strong>Calicut Chemistry Collective</strong><span>Workshop in Chemistry for PG Students and Teachers</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="band" aria-label="About">
@@ -1533,32 +1660,6 @@
       });
     }
 
-    function initPublications(){
-      const ul = document.querySelector('#pubList');
-      if(ul) hardenBlankTargets(ul);
-
-      setupFilter({
-        listSelector: '#pubList',
-        searchId: 'pubSearch',
-        yearId: 'pubYear',
-        clearId: 'pubClear',
-        countId: 'pubCount'
-      });
-    }
-
-    function initConferences(){
-      const ul = document.querySelector('#confList');
-      if(ul) hardenBlankTargets(ul);
-
-      setupFilter({
-        listSelector: '#confList',
-        searchId: 'confSearch',
-        yearId: 'confYear',
-        clearId: 'confClear',
-        countId: 'confCount'
-      });
-    }
-
     function initFooterDates(){
       try{
         const yearEl = document.getElementById('year');
@@ -1613,24 +1714,6 @@
       closeMenu();
     }
 
-    function initArchiveAnchors(){
-      const pubArchive = document.getElementById('publications-archive');
-      if(!pubArchive) return;
-
-      function openPublications(){
-        pubArchive.open = true;
-      }
-
-      document.querySelectorAll('a[href="#publications"]').forEach((a) => {
-        a.addEventListener('click', openPublications);
-      });
-
-      if(location.hash === '#publications') openPublications();
-
-      window.addEventListener('hashchange', () => {
-        if(location.hash === '#publications') openPublications();
-      }, { passive: true });
-    }
     function initSelectedWork(){
       const list = document.getElementById('selectedWorkList');
       const dataEl = document.getElementById('selectedWorkData');
@@ -1775,10 +1858,7 @@
     }
 
     hardenBlankTargets(document);
-    initPublications();
-    initConferences();
     initMobileNav();
-    initArchiveAnchors();
     initSelectedWork();
     initFooterDates();
     activeNav();

@@ -3,12 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Full publications archive for Anoop Ayyappan, including journal articles with DOI links and searchable browsing by year and keyword." />
+  <meta name="description" content="Full publications archive for Anoop Ayyappan, with journal articles, DOI links, and searchable browsing by keyword and year." />
+  <meta name="keywords" content="Anoop Ayyappan publications, computational chemistry publications, quantum chemistry papers, nanocluster publications, PyAR, Digital University Kerala" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Anoop Ayyappan">
   <meta name="theme-color" content="#0b0907">
-  <title>Publications | Anoop Ayyappan</title>
+  <meta property="og:title" content="Full Publications | Anoop Ayyappan" />
+  <meta property="og:description" content="Search the full publications archive of Anoop Ayyappan, including journal articles with DOI links and year filtering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anooplab.github.io/publications/" />
+  <meta property="og:site_name" content="Anoop Ayyappan" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image" content="https://anooplab.github.io/images/anoop.png" />
+  <meta property="og:image:alt" content="Portrait of Anoop Ayyappan" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Full Publications | Anoop Ayyappan" />
+  <meta name="twitter:description" content="Search the full publications archive of Anoop Ayyappan, including journal articles with DOI links and year filtering." />
+  <meta name="twitter:image" content="https://anooplab.github.io/images/anoop.png" />
+  <title>Full Publications | Anoop Ayyappan</title>
   <link rel="canonical" href="https://anooplab.github.io/publications/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://anooplab.github.io/publications/#page",
+          "url": "https://anooplab.github.io/publications/",
+          "name": "Full Publications | Anoop Ayyappan",
+          "description": "Search the full publications archive of Anoop Ayyappan, including journal articles with DOI links and year filtering.",
+          "isPartOf": {
+            "@id": "https://anooplab.github.io/#website"
+          },
+          "about": {
+            "@id": "https://anooplab.github.io/#person"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://anooplab.github.io/#website",
+          "url": "https://anooplab.github.io/",
+          "name": "Anoop Ayyappan",
+          "publisher": {
+            "@id": "https://anooplab.github.io/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://anooplab.github.io/#person",
+          "name": "Anoop Ayyappan",
+          "jobTitle": "Professor",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Digital University Kerala"
+          },
+          "url": "https://anooplab.github.io/",
+          "image": "https://anooplab.github.io/images/anoop.png",
+          "sameAs": [
+            "https://www.duk.ac.in/faculty/anoop-a",
+            "https://github.com/anooplab",
+            "https://www.linkedin.com/in/anoopayyappan/",
+            "https://www.researchgate.net/profile/Anoop-Ayyappan",
+            "https://orcid.org/0000-0002-1991-0305",
+            "https://scholar.google.com/citations?user=7v8M4iYAAAAJ",
+            "https://www.scopus.com/authid/detail.uri?authorId=6508446878"
+          ]
+        }
+      ]
+    }
+  </script>
 
   <style>
 
@@ -316,6 +379,7 @@
       gap: 10px;
       margin-bottom: 10px;
     }
+    .section-head h1,
     .section-head h3{
       margin: 0;
       font-family: var(--serif);
@@ -324,6 +388,7 @@
       position: relative;
       padding-left: 12px;
     }
+    .section-head h1::before,
     .section-head h3::before{
       content: "";
       position: absolute;
@@ -595,6 +660,24 @@
       color: var(--muted);
       font-size: 13px;
     }
+    .archive-panel ul.clean{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .archive-panel ul.clean li{
+      margin: 10px 0 0;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(72,53,37,.55);
+      background: rgba(17,13,10,.34);
+      line-height: 1.55;
+    }
+    .archive-panel ul.clean li a{
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(198,154,107,.35);
+    }
+    .archive-panel ul.clean li a:hover{ border-bottom-color: rgba(198,154,107,.7); }
 
     .scrollbox{
       max-height: 440px;
@@ -834,8 +917,8 @@
         <a href="/">Home</a>
         <a href="/#research">Research</a>
         <a href="/#software">Software</a>
-        <a href="/#selected-work">Selected Work</a>
         <a href="/publications/" class="active">Publications</a>
+        <a href="/#engagements">Engagements</a>
         <a href="/#contact">Contact</a>
       </nav>
     </div>
@@ -844,20 +927,20 @@
   <main class="wrap pub-page-main" role="main" id="main">
     <section class="band" aria-labelledby="publications-title">
       <div class="section-head pub-page-head">
-        <h3 id="publications-title">Full Publications</h3>
-        <p class="archive-intro">The complete journal-article archive is collected here so the homepage can stay focused. Search by keyword or filter by year, and follow DOI links directly from the entries.</p>
+        <h1 id="publications-title">Full Publications</h1>
+        <p class="archive-intro">This page gathers the full journal-article archive in one place. Search by keyword, filter by year, and follow DOI links directly from each entry.</p>
       </div>
 
       <div class="card archive-shell">
         <div class="pub-page-actions">
           <a class="btn primary" href="/">Return to homepage</a>
-          <a class="btn ghost" href="/#selected-work">Back to selected work</a>
+          <a class="btn ghost" href="/#selected-work">Back to publications preview</a>
         </div>
 
         <div>
           <span class="eyebrow">Archive</span>
           <h4 style="margin:0 0 6px;">Journal articles</h4>
-          <p class="muted small" style="margin-top:0;">Search and filter by year. This list stays full width for easier browsing.</p>
+          <p class="muted small" style="margin-top:0;">Search by title, author, or journal, and narrow the archive by year when needed.</p>
 
           <div class="pub-filter filterbar" aria-label="Filter publications">
             <div>
@@ -1092,6 +1175,17 @@
 
             </ul>
           </div>
+
+          <details class="archive-panel details-card">
+            <summary>Preprints</summary>
+            <p class="archive-note">Preprints and accepted manuscripts that are part of the broader publication record but not yet part of the peer-reviewed journal archive.</p>
+            <ul class="clean small">
+              <li>Roy, S.; Anoop, A. Insights into the Active Catalyst Formation in Palladium Catalyzed Coupling Reaction from Di-Nuclear Palladium Acetate: A DFT Study. <a href="https://doi.org/10.26434/chemrxiv-2022-px0fd" target="_blank" rel="noreferrer noopener">ChemRxiv 2022</a>.</li>
+              <li>Anoop, A.; Ganesh, V. The Role of Homoaromaticity in the Tropylium-Catalyzed Carboxylic Acid O-H Insertion with Diazoesters. <a href="https://doi.org/10.26434/chemrxiv-2022-lmskx-v2" target="_blank" rel="noreferrer noopener">ChemRxiv 2022</a>.</li>
+              <li>Khatun, M.; Paul, S.; Roy, S.; Dey, S.; Anoop, A. Small Gold-Thiolate Clusters Au<sub>3</sub>(SMe)<sub>3</sub>: Benchmarking of Density Functionals and Bonding Analysis. <a href="https://doi.org/10.26434/chemrxiv-2022-35wtw" target="_blank" rel="noreferrer noopener">ChemRxiv 2022</a>.</li>
+              <li>Rao, D. Y.; Anoop, A. Computational Study of Tandem C-C Coupling and C-H Activation Reaction of a Flexible Substrate. <a href="https://doi.org/10.26434/chemrxiv.8082281.v1" target="_blank" rel="noreferrer noopener">ChemRxiv 2019</a>.</li>
+            </ul>
+          </details>
         </div>
       </div>
     </section>
@@ -1180,7 +1274,7 @@
           if(show) shown++;
         });
 
-        countEl.textContent = ${shown}/;
+        countEl.textContent = shown === items.length ? `${shown} articles` : `${shown} of ${items.length}`;
       }
 
       apply();
