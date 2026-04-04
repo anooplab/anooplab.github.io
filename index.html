@@ -74,8 +74,50 @@
       padding: 14px 24px;
       display:flex;
       align-items:center;
-      justify-content: flex-end;
+      justify-content: space-between;
       gap: 16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 0;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand:hover{
+      text-decoration: none;
+    }
+    .brand-mark{
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      border: 1px solid rgba(198,154,107,.28);
+      background: linear-gradient(135deg, rgba(198,154,107,.22), rgba(141,101,70,.24));
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+      flex: 0 0 auto;
+      object-fit: contain;
+      padding: 8px;
+    }
+    .brand-text{
+      min-width: 0;
+      display:flex;
+      flex-direction:column;
+      gap: 1px;
+    }
+    .brand-title{
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.1;
+      color: var(--text);
+      letter-spacing: .01em;
+    }
+    .brand-subtitle{
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
     .nav{
       display:flex;
@@ -826,6 +868,13 @@
       .engagement-grid{ grid-template-columns: 1fr; }
       .engagement-series{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .topbar{ position: static; }
+      .topbar-inner{
+        justify-content: flex-start;
+        gap: 12px;
+      }
+      .brand{
+        margin-right: auto;
+      }
       .brand{ min-width: auto; }
       .topbar-inner{ align-items: center; flex-wrap: wrap; gap: 12px; }
       .nav-toggle{ display:inline-flex; margin-left: auto; }
@@ -969,6 +1018,13 @@
 <body>
   <header class="topbar" role="banner">
     <div class="topbar-inner">
+      <a class="brand" href="#home" aria-label="AnoopLab home">
+        <img class="brand-mark" src="apple-touch-icon.png" alt="" width="52" height="52" />
+        <span class="brand-text">
+          <span class="brand-title">AnoopLab</span>
+          <span class="brand-subtitle">Computational Chemistry Group</span>
+        </span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
         <span aria-hidden="true"></span>
         Menu
@@ -989,11 +1045,8 @@
     <section id="home" class="card">
       <div class="hero-layout">
         <div class="hero-text">
-          <p class="eyebrow" style="margin-bottom:10px;">
-            <img src="apple-touch-icon.png" alt="" width="22" height="22" style="border-radius:6px; vertical-align:middle; margin-right:8px;" />
-            Computational Chemistry and Molecular Discovery
-          </p>
-          <h1>Anoop Lab</h1>
+          <p class="eyebrow" style="margin-bottom:10px;">Research at Digital University Kerala</p>
+          <h1>Computational Chemistry and Molecular Discovery</h1>
           <p class="lead" style="font-size:18px; color:#f5fbff; margin-bottom:8px;">
             <a href="https://duk.ac.in/" target="_blank" rel="noreferrer noopener">Digital University Kerala</a>
           </p>
@@ -1005,18 +1058,6 @@
             <a class="btn ghost" href="#members" aria-label="Jump to people">People</a>
             <a class="btn ghost" href="#selected-work" aria-label="Jump to publications preview">Publications</a>
           </div>
-        </div>
-
-        <div class="hero-media">
-          <img
-            src="apple-touch-icon.png"
-            alt="Anoop Lab mark"
-            width="180"
-            height="180"
-            loading="eager"
-            class="hero-image"
-            style="object-fit:contain; background:rgba(23,17,13,.65); padding:18px;"
-          >
         </div>
       </div>
     </section>
