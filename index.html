@@ -409,6 +409,24 @@
       background: linear-gradient(165deg, rgba(22,17,13,.92), rgba(16,12,10,.80));
       box-shadow: inset 0 1px 0 rgba(255,244,230,.03);
     }
+    .student-card-link{
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .student-card-link:hover{
+      text-decoration: none;
+      transform: translateY(-1px);
+      border-color: rgba(198,154,107,.34);
+      box-shadow: 0 10px 24px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,244,230,.03);
+      background: linear-gradient(165deg, rgba(28,21,15,.94), rgba(18,13,10,.84));
+    }
+    .student-card-link:focus-visible{
+      outline: 2px solid rgba(198,154,107,.65);
+      outline-offset: 2px;
+      text-decoration: none;
+    }
     .student-photo{
       position: relative;
       aspect-ratio: 1 / 1.05;
@@ -1144,16 +1162,16 @@
           <span class="eyebrow">Current people</span>
           <h4 style="margin:0 0 8px;">Principal investigator and current members</h4>
           <div class="student-grid">
-            <article class="student-card">
+            <a class="student-card student-card-link" href="/anoop/" aria-label="Open the personal page of Anoop Ayyappan">
               <div class="student-photo">
                 <img src="images/anoop.png" alt="Anoop Ayyappan" loading="lazy" />
               </div>
               <div class="student-body">
                 <h5>Anoop Ayyappan</h5>
                 <p>Principal Investigator, Professor at Digital University Kerala.</p>
-                <p><a href="/anoop/">View profile</a></p>
+                <p>View profile</p>
               </div>
-            </article>
+            </a>
 
             <article class="student-card">
               <div class="student-photo">
