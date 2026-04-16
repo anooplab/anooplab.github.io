@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Anoop Lab is a computational chemistry group at Digital University Kerala working on molecular discovery, chemical space exploration, nanocluster structure prediction, reaction discovery, and machine learning with quantum chemistry.">
+  <meta name="description" content="Anoop Lab is a computational chemistry group at Digital University Kerala, India, working on molecular discovery, chemical space exploration, nanocluster structure prediction, reaction discovery, and machine learning with quantum chemistry.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Anoop Ayyappan">
   <meta name="theme-color" content="#0b0907">
@@ -585,16 +585,37 @@
     .compact-callout{
       padding: 16px 18px;
       margin-top: 14px;
+      border-color: rgba(201,113,43,.46) !important;
+      background:
+        radial-gradient(380px 220px at 0% 0%, rgba(255,194,102,.18), transparent 64%),
+        linear-gradient(135deg, rgba(66,30,12,.96), rgba(32,14,8,.92)) !important;
+      box-shadow: 0 16px 36px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,236,214,.08);
     }
     .compact-callout h3,
     .compact-callout h4{
       margin: 0 0 6px;
       font-family: var(--serif);
       font-size: 20px;
+      color: #fff4e8;
     }
     .compact-callout p{
       margin: 0;
-      color: rgba(240,229,215,.92);
+      color: rgba(255,239,224,.94);
+    }
+    .compact-callout .eyebrow{
+      color: #ffd29d;
+    }
+    .compact-callout .btn{
+      border-color: rgba(255,196,128,.34);
+      box-shadow: 0 10px 24px rgba(0,0,0,.16);
+    }
+    .compact-callout .btn.ghost{
+      background: rgba(255,244,232,.08);
+    }
+    .compact-callout .btn.primary,
+    .compact-callout .btn:not(.ghost){
+      background: linear-gradient(135deg, rgba(234,154,72,.88), rgba(184,95,35,.92));
+      color: #fffaf4;
     }
     .selected-list{
       display: grid;
@@ -949,7 +970,7 @@
 
   <!-- Open Graph / LinkedIn -->
   <meta property="og:title" content="Anoop Lab | Computational Chemistry at Digital University Kerala">
-  <meta property="og:description" content="Anoop Lab is a computational chemistry group at Digital University Kerala working on molecular discovery, chemical space exploration, nanocluster structure prediction, reaction discovery, and machine learning with quantum chemistry.">
+  <meta property="og:description" content="Anoop Lab is a computational chemistry group at Digital University Kerala, India, working on molecular discovery, chemical space exploration, nanocluster structure prediction, reaction discovery, and machine learning with quantum chemistry.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anooplab.github.io/">
   <meta property="og:site_name" content="Anoop Lab">
@@ -960,7 +981,7 @@
   <!-- Twitter/X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anoop Lab | Computational Chemistry at Digital University Kerala">
-  <meta name="twitter:description" content="Anoop Lab is a computational chemistry group at Digital University Kerala working on molecular discovery, chemical space exploration, nanocluster structure prediction, reaction discovery, and machine learning with quantum chemistry.">
+  <meta name="twitter:description" content="Anoop Lab is a computational chemistry group at Digital University Kerala, India, working on molecular discovery, chemical space exploration, nanocluster structure prediction, reaction discovery, and machine learning with quantum chemistry.">
   <meta name="twitter:image" content="https://anooplab.github.io/apple-touch-icon.png">
   <meta name="twitter:image:alt" content="Anoop Lab mark">
 
@@ -975,6 +996,18 @@
         "url": "https://anooplab.github.io/",
         "name": "Anoop Lab",
         "description": "Computational chemistry and molecular discovery at Digital University Kerala."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://anooplab.github.io/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://anooplab.github.io/"
+          }
+        ]
       },
       {
         "@type": "Organization",
@@ -1062,7 +1095,7 @@
       </div>
     </section>
 
-    <div class="card compact-callout" style="border-color:rgba(198,154,107,.30); background:linear-gradient(135deg, rgba(26,19,14,.92), rgba(18,13,10,.84));">
+    <div class="card compact-callout">
       <span class="eyebrow">Research opportunities</span>
       <h4>Prospective PhD students</h4>
       <div style="display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; margin-top:12px;">
