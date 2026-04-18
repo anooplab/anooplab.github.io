@@ -521,33 +521,51 @@
     }
     .group-gallery{
       display: grid;
-      grid-template-columns: 1.35fr .95fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
       align-items: stretch;
     }
-    .group-gallery-main,
-    .group-gallery-side img{
+    .group-gallery-item{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid rgba(88,66,46,.7);
+      background:
+        radial-gradient(180px 120px at 100% 0%, rgba(198,154,107,.08), transparent 74%),
+        rgba(18,13,10,.92);
+      overflow: hidden;
+    }
+    .group-gallery-item img{
       width: 100%;
       height: 100%;
       display: block;
-      border-radius: 20px;
-      border: 1px solid rgba(88,66,46,.7);
-    }
-    .group-gallery-main{
-      min-height: 320px;
-      object-fit: cover;
-    }
-    .group-gallery-side{
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 12px;
-      min-height: 320px;
-    }
-    .group-gallery-side img{
-      min-height: 154px;
       object-fit: contain;
-      background: rgba(18,13,10,.92);
-      padding: 6px;
+      padding: 8px;
+    }
+    .group-gallery-item--wide{
+      aspect-ratio: 16 / 9;
+    }
+    .group-gallery-item--mid{
+      grid-column: 1 / -1;
+      aspect-ratio: 21 / 9;
+    }
+    .group-gallery-item--solo{
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+    }
+    .group-gallery-row{
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .group-gallery-row--top .group-gallery-item{
+      aspect-ratio: 5 / 1.35;
+    }
+    .group-gallery-row .group-gallery-item{
+      aspect-ratio: 16 / 9;
     }
     ul.clean{ margin: 10px 0 0; padding-left: 18px; }
     ul.clean li{ margin: 7px 0; color: rgba(240,229,215,.94); }
@@ -939,13 +957,20 @@
       .student-grid{ grid-template-columns: 1fr; }
       .engagement-series{ grid-template-columns: 1fr; }
       .group-gallery{ grid-template-columns: 1fr; }
-      .group-gallery-main{ min-height: 240px; }
-      .group-gallery-side{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: none;
-        min-height: auto;
+      .group-gallery-item--wide,
+      .group-gallery-item--mid,
+      .group-gallery-item--solo{
+        aspect-ratio: 16 / 10;
       }
-      .group-gallery-side img{ min-height: 132px; }
+      .group-gallery-row{
+        grid-template-columns: 1fr;
+      }
+      .group-gallery-row--top .group-gallery-item{
+        aspect-ratio: 16 / 6;
+      }
+      .group-gallery-row .group-gallery-item{
+        aspect-ratio: 16 / 10;
+      }
     }
 
     @media (hover: none) and (pointer: coarse){
@@ -1428,12 +1453,21 @@
       </div>
 
       <details class="details-card archive-panel">
-        <summary>Former group photos</summary>
+        <summary>Group photos</summary>
         <div class="group-gallery" style="margin-top:12px;">
-          <img class="group-gallery-main" src="images/group-photo-1.jpg" alt="Anoop lab former group photo 1" loading="lazy" />
-          <div class="group-gallery-side">
-            <img src="images/group-photo-2.jpg" alt="Anoop lab former group photo 2" loading="lazy" />
-            <img src="images/group-photo-3.jpg" alt="Anoop lab former group photo 3" loading="lazy" />
+          <div class="group-gallery-row group-gallery-row--top">
+            <div class="group-gallery-item">
+              <img src="images/Group_photo_2.jpg" alt="AnoopLab group photo 2" loading="lazy" />
+            </div>
+            <div class="group-gallery-item">
+              <img src="images/Group_photo_1.jpg" alt="AnoopLab group photo 1" loading="lazy" />
+            </div>
+          </div>
+          <div class="group-gallery-item group-gallery-item--mid">
+            <img src="images/Group_photo_sep_2018.jpg" alt="AnoopLab group photo from September 2018" loading="lazy" />
+          </div>
+          <div class="group-gallery-item group-gallery-item--solo">
+            <img src="images/Group_photo_b.jpg" alt="AnoopLab group photo B" loading="lazy" />
           </div>
         </div>
       </details>
