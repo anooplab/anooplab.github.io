@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Anoop Ayyappan is Professor at Digital University Kerala working in computational chemistry, molecular discovery, reaction mechanisms, and machine-learning-assisted quantum chemistry. Current PhD opportunities are open in AI-enabled molecular design and computational chemistry.">
+  <meta name="description" content="Anoop Ayyappan is Professor at Digital University Kerala working in computational chemistry, molecular discovery, reaction mechanisms, and machine-learning-assisted quantum chemistry.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Anoop Ayyappan">
   <meta name="theme-color" content="#0b0907">
@@ -903,7 +903,7 @@
 
   <!-- Open Graph / LinkedIn -->
   <meta property="og:title" content="Anoop Ayyappan | Principal Investigator, Anoop Lab">
-  <meta property="og:description" content="Anoop Ayyappan is Professor at Digital University Kerala working in computational chemistry, molecular discovery, reaction mechanisms, and machine-learning-assisted quantum chemistry. Current PhD opportunities are open in AI-enabled molecular design and computational chemistry.">
+  <meta property="og:description" content="Anoop Ayyappan is Professor at Digital University Kerala working in computational chemistry, molecular discovery, reaction mechanisms, and machine-learning-assisted quantum chemistry.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anooplab.github.io/anoop/">
   <meta property="og:site_name" content="Anoop Ayyappan">
@@ -914,7 +914,7 @@
   <!-- Twitter/X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anoop Ayyappan | Principal Investigator, Anoop Lab">
-  <meta name="twitter:description" content="Anoop Ayyappan is Professor at Digital University Kerala working in computational chemistry, molecular discovery, reaction mechanisms, and machine-learning-assisted quantum chemistry. Current PhD opportunities are open in AI-enabled molecular design and computational chemistry.">
+  <meta name="twitter:description" content="Anoop Ayyappan is Professor at Digital University Kerala working in computational chemistry, molecular discovery, reaction mechanisms, and machine-learning-assisted quantum chemistry.">
   <meta name="twitter:image" content="https://anooplab.github.io/images/anoop.png">
   <meta name="twitter:image:alt" content="Portrait of Anoop Ayyappan">
 
@@ -1046,33 +1046,6 @@
     </div>
     </section>
 
-    <aside class="card compact-callout" aria-labelledby="current-phd-opportunity-title">
-      <span class="eyebrow">Current PhD opportunity</span>
-      <h4 id="current-phd-opportunity-title">Current PhD opportunity</h4>
-      <p class="small" style="margin:8px 0 0; max-width:78ch;">I am currently inviting PhD applications in AI-enabled molecular design and computational chemistry through Digital University Kerala. Application deadline: 31 May 2026. DRAT: 21 June 2026.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-        <a class="btn" href="#phd-opportunity" aria-label="View the PhD opportunity section">View PhD opportunity</a>
-      </div>
-    </aside>
-
-    <section id="phd-opportunity" class="card compact-callout" aria-labelledby="phd-opportunity-title">
-      <span class="eyebrow">Research opportunities</span>
-      <h4 id="phd-opportunity-title">Prospective PhD students — 2026</h4>
-      <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
-        <p class="small" style="margin:0; max-width:86ch;">I am looking for motivated PhD candidates interested in computational chemistry, molecular discovery, machine-learning-assisted quantum chemistry, automated molecular and cluster structure exploration, and reaction mechanisms.</p>
-        <p class="small" style="margin:0; max-width:86ch;">The official Digital University Kerala PhD vacancy list includes “AI-Enabled Molecular Design and Computational Chemistry” under the School of Digital Sciences, with 2 vacancies.</p>
-        <p class="small" style="margin:0; max-width:86ch;">This opportunity is suitable for students from Chemistry, Physics, Materials Science, Computational Science, Data Science, AI/ML, or related areas who are willing to learn both chemistry and computation seriously.</p>
-        <p class="small" style="margin:0; max-width:86ch;"><strong>Application deadline:</strong> 31 May 2026<br><strong>DRAT for PhD admissions:</strong> 21 June 2026</p>
-        <p class="small" style="margin:0; max-width:86ch;">Before contacting me, interested candidates should read the research areas and publications, and then apply through the official Digital University Kerala admissions portal.</p>
-        <div style="display:flex; gap:10px; flex:0 0 auto; align-items:center; flex-wrap:wrap; margin-top:2px;">
-          <a class="btn ghost" href="#research" aria-label="Explore Anoop Ayyappan research areas" style="padding:8px 12px; min-height:auto;">Explore Research</a>
-          <a class="btn ghost" href="/publications/" aria-label="Read publications" style="padding:8px 12px; min-height:auto;">Read Publications</a>
-          <a class="btn" href="https://duk.ac.in/admission/" target="_blank" rel="noreferrer noopener" aria-label="Apply through Digital University Kerala admissions" style="padding:8px 12px; min-height:auto;">Apply through DUK Admissions</a>
-          <a class="btn ghost" href="https://duk.ac.in/admissions/doctoral/phd/" target="_blank" rel="noreferrer noopener" aria-label="Read PhD details at Digital University Kerala" style="padding:8px 12px; min-height:auto;">PhD details at DUK</a>
-          <a class="btn ghost" href="mailto:anoop.a@duk.ac.in" aria-label="Contact Anoop Ayyappan by email" style="padding:8px 12px; min-height:auto;">Contact me</a>
-        </div>
-      </div>
-    </section>
 
     <section id="research" class="card" aria-label="Research">
       <span class="eyebrow">Research programme</span>
@@ -1550,6 +1523,7 @@
 
       const permanentItems = Array.isArray(items) ? items : [];
       const seenTitles = new Set(permanentItems.map(item => norm(item && item.title)));
+      const excludedRecentUrls = new Set(['https://doi.org/10.1093/nar/gkag397']);
 
       function collectRecentItems(source, limit){
         const recentItems = [];
@@ -1570,10 +1544,13 @@
           if(!title || seenTitles.has(norm(title))) return;
 
           const firstLink = li.querySelector('a[href]');
+          const url = firstLink ? firstLink.getAttribute('href') : '';
+          if(url && excludedRecentUrls.has(url.toLowerCase())) return;
+
           recentItems.push({
             title,
             meta: metaParts.join(', '),
-            url: firstLink ? firstLink.getAttribute('href') : ''
+            url
           });
           seenTitles.add(norm(title));
         });
