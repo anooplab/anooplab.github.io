@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">AnoopLab computational research workflow</title>
+  <desc id="desc">Four connected stages: build scientific software and data, explore chemical space and structures, learn and interpret with machine learning, and validate and discover with quantum chemistry.</desc>
+  <defs>
+    <marker id="arrow-oxide" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8d412e"/>
+    </marker>
+    <marker id="arrow-mineral" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#53685b"/>
+    </marker>
+    <style>
+      .paper { fill:#fffdf8; }
+      .ink { fill:#18221e; }
+      .soft { fill:#4f5b55; }
+      .oxide { fill:#8d412e; }
+      .mineral { fill:#53685b; }
+      .line { stroke:#9f9380; stroke-width:2; fill:none; }
+      .thin { stroke:#c9bfaf; stroke-width:1.5; fill:none; }
+      .route-oxide { stroke:#8d412e; stroke-width:3; fill:none; marker-end:url(#arrow-oxide); }
+      .route-mineral { stroke:#53685b; stroke-width:3; fill:none; marker-end:url(#arrow-mineral); }
+      .label { font:700 17px "Segoe UI",Arial,sans-serif; letter-spacing:2.2px; }
+      .title { font:500 30px Georgia,"Times New Roman",serif; }
+      .copy { font:400 17px "Segoe UI",Arial,sans-serif; }
+      .small { font:650 13px "Segoe UI",Arial,sans-serif; letter-spacing:1px; }
+    </style>
+  </defs>
+
+  <rect x="20" y="20" width="1160" height="860" rx="8" class="paper" stroke="#9f9380" stroke-width="2"/>
+  <path d="M20 104 H1180" class="line"/>
+  <text x="62" y="74" class="label oxide">ANOOPLAB · COMPUTATIONAL RESEARCH WORKFLOW</text>
+  <text x="1070" y="74" text-anchor="end" class="small soft">METHODS → EVIDENCE</text>
+
+  <!-- central validation spine -->
+  <rect x="430" y="342" width="340" height="178" rx="89" fill="#18221e"/>
+  <text x="600" y="399" text-anchor="middle" class="label" fill="#d89982">CHEMICAL VALIDATION</text>
+  <text x="600" y="447" text-anchor="middle" class="title" fill="#fffdf8">Quantum chemistry</text>
+  <text x="600" y="481" text-anchor="middle" class="copy" fill="#cdd5d1">benchmarks · refinement · limits</text>
+
+  <!-- stage 1 -->
+  <rect x="70" y="160" width="390" height="186" rx="4" fill="#f2eee5" stroke="#8d412e" stroke-width="3"/>
+  <text x="104" y="205" class="label oxide">01 · BUILD</text>
+  <text x="104" y="249" class="title ink">Software and data</text>
+  <text x="104" y="287" class="copy soft">PyAR · HydroMol · SSA</text>
+  <path d="M104 310 H420" class="thin"/>
+  <text x="104" y="329" class="small soft">REUSABLE · DOCUMENTED · TESTABLE</text>
+
+  <!-- stage 2 -->
+  <rect x="740" y="160" width="390" height="186" rx="4" fill="#f2eee5" stroke="#53685b" stroke-width="3"/>
+  <text x="774" y="205" class="label mineral">02 · EXPLORE</text>
+  <text x="774" y="249" class="title ink">Chemical space</text>
+  <text x="774" y="287" class="copy soft">molecules · reactions · structures</text>
+  <path d="M774 310 H1090" class="thin"/>
+  <text x="774" y="329" class="small soft">GENERATION · SEARCH · OPTIMISATION</text>
+
+  <!-- stage 3 -->
+  <rect x="740" y="602" width="390" height="186" rx="4" fill="#f2eee5" stroke="#8d412e" stroke-width="3"/>
+  <text x="774" y="647" class="label oxide">03 · LEARN</text>
+  <text x="774" y="691" class="title ink" style="font-size:24px">Models and explanations</text>
+  <text x="774" y="729" class="copy soft">structure–property relationships</text>
+  <path d="M774 752 H1090" class="thin"/>
+  <text x="774" y="771" class="small soft">ACCELERATE · INTERPRET · QUESTION</text>
+
+  <!-- stage 4 -->
+  <rect x="70" y="602" width="390" height="186" rx="4" fill="#f2eee5" stroke="#53685b" stroke-width="3"/>
+  <text x="104" y="647" class="label mineral">04 · DISCOVER</text>
+  <text x="104" y="691" class="title ink" style="font-size:24px">Molecules and materials</text>
+  <text x="104" y="729" class="copy soft">prioritised, chemically credible results</text>
+  <path d="M104 752 H420" class="thin"/>
+  <text x="104" y="771" class="small soft">TADF · FUELS · CLUSTERS · MATERIALS</text>
+
+  <!-- directional cycle -->
+  <path d="M460 252 C560 210 640 210 740 252" class="route-oxide"/>
+  <path d="M1035 346 C1092 425 1092 523 1035 602" class="route-mineral"/>
+  <path d="M740 695 C640 738 560 738 460 695" class="route-oxide"/>
+  <path d="M165 602 C108 523 108 425 165 346" class="route-mineral"/>
+
+  <!-- validation connections -->
+  <path d="M460 315 L507 357" class="thin"/>
+  <path d="M740 315 L693 357" class="thin"/>
+  <path d="M740 633 L693 505" class="thin"/>
+  <path d="M460 633 L507 505" class="thin"/>
+
+  <circle cx="600" cy="220" r="6" class="oxide"/>
+  <circle cx="1080" cy="474" r="6" class="mineral"/>
+  <circle cx="600" cy="738" r="6" class="oxide"/>
+  <circle cx="120" cy="474" r="6" class="mineral"/>
+</svg>

@@ -1,1018 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-IN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Anoop Lab at Digital University Kerala works on computational chemistry, molecular discovery, automated structure exploration, reaction mechanisms, and machine-learning-assisted quantum chemistry.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AnoopLab develops scientific software and computational methods for chemical-space exploration, molecular structure prediction, explainable machine learning, and molecular and materials discovery.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Anoop Ayyappan">
-  <meta name="theme-color" content="#0b0907">
-  <title>Anoop Lab | Computational Chemistry at Digital University Kerala</title>
+  <meta name="theme-color" content="#f2eee5">
+  <title>AnoopLab | Computational Chemistry and Molecular Discovery</title>
+
+  <link rel="canonical" href="https://anooplab.github.io/">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0b0907">
+  <link rel="stylesheet" href="/css/lab.css">
 
-  <style>
-    :root{
-      --bg:#0b0907;
-      --panel:#16110c;
-      --panel2:#110d09;
-      --text:#f0e5d7;
-      --muted:#b5a694;
-      --brand:#c69a6b;
-      --brand2:#8d6546;
-      --brand3:#d8b38b;
-      --brand4:#a46f4d;
-      --brand5:#6f7a67;
-      --line:#3b2c1f;
-      --shadow: 0 24px 52px rgba(0,0,0,.38);
-      --radius: 18px;
-      --max: 1120px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-    }
-
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    body{
-      margin:0;
-      font-family: var(--sans);
-      background:
-        radial-gradient(1200px 760px at 16% 0%, rgba(198,154,107,.12), transparent 56%),
-        radial-gradient(960px 520px at 92% 10%, rgba(111,122,103,.10), transparent 62%),
-        radial-gradient(980px 620px at 50% 100%, rgba(141,101,70,.14), transparent 64%),
-        linear-gradient(180deg, rgba(14,11,8,.98), rgba(10,8,6,.99)),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.72;
-      overflow-x: hidden;
-      letter-spacing: .01em;
-    }
-    ::selection{ background: rgba(198,154,107,.34); color: #fff7ed; }
-    main{ position: relative; z-index: 1; }
-
-    a{ color: var(--brand); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
-
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: rgba(14,11,8,.82);
-      border-bottom: 1px solid rgba(76,56,38,.72);
-      box-shadow: 0 12px 36px rgba(0,0,0,.22);
-    }
-    .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 24px;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 0;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .brand:hover{
-      text-decoration: none;
-    }
-    .brand-mark{
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      border: 1px solid rgba(198,154,107,.28);
-      background: linear-gradient(135deg, rgba(198,154,107,.22), rgba(141,101,70,.24));
-      box-shadow: 0 10px 24px rgba(0,0,0,.18);
-      flex: 0 0 auto;
-      object-fit: contain;
-      padding: 8px;
-    }
-    .brand-text{
-      min-width: 0;
-      display:flex;
-      flex-direction:column;
-      gap: 1px;
-    }
-    .brand-title{
-      font-family: var(--serif);
-      font-size: 18px;
-      line-height: 1.1;
-      color: var(--text);
-      letter-spacing: .01em;
-    }
-    .brand-subtitle{
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .nav::-webkit-scrollbar{ display:none; }
-    .nav a{
-      font-size: 13px;
-      color: var(--text);
-      opacity: .92;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(76,56,38,.15);
-      transition: background .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease;
-    }
-    .nav a:hover{
-      text-decoration: none;
-      border-color: rgba(198,154,107,.34);
-      background: linear-gradient(135deg, rgba(29,21,15,.92), rgba(20,15,11,.82));
-      box-shadow: inset 0 0 0 1px rgba(255,244,230,.03);
-      transform: translateY(-1px);
-    }
-    .nav a.active{
-      border-color: rgba(198,154,107,.42);
-      background: linear-gradient(135deg, rgba(198,154,107,.18), rgba(141,101,70,.20));
-      box-shadow: 0 8px 20px rgba(0,0,0,.16);
-    }
-    .nav-toggle{
-      display:none;
-      align-items:center;
-      justify-content:center;
-      gap: 8px;
-      min-height: 42px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(76,56,38,.75);
-      background: linear-gradient(135deg, rgba(28,21,15,.90), rgba(17,13,10,.82));
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 650;
-      cursor: pointer;
-    }
-    .nav-toggle:hover{ border-color: rgba(198,154,107,.34); }
-    .nav-toggle span{ display:block; width: 16px; height: 2px; background: currentColor; border-radius: 999px; box-shadow: 0 5px 0 currentColor, 0 -5px 0 currentColor; }
-
-    .social{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .iconlink{
-      width: 44px;
-      height: 44px;
-      display:grid;
-      place-items:center;
-      border-radius: 14px;
-      border: 1px solid rgba(76,56,38,.58);
-      background: linear-gradient(135deg, rgba(26,19,14,.58), rgba(18,13,10,.30));
-      color: var(--text);
-      text-decoration: none;
-      opacity: .9;
-      transition: background .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease;
-    }
-    .iconlink:hover{
-      background: linear-gradient(135deg, rgba(198,154,107,.18), rgba(141,101,70,.16), rgba(216,179,139,.10));
-      border-color: rgba(198,154,107,.32);
-      box-shadow: 0 10px 24px rgba(0,0,0,.20);
-      text-decoration: none;
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-    .iconlink:focus-visible{
-      outline: 2px solid rgba(198,154,107,.65);
-      outline-offset: 2px;
-    }
-    .iconlink svg{ width: 18px; height: 18px; stroke: currentColor; }
-
-    .card{
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(220px 160px at 100% 0%, var(--section-halo, rgba(198,154,107,.10)), transparent 72%),
-        linear-gradient(180deg, rgba(25,19,14,.94), rgba(15,11,8,.90));
-      border: 1px solid rgba(72,53,37,.74);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,244,230,.03);
-      padding: 20px;
-    }
-    .card::before{
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, var(--section-accent, rgba(198,154,107,.95)), var(--section-accent-2, rgba(141,101,70,.78)), rgba(216,179,139,.42), transparent 82%);
-      opacity: .85;
-      pointer-events: none;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 8px;
-      min-height: 44px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(76,56,38,.78);
-      background: rgba(24,18,13,.72);
-      color: var(--text);
-      font-size: 13px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration:none;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
-    }
-    .btn:hover{
-      background: rgba(30,22,16,.94);
-      border-color: rgba(198,154,107,.28);
-      box-shadow: 0 10px 24px rgba(0,0,0,.18);
-      text-decoration:none;
-      transform: translateY(-1px);
-    }
-    .btn.primary{
-      border-color: rgba(198,154,107,.40);
-      background: linear-gradient(135deg, rgba(198,154,107,.24), rgba(141,101,70,.26));
-      box-shadow: 0 12px 28px rgba(0,0,0,.20);
-    }
-    .btn.ghost{ background: linear-gradient(135deg, rgba(24,18,13,.56), rgba(18,13,10,.32)); }
-    .btn.ghost:hover{ background: rgba(28,21,15,.76); }
-
-    .muted{ color: var(--muted); }
-    .small{ font-size: 12px; }
-    .lead{ max-width: 62ch; }
-
-    section{
-      padding: 26px 0;
-      scroll-margin-top: 86px;
-      --section-accent: rgba(198,154,107,.95);
-      --section-accent-2: rgba(141,101,70,.78);
-      --section-halo: rgba(198,154,107,.11);
-    }
-    #home{
-      --section-accent: rgba(216,179,139,.95);
-      --section-accent-2: rgba(141,101,70,.74);
-      --section-halo: rgba(198,154,107,.14);
-    }
-    #research{
-      --section-accent: rgba(198,154,107,.96);
-      --section-accent-2: rgba(111,122,103,.74);
-      --section-halo: rgba(198,154,107,.13);
-    }
-    #members{
-      --section-accent: rgba(166,111,77,.92);
-      --section-accent-2: rgba(216,179,139,.78);
-      --section-halo: rgba(166,111,77,.12);
-    }
-    #engagements{
-      --section-accent: rgba(111,122,103,.95);
-      --section-accent-2: rgba(198,154,107,.76);
-      --section-halo: rgba(111,122,103,.11);
-    }
-    #about{
-      --section-accent: rgba(216,179,139,.95);
-      --section-accent-2: rgba(198,154,107,.76);
-      --section-halo: rgba(216,179,139,.12);
-    }
-    #contact{
-      --section-accent: rgba(166,111,77,.94);
-      --section-accent-2: rgba(198,154,107,.74);
-      --section-halo: rgba(166,111,77,.12);
-    }
-
-    .hero{ padding: 28px 0 12px; }
-    .hero-inner{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    .hero-copy{
-      padding: 22px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(74,55,39,.72);
-      background:
-        radial-gradient(220px 160px at 14% 18%, rgba(198,154,107,.12), transparent 72%),
-        radial-gradient(260px 180px at 92% 0%, rgba(111,122,103,.10), transparent 74%),
-        linear-gradient(145deg, rgba(28,21,15,.90), rgba(16,12,9,.72));
-      box-shadow: var(--shadow);
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-family: var(--serif);
-      font-size: 42px;
-      letter-spacing: -.02em;
-      line-height: 1.15;
-      color: #f2e7d9;
-      text-wrap: balance;
-      text-shadow: none;
-    }
-    .hero p{ margin: 0 0 14px; }
-    .hero-actions{ display:flex; gap: 10px; flex-wrap: wrap; }
-
-    .hero-layout{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:40px;
-      flex-wrap:wrap;
-      width:100%;
-    }
-    .hero-heading{ flex:1 1 100%; width:100%; max-width:none; }
-    .hero-heading h1{ max-width: none; }
-    .hero-text{ flex:1 1 420px; min-width:0; }
-    .hero-media{ flex:0 1 360px; text-align:center; width:100%; max-width:360px; }
-    .hero-image{
-      width:100%;
-      max-width:360px;
-      height:auto;
-      aspect-ratio: 3 / 2;
-      object-fit:contain;
-      border-radius:18px;
-      border:1px solid rgba(116,88,63,.64);
-      background: rgba(17,13,10,.36);
-      box-shadow:
-        0 18px 34px rgba(0,0,0,0.42),
-        0 0 0 1px rgba(255,244,230,.03);
-    }
-
-    .section-head{
-      display:flex;
-      justify-content: flex-start;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .section-head h3{
-      margin: 0;
-      font-family: var(--serif);
-      font-size: 26px;
-      letter-spacing: .01em;
-      position: relative;
-      padding-left: 12px;
-    }
-    .section-head h3::before{
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 20px;
-      border-radius: 99px;
-      background: linear-gradient(180deg, var(--section-accent), var(--section-accent-2));
-      opacity: .85;
-    }
-    .section-head p{ margin: 0; color: var(--muted); font-size: 13px; }
-
-    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .grid-3{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-    .eyebrow{
-      display:inline-block;
-      margin-bottom: 8px;
-      color: var(--section-accent);
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-    .compact-list{ margin: 10px 0 0; padding: 0; list-style: none; }
-    .compact-list li{
-      margin: 0 0 10px;
-      padding: 14px;
-      border: 1px solid rgba(72,53,37,.60);
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(24,18,13,.74), rgba(18,13,10,.48));
-    }
-    .compact-list li:last-child{ margin-bottom: 0; }
-    .compact-list strong{ display:block; margin-bottom: 4px; color: #f4f9ff; }
-    .compact-meta{ margin-top: 4px; color: var(--muted); font-size: 13px; }
-    .details-card{
-      margin-top: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(74,55,39,.65);
-      background: linear-gradient(165deg, rgba(20,15,11,.74), rgba(13,10,8,.54));
-    }
-    .details-card summary{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .details-card summary::after{ content:"+"; color: var(--section-accent); font-size: 18px; line-height: 1; }
-    .details-card[open] summary::after{ content:"-"; }
-    .timeline{ margin: 12px 0 0; padding: 0; list-style: none; }
-    .timeline li{
-      position: relative;
-      padding: 0 0 16px 18px;
-      margin: 0;
-      color: rgba(240,229,215,.92);
-      border-left: 1px solid rgba(96,73,52,.42);
-    }
-    .timeline li:last-child{ padding-bottom: 0; }
-    .timeline li::before{
-      content:"";
-      position: absolute;
-      left: -5px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--section-accent), var(--section-accent-2));
-    }
-    .timeline strong{ display:block; margin-bottom: 3px; color: #f5f9ff; }
-    .stat-grid{ display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
-    .stat-card{
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(72,53,37,.58);
-      background: linear-gradient(135deg, rgba(24,18,13,.78), rgba(18,13,10,.44));
-    }
-    .stat-value{ display:block; font-size: 22px; font-weight: 700; color: #f5fbff; }
-.stat-label{ display:block; margin-top: 2px; color: var(--muted); font-size: 12px; }
-    .student-grid{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
-    .student-card{
-      overflow: hidden;
-      border: 1px solid rgba(72,53,37,.62);
-      border-radius: 16px;
-      background: linear-gradient(165deg, rgba(22,17,13,.92), rgba(16,12,10,.80));
-      box-shadow: inset 0 1px 0 rgba(255,244,230,.03);
-    }
-    .student-card-link{
-      display: block;
-      color: inherit;
-      text-decoration: none;
-      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .student-card-link:hover{
-      text-decoration: none;
-      transform: translateY(-1px);
-      border-color: rgba(198,154,107,.34);
-      box-shadow: 0 10px 24px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,244,230,.03);
-      background: linear-gradient(165deg, rgba(28,21,15,.94), rgba(18,13,10,.84));
-    }
-    .student-card-link:focus-visible{
-      outline: 2px solid rgba(198,154,107,.65);
-      outline-offset: 2px;
-      text-decoration: none;
-    }
-    .student-photo{
-      position: relative;
-      aspect-ratio: 1 / 1.05;
-      overflow: hidden;
-      background: radial-gradient(circle at 30% 20%, rgba(198,154,107,.18), transparent 38%), linear-gradient(135deg, rgba(34,26,19,.96), rgba(19,14,11,.88));
-    }
-    .student-photo img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .student-placeholder{
-      width: 100%;
-      height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      text-align: center;
-      color: rgba(240,229,215,.9);
-      font-size: 15px;
-      letter-spacing: .04em;
-    }
-    .student-placeholder strong{
-      display: inline-grid;
-      place-items: center;
-      width: 64px;
-      height: 64px;
-      margin-bottom: 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(198,154,107,.28), rgba(141,101,70,.28), rgba(216,179,139,.24));
-      color: #fff6ec;
-      font-size: 24px;
-      font-weight: 700;
-    }
-    .student-body{ padding: 11px 12px 12px; }
-    .student-body h5{
-      margin: 0 0 4px;
-      font-size: 15px;
-      color: #f5fbff;
-    }
-    .student-body p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.45;
-    }
-    .group-gallery{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      align-items: stretch;
-    }
-    .group-gallery-item{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid rgba(88,66,46,.7);
-      background:
-        radial-gradient(180px 120px at 100% 0%, rgba(198,154,107,.08), transparent 74%),
-        rgba(18,13,10,.92);
-      overflow: hidden;
-    }
-    .group-gallery-item img{
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      padding: 8px;
-    }
-    .group-gallery-item--wide{
-      aspect-ratio: 16 / 9;
-    }
-    .group-gallery-item--mid{
-      grid-column: 1 / -1;
-      aspect-ratio: 21 / 9;
-    }
-    .group-gallery-item--solo{
-      grid-column: 1 / -1;
-      aspect-ratio: 16 / 9;
-    }
-    .group-gallery-row{
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .group-gallery-row--top .group-gallery-item{
-      aspect-ratio: 5 / 1.35;
-    }
-    .group-gallery-row .group-gallery-item{
-      aspect-ratio: 16 / 9;
-    }
-    ul.clean{ margin: 10px 0 0; padding-left: 18px; }
-    ul.clean li{ margin: 7px 0; color: rgba(240,229,215,.94); }
-
-    details{
-      border: 1px solid rgba(72,53,37,.7);
-      background: rgba(17,13,10,.30);
-      border-radius: 14px;
-      padding: 12px 12px;
-      margin-top: 10px;
-    }
-    details summary{
-      cursor: pointer;
-      font-weight: 650;
-      list-style: none;
-      outline: none;
-    }
-    details summary::-webkit-details-marker{ display:none; }
-
-    .kbd{
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 2px 6px;
-      border-radius: 7px;
-      border: 1px solid rgba(72,53,37,.8);
-      background: rgba(25,19,14,.72);
-      color: rgba(240,229,215,.9);
-    }
-
-    .sep{ height: 1px; background: rgba(72,53,37,.55); margin: 8px 0 0; }
-
-    .card-head h2{ margin: 0 0 6px; font-size: 24px; }
-    .card-head p{ margin: 0 0 10px; }
-    .card-body p{ margin: 0 0 10px; }
-    ul.bullets{ margin: 10px 0 0; padding-left: 18px; }
-    ul.bullets li{ margin: 7px 0; }
-    .cta-row{ margin-top: 14px; display:flex; gap: 10px; flex-wrap: wrap; }
-    .compact-callout{
-      padding: 16px 18px;
-      margin-top: 14px;
-      border-color: rgba(201,113,43,.46) !important;
-      background:
-        radial-gradient(380px 220px at 0% 0%, rgba(255,194,102,.18), transparent 64%),
-        linear-gradient(135deg, rgba(66,30,12,.96), rgba(32,14,8,.92)) !important;
-      box-shadow: 0 16px 36px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,236,214,.08);
-    }
-    .compact-callout h3,
-    .compact-callout h4{
-      margin: 0 0 6px;
-      font-family: var(--serif);
-      font-size: 20px;
-      color: #fff4e8;
-    }
-    .compact-callout p{
-      margin: 0;
-      color: rgba(255,239,224,.94);
-    }
-    .compact-callout .eyebrow{
-      color: #ffd29d;
-    }
-    .compact-callout .btn{
-      border-color: rgba(255,196,128,.34);
-      box-shadow: 0 10px 24px rgba(0,0,0,.16);
-    }
-    .compact-callout .btn.ghost{
-      background: rgba(255,244,232,.08);
-    }
-    .compact-callout .btn.primary,
-    .compact-callout .btn:not(.ghost){
-      background: linear-gradient(135deg, rgba(234,154,72,.88), rgba(184,95,35,.92));
-      color: #fffaf4;
-    }
-    .selected-list{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-    .selected-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-    .selected-head p{
-      margin:0;
-      max-width: 58ch;
-      color: var(--muted);
-    }
-    .selected-item{
-      padding: 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(72,53,37,.62);
-      background: linear-gradient(165deg, rgba(22,17,13,.90), rgba(16,12,10,.78));
-    }
-    .selected-item h4{
-      margin: 0 0 8px;
-      font-size: 16px;
-      line-height: 1.35;
-    }
-    .selected-item h4 a{
-      color: var(--text);
-      text-decoration: none;
-    }
-    .selected-item h4 a:hover{ text-decoration: underline; }
-    .selected-meta{
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .selected-actions{
-      display:flex;
-      justify-content:flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .engagement-grid{
-      display:grid;
-      grid-template-columns: 1.25fr 1fr 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-    .engagement-card{
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(72,53,37,.62);
-      background: linear-gradient(165deg, rgba(22,17,13,.90), rgba(16,12,10,.78));
-    }
-    .engagement-card h4{
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-    .engagement-card p{
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .engagement-series{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-    .engagement-series article{
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(72,53,37,.55);
-      background: rgba(17,13,10,.34);
-    }
-    .engagement-series h5{
-      margin: 0 0 4px;
-      font-size: 14px;
-      color: var(--text);
-    }
-    .engagement-series p{
-      margin: 0;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-    .engagement-list{
-      margin: 0;
-      padding-left: 18px;
-      color: rgba(240,229,215,.95);
-    }
-    .engagement-list li{ margin: 0 0 10px; }
-    .engagement-list li:last-child{ margin-bottom: 0; }
-    .engagement-list strong{
-      display:block;
-      margin-bottom: 2px;
-      font-size: 14px;
-      color: var(--text);
-    }
-    .featured-links{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-      align-items:center;
-    }
-    .archive-panel{
-      margin-top: 14px;
-    }
-    .archive-panel summary{
-      font-family: var(--serif);
-      font-size: 18px;
-      color: var(--text);
-    }
-    .archive-panel[open] summary{
-      margin-bottom: 10px;
-    }
-    .archive-note{
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .scrollbox{
-      max-height: 440px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      padding: 10px 10px;
-      margin-top: 10px;
-      border: 1px solid rgba(72,53,37,.7);
-      border-radius: 14px;
-      background: rgba(17,13,10,.30);
-      overscroll-behavior: contain;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(166,111,77,.42) rgba(20,15,11,.48);
-    }
-    .scrollbox::-webkit-scrollbar{ width: 10px; }
-    .scrollbox::-webkit-scrollbar-track{ background: rgba(20,15,11,.48); border-radius: 999px; }
-    .scrollbox::-webkit-scrollbar-thumb{ background: rgba(166,111,77,.32); border-radius: 999px; border: 2px solid rgba(20,15,11,.48); }
-    .scrollbox::-webkit-scrollbar-thumb:hover{ background: rgba(198,154,107,.42); }
-
-    .scrollbox ul.clean{
-      padding-left: 0;
-      margin: 8px 0 0;
-      list-style: none;
-    }
-    .scrollbox ul.clean li{
-      margin: 10px 0;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(72,53,37,.55);
-      background: rgba(17,13,10,.34);
-      line-height: 1.55;
-    }
-    .scrollbox ul.clean li:hover{
-      border-color: rgba(198,154,107,.25);
-      background: linear-gradient(135deg, rgba(26,19,14,.44), rgba(19,14,11,.30));
-    }
-    .scrollbox ul.clean li em{ color: rgba(240,229,215,.95); font-style: normal; font-weight: 650; }
-    .scrollbox ul.clean li a{ text-decoration: none; border-bottom: 1px dashed rgba(198,154,107,.35); }
-    .scrollbox ul.clean li a:hover{ border-bottom-color: rgba(198,154,107,.7); }
-
-    .filterbar{
-      margin-top: 12px;
-      padding: 12px;
-      border: 1px solid rgba(72,53,37,.7);
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(18,13,10,.44), rgba(28,21,15,.28));
-    }
-    .filterbar input,
-    .filterbar select{
-      width:100%;
-      padding:10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(72,53,37,.8);
-      background: linear-gradient(180deg, rgba(24,18,13,.82), rgba(18,13,10,.62));
-      color: var(--text);
-    }
-    .filterbar input:focus-visible,
-    .filterbar select:focus-visible,
-    .filterbar button:focus-visible{
-      outline: 2px solid rgba(198,154,107,.65);
-      outline-offset: 2px;
-    }
-
-    section.band{ position: relative; }
-    section.band::before{
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(32,24,18,.28), rgba(14,11,8,0));
-      border: 1px solid rgba(141,101,70,.16);
-      border-left: none;
-      border-right: none;
-      pointer-events: none;
-    }
-
-    .skip{
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(76,56,38,.8);
-      background: rgba(20,15,11,.94);
-      color: var(--text);
-      transform: translateY(-160%);
-      transition: transform .15s ease;
-      z-index: 999;
-    }
-    .skip:focus{ transform: translateY(0); }
-
-    footer{
-      margin-top: 20px;
-      padding: 16px 0 28px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .footer-card{
-      margin-top: 10px;
-      padding: 10px 14px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(72,53,37,.72);
-      background:
-        radial-gradient(220px 140px at 100% 0%, rgba(198,154,107,.10), transparent 74%),
-        linear-gradient(180deg, rgba(24,18,13,.82), rgba(14,11,8,.50));
-      box-shadow: 0 14px 28px rgba(0,0,0,.20);
-    }
-    .footer-title{ margin:0 0 6px; font-family: var(--serif); font-weight: 600; letter-spacing: .04em; color: rgba(240,229,215,.95); }
-    .footer-meta{ margin: 0; color: var(--muted); line-height: 1.55; }
-    .footer-bottom{
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .footer-bottom .social{
-      margin-left: auto;
-      gap: 8px;
-    }
-    .license{
-      display:flex;
-      align-items:center;
-      gap: 6px;
-      flex-wrap: wrap;
-      color: rgba(240,229,215,.92);
-    }
-    .footer-stamp{
-      text-align: right;
-      padding: 6px 10px;
-      border: 1px solid rgba(88,66,46,.55);
-      border-radius: 999px;
-      background: rgba(21,16,12,.78);
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 900px){
-      .grid-2{ grid-template-columns: 1fr; }
-      .grid-3{ grid-template-columns: 1fr; }
-      .stat-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .student-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .selected-list{ grid-template-columns: 1fr; }
-      .engagement-grid{ grid-template-columns: 1fr; }
-      .engagement-series{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .topbar{ position: static; }
-      .topbar-inner{
-        justify-content: flex-start;
-        gap: 12px;
-      }
-      .brand{
-        margin-right: auto;
-      }
-      .brand{ min-width: auto; }
-      .topbar-inner{ align-items: center; flex-wrap: wrap; gap: 12px; }
-      .nav-toggle{ display:inline-flex; margin-left: auto; }
-      .nav{
-        display:none;
-        width: 100%;
-        margin-top: 2px;
-        padding: 10px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        border: 1px solid rgba(72,53,37,.75);
-        border-radius: 16px;
-        background: linear-gradient(180deg, rgba(23,17,13,.96), rgba(15,11,8,.94));
-        box-shadow: 0 18px 34px rgba(0,0,0,.24);
-      }
-      .topbar.nav-open .nav{ display:flex; }
-      .nav a{ white-space: normal; }
-      .footer-bottom{ align-items: flex-start; justify-content:flex-start; }
-      .footer-bottom .social{ margin-left: 0; }
-      .footer-stamp{ text-align: left; }
-    }
-
-    @media (max-width: 600px){
-      .wrap{ padding: 16px; }
-      .topbar-inner{ padding: 12px 16px; align-items: stretch; }
-      .brand h1{ font-size: 15px; }
-      .brand p{ font-size: 11px; }
-      .nav-toggle{ width: 100%; justify-content: center; }
-      .nav a{ padding: 10px 12px; font-size: 12px; }
-      .hero h1{ font-size: 32px; }
-      .hero-layout{ flex-direction: column; align-items: flex-start; gap: 18px; }
-      .hero-text{ flex-basis: auto; width: 100%; }
-      .hero-media{ max-width: 220px; }
-      .scrollbox{ max-height: none; overflow-y: visible; }
-      .pub-filter{ grid-template-columns: 1fr !important; }
-      .conf-filter{ grid-template-columns: 1fr !important; }
-      .stat-grid{ grid-template-columns: 1fr; }
-      .student-grid{ grid-template-columns: 1fr; }
-      .engagement-series{ grid-template-columns: 1fr; }
-      .group-gallery{ grid-template-columns: 1fr; }
-      .group-gallery-item--wide,
-      .group-gallery-item--mid,
-      .group-gallery-item--solo{
-        aspect-ratio: 16 / 10;
-      }
-      .group-gallery-row{
-        grid-template-columns: 1fr;
-      }
-      .group-gallery-row--top .group-gallery-item{
-        aspect-ratio: 16 / 6;
-      }
-      .group-gallery-row .group-gallery-item{
-        aspect-ratio: 16 / 10;
-      }
-    }
-
-    @media (hover: none) and (pointer: coarse){
-      .scrollbox{
-        max-height: none;
-        overflow-y: visible;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior: auto; }
-      *{ transition: none !important; }
-    }
-
-    .nav a:focus-visible,
-    .btn:focus-visible,
-    details summary:focus-visible{
-      outline: 2px solid rgba(198,154,107,.65);
-      outline-offset: 2px;
-      text-decoration: none;
-    }
-  </style>
-  <link rel="canonical" href="https://anooplab.github.io/">
-
-  <!-- Open Graph / LinkedIn -->
-  <meta property="og:title" content="Anoop Lab | Computational Chemistry at Digital University Kerala">
-  <meta property="og:description" content="Anoop Lab at Digital University Kerala works on computational chemistry, molecular discovery, automated structure exploration, reaction mechanisms, and machine-learning-assisted quantum chemistry.">
+  <meta property="og:title" content="AnoopLab | Computational Chemistry, Scientific Software and Molecular Discovery">
+  <meta property="og:description" content="Scientific software, chemical-space exploration, explainable machine learning, and computational molecular and materials discovery.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anooplab.github.io/">
-  <meta property="og:site_name" content="Anoop Lab">
+  <meta property="og:site_name" content="AnoopLab">
   <meta property="og:locale" content="en_IN">
-  <meta property="og:image" content="https://anooplab.github.io/images/AL-hero-img.png">
-  <meta property="og:image:alt" content="AnoopLab hero image with campus and computational chemistry visual theme">
-
-  <!-- Twitter/X -->
+  <meta property="og:image" content="https://anooplab.github.io/images/AL-research-workflow.png">
+  <meta property="og:image:alt" content="AnoopLab computational research workflow">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Anoop Lab | Computational Chemistry at Digital University Kerala">
-  <meta name="twitter:description" content="Anoop Lab at Digital University Kerala works on computational chemistry, molecular discovery, automated structure exploration, reaction mechanisms, and machine-learning-assisted quantum chemistry.">
-  <meta name="twitter:image" content="https://anooplab.github.io/images/AL-hero-img.png">
-  <meta name="twitter:image:alt" content="AnoopLab hero image with campus and computational chemistry visual theme">
+  <meta name="twitter:title" content="AnoopLab | Computational Chemistry and Molecular Discovery">
+  <meta name="twitter:description" content="Scientific software, chemical-space exploration, explainable machine learning, and computational molecular and materials discovery.">
+  <meta name="twitter:image" content="https://anooplab.github.io/images/AL-research-workflow.png">
 
-  <!-- Structured data for group identity -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1021,25 +38,13 @@
         "@type": "WebSite",
         "@id": "https://anooplab.github.io/#website",
         "url": "https://anooplab.github.io/",
-        "name": "Anoop Lab",
-        "description": "Computational chemistry and molecular discovery at Digital University Kerala."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://anooplab.github.io/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://anooplab.github.io/"
-          }
-        ]
+        "name": "AnoopLab",
+        "description": "Computational chemistry, scientific software, and molecular discovery."
       },
       {
         "@type": "Organization",
         "@id": "https://anooplab.github.io/#organization",
-        "name": "Anoop Lab",
+        "name": "AnoopLab",
         "url": "https://anooplab.github.io/",
         "logo": "https://anooplab.github.io/apple-touch-icon.png",
         "member": {
@@ -1054,21 +59,22 @@
           "url": "https://duk.ac.in/"
         },
         "knowsAbout": [
-          "Computational chemistry",
+          "Scientific software for computational chemistry",
+          "Reproducible computational workflows",
+          "Explainable artificial intelligence for molecular science",
+          "Machine-learning-enabled quantum chemistry",
           "Chemical space exploration",
-          "Molecular structure prediction",
-          "Nanocluster structure prediction",
-          "Reaction discovery",
-          "Machine learning potentials",
-          "Quantum chemistry"
+          "Reaction network exploration",
+          "Molecular and nanocluster structure prediction",
+          "Global optimisation",
+          "Computational materials discovery"
         ],
         "sameAs": [
           "https://github.com/anooplab",
-          "https://duk.ac.in/"
-        ],
-        "mainEntityOfPage": {
-          "@id": "https://anooplab.github.io/#website"
-        }
+          "https://hydromol.github.io/",
+          "https://orcid.org/0000-0002-8116-5506",
+          "https://scholar.google.com/citations?user=QgKaomgAAAAJ"
+        ]
       }
     ]
   }
@@ -1076,807 +82,224 @@
 </head>
 
 <body>
-  <header class="topbar" role="banner">
-    <div class="topbar-inner">
-      <a class="brand" href="#home" aria-label="AnoopLab home">
-        <img class="brand-mark" src="apple-touch-icon.png" alt="" width="52" height="52" />
-        <span class="brand-text">
-          <span class="brand-title">AnoopLab</span>
-          <span class="brand-subtitle">Computational Chemistry Group</span>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="identity" href="#top" aria-label="AnoopLab home">
+        <img src="/apple-touch-icon.png" alt="" width="46" height="46">
+        <span>
+          <strong>AnoopLab</strong>
+          <small>Computational Chemistry Group</small>
         </span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
-        <span aria-hidden="true"></span>
-        Menu
-      </button>
-
-      <nav class="nav" id="site-nav" aria-label="Primary navigation">
-        <a href="#home">Home</a>
+      <nav aria-label="Primary navigation">
         <a href="#research">Research</a>
-        <a href="#software">Software</a>
-        <a href="#members">People</a>
-        <a href="#selected-work">Publications</a>
+        <a href="#evidence">Selected work</a>
+        <a href="#software">Software &amp; data</a>
+        <a href="#people">People</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap" role="main" id="main">
-    <section id="home" class="card">
-      <div class="hero-layout">
-        <div class="hero-heading">
-          <p class="eyebrow" style="margin-bottom:10px;">Research at Digital University Kerala</p>
-          <h1>Computational Chemistry and Molecular Discovery</h1>
-        </div>
-        <div class="hero-text">
-          <p class="lead" style="font-size:18px; color:#f5fbff; margin-bottom:8px;">
-            <a href="https://duk.ac.in/" target="_blank" rel="noreferrer noopener">Digital University Kerala</a>
-          </p>
-          <p class="lead">
-            We work in computational chemistry and molecular discovery, with interests spanning chemical space exploration, molecular and nanocluster structure prediction, reaction discovery, and machine-learning-enabled quantum-chemical workflows. The group develops automated and reliable approaches for exploring structures, properties, and reactivity across complex chemical systems.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#research" aria-label="Jump to research">Research</a>
-            <a class="btn ghost" href="#members" aria-label="Jump to people">People</a>
-            <a class="btn ghost" href="#selected-work" aria-label="Jump to publications preview">Publications</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <img
-            src="images/AL-hero-img.png"
-            alt="AnoopLab research-forward campus hero image"
-            width="960"
-            height="640"
-            loading="eager"
-            class="hero-image"
-            style="border-radius:18px; box-shadow:0 18px 42px rgba(0,0,0,.26);"
-          >
-        </div>
-      </div>
-    </section>
-
-
-    <section id="research" class="card" aria-label="Research">
-      <span class="eyebrow">Research at a glance</span>
-      <div class="card-head">
-        <h2>Research</h2>
-        <p class="muted">Computational methods for structure, reactivity, and molecular discovery.</p>
-        <div class="stat-grid">
-          <div class="stat-card"><span class="stat-value">Automated chemical discovery</span><span class="stat-label">Chemical space workflows</span><div class="compact-meta">Structure generation, global optimisation, and systematic exploration of chemical space.</div></div>
-          <div class="stat-card"><span class="stat-value">AI/ML-Enhanced Computational Chemistry</span><span class="stat-label">Model and validation loop</span><div class="compact-meta">Fast surrogate modelling combined with quantum-chemical validation where accuracy matters.</div></div>
-          <div class="stat-card"><span class="stat-value">From clusters to materials</span><span class="stat-label">Application range</span><div class="compact-meta">Applications spanning nanoclusters, catalysis, and broader molecular and materials discovery.</div></div>
-          <div class="stat-card"><span class="stat-value">Reproducible workflows</span><span class="stat-label">Reliable computation</span><div class="compact-meta">Transparent, reusable pipelines for exploring structures, properties, and reactivity across complex systems.</div></div>
-        </div>
-      </div>
-
-      <div class="card-body">
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="overline">Computational chemistry · scientific software · molecular discovery</p>
+        <h1 id="hero-title">Tools, chemical space, and interpretable models for molecular discovery.</h1>
+        <p class="hero-lead">
+          AnoopLab is currently based at <a href="https://duk.ac.in/">Digital University Kerala</a>, continuing a computational chemistry research programme developed across Digital University Kerala and IIT Kharagpur.
+        </p>
         <p>
-          We build computational workflows that explore chemical space systematically rather than by ad hoc trial. A typical workflow in the group follows a tight loop: generate candidate structures, optimise globally, learn faster surrogate models, and validate key findings with quantum chemistry.
+          We develop and apply computational methods to explore molecular structure, reactivity, and materials. Machine learning is used judiciously alongside quantum chemistry, with emphasis on chemical interpretation, validation, and reproducible workflows.
         </p>
-
-        <div class="cta-row" style="align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#selected-work" aria-label="Jump to publications">Publications</a>
-            <a class="btn ghost" href="#members" aria-label="Jump to people">People</a>
-          </div>
-          <div class="social" aria-label="Research profiles" style="justify-content:flex-end;">
-            <a class="iconlink" href="https://www.researchgate.net/profile/Anakuthil-Anoop" target="_blank" rel="noreferrer noopener" aria-label="ResearchGate" title="ResearchGate">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 20V4" />
-                <path d="M4 4h9a5 5 0 0 1 0 10H9" />
-                <path d="M9 14h1a6 6 0 0 1 6 6" />
-                <circle cx="17" cy="9" r="3" />
-              </svg>
-            </a>
-            <a class="iconlink" href="https://orcid.org/0000-0002-8116-5506" target="_blank" rel="noreferrer noopener" aria-label="ORCID" title="ORCID">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M9 7v10" />
-                <path d="M11 7h3.5a3.5 3.5 0 0 1 0 7H11" />
-              </svg>
-            </a>
-            <a class="iconlink" href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer noopener" aria-label="Google Scholar" title="Google Scholar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 8l9-4 9 4-9 4-9-4z" />
-                <path d="M7 10v5c0 1 2.5 3 5 3s5-2 5-3v-5" />
-                <path d="M21 8v6" />
-              </svg>
-            </a>
-            <a class="iconlink" href="https://www.scopus.com/authid/detail.uri?authorId=6508191130" target="_blank" rel="noreferrer noopener" aria-label="Scopus Author ID" title="Scopus Author ID">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
-                <path d="M7 8h10" />
-                <path d="M7 12h10" />
-                <path d="M7 16h6" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="sep"></div>
+        <nav class="text-links" aria-label="Primary links">
+          <a href="#research">Research programme <span aria-hidden="true">→</span></a>
+          <a href="/publications/">Full publications <span aria-hidden="true">→</span></a>
+        </nav>
       </div>
+
+      <figure class="workflow-figure">
+        <img src="/images/AL-research-workflow.svg" alt="A four-stage AnoopLab workflow: build software and data, explore chemical space, learn and interpret, then validate and discover using quantum chemistry.">
+        <figcaption>Research workflow: reusable methods connect systematic exploration, interpretable modelling, and chemical validation.</figcaption>
+      </figure>
     </section>
 
-    <section id="software" aria-label="Featured software and methods">
-      <div class="card">
-        <span class="eyebrow">Featured software / methods</span>
-        <h3 style="margin:0 0 8px;">PyAR</h3>
-        <p class="lead" style="margin:0 0 14px;">
-          PyAR supports automated prediction of unknown reactions and geometries of aggregates and atomic clusters. It reflects the group's broader interest in automation-driven exploration of chemical structure and reactivity.
-        </p>
-        <div class="featured-links">
-          <a class="btn primary" href="https://github.com/anooplab/pyar" target="_blank" rel="noreferrer noopener" aria-label="Explore PyAR software on GitHub">Explore software</a>
-          <a class="btn ghost" href="https://github.com/anooplab" target="_blank" rel="noreferrer noopener" aria-label="Open GitHub profile" style="display:inline-flex; align-items:center; gap:8px;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.8c0-1 .1-1.4-.5-2 2.5-.3 5.1-1.2 5.1-5.6 0-1.2-.4-2.3-1.2-3.2.1-.3.5-1.5-.1-3.1 0 0-1-.3-3.2 1.2a11 11 0 0 0-5.8 0C7.1 4.7 6.1 5 6.1 5c-.6 1.6-.2 2.8-.1 3.1-.8.9-1.2 2-1.2 3.2 0 4.4 2.6 5.3 5.1 5.6-.4.4-.6.9-.6 1.8V22"/>
-            </svg>
-            <span>GitHub profile</span>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="selected-work" aria-label="Publications">
-      <div class="card">
-        <div class="selected-head">
+    <section class="section" id="research" aria-labelledby="research-title">
+      <header class="section-intro">
+        <p class="section-number">01 · Research programme</p>
+        <h2 id="research-title">Four connected themes</h2>
+        <p>The programme is organised around methods and questions rather than isolated application areas.</p>
+      </header>
+
+      <ol class="theme-list">
+        <li>
+          <span class="theme-index">01</span>
           <div>
-            <h3 style="margin:0 0 6px;">Publications</h3>
-            <p>A curated mix of recent papers and representative earlier work.</p>
+            <h3>Scientific software and reproducible computational discovery</h3>
+            <p>Reusable tools, documented workflows, and research datasets for chemical structure, reaction, and property exploration. PyAR is the principal software-development programme.</p>
           </div>
-          <div class="selected-actions">
-            <a class="btn ghost" href="/publications/" aria-label="Open the full publications archive">Full Publications</a>
+        </li>
+        <li>
+          <span class="theme-index">02</span>
+          <div>
+            <h3>Explainable AI and machine learning for molecular science</h3>
+            <p>Interpretable structure–property relationships and ML-assisted quantum chemistry, with attention to chemical meaning, validation, and the limits of each model.</p>
           </div>
-        </div>
-        <div class="selected-list" id="selectedWorkList"></div>
-      </div>
-    </section>
-    <script type="application/json" id="selectedWorkData">
-      [
-        {
-          "title": "Computational Exploration of Small Hydrocarbon Networks: A Stochastic Generation and DFT Refinement Framework",
-          "meta": "Journal of Computational Chemistry, 2025",
-          "url": "https://doi.org/10.1002/jcc.70236"
-        },
-        {
-          "title": "A Global Optimizer for Nanoclusters",
-          "meta": "Frontiers in Chemistry, 2019",
-          "url": "https://doi.org/10.3389/fchem.2019.00644"
-        },
-        {
-          "title": "Prebiotic Chemistry of HCN Tetramerization by Automated Reaction Search",
-          "meta": "Chemistry - A European Journal, 2018",
-          "url": "https://doi.org/10.1002/chem.201705492"
-        },
-        {
-          "title": "A tabu-search based strategy for modeling molecular aggregates and binary reactions",
-          "meta": "Computational and Theoretical Chemistry, 2017",
-          "url": "https://doi.org/10.1016/j.comptc.2017.03.040"
-        }
-      ]
-    </script>
-
-<section id="members" aria-label="People">
-      <div class="section-head">
-        <h3>People</h3>
-        <p>The principal investigator, current members, and alumni.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <span class="eyebrow">Current people</span>
-          <h4 style="margin:0 0 8px;">Principal investigator and current members</h4>
-          <div class="student-grid">
-            <a class="student-card student-card-link" href="/anoop/" aria-label="Open the personal page of Anoop Ayyappan">
-              <div class="student-photo">
-                <img src="images/anoop.png" alt="Anoop Ayyappan" loading="lazy" />
-              </div>
-              <div class="student-body">
-                <h5>Anoop Ayyappan</h5>
-                <p>Principal Investigator, Professor at Digital University Kerala.</p>
-                <p>View profile</p>
-              </div>
-            </a>
-
-            <article class="student-card">
-              <div class="student-photo">
-                <img src="images/bhrigu-chakraborty.jpg" alt="Bhrigu Chakraborty" loading="lazy" />
-              </div>
-              <div class="student-body">
-                <h5>Bhrigu Chakraborty</h5>
-                <p>PhD student, jointly supervised with Prof. P. K. Chattaraj.</p>
-              </div>
-            </article>
-
-            <article class="student-card">
-              <div class="student-photo">
-                <img src="images/lazumla-sherpa.png" alt="Lazumla Sherpa" loading="lazy" />
-              </div>
-              <div class="student-body">
-                <h5>Lazumla Sherpa</h5>
-                <p>PhD student, jointly supervised with Prof. S. Bandhyopadyay.</p>
-              </div>
-            </article>
-
-            <article class="student-card">
-              <div class="student-photo">
-                <img src="images/sayan-paul.png" alt="Sayan Paul" loading="lazy" />
-              </div>
-              <div class="student-body">
-                <h5>Sayan Paul</h5>
-                <p>PhD student, jointly supervised with Prof. N. D. Pradeep Singh.</p>
-              </div>
-            </article>
+        </li>
+        <li>
+          <span class="theme-index">03</span>
+          <div>
+            <h3>Automated exploration of chemical space, reactions, and structures</h3>
+            <p>Systematic generation and exploration of molecules, reaction networks, aggregates, and nanoclusters, including global optimisation and multilevel refinement.</p>
           </div>
-        
-        </div>
-
-        <div class="card">
-          <span class="eyebrow">Past members</span>
-          <h4 style="margin:0 0 8px;">Former members</h4>
-          <details class="details-card">
-            <summary>PhD</summary>
-            <div class="student-grid">
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/saibal-jana.png" alt="Saibal Jana" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://www.int.kit.edu/staff_7373.php" target="_blank" rel="noreferrer noopener">Dr. Saibal Jana</a></h5>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/subhajit-mandal.png" alt="Subhajit Mandal" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://scholar.google.com/citations?user=MkiKY0kAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Subhajit Mandal</a></h5>
-                  <p>Jointly with Prof. P. K. Chattaraj.</p>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/surajit-nandi.png" alt="Surajit Nandi" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://scholar.google.com/citations?user=g7bAmuYAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Surajit Nandi</a></h5>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/yogeswara-rao.png" alt="Davaluri Yogeswara Rao" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://www.researchgate.net/profile/Davuluri-Yogeswara-Rao" target="_blank" rel="noreferrer noopener">Dr. Davaluri Yogeswara Rao</a></h5>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/eshani-das.png" alt="Eshani Das" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://chemistry.brown.edu/people/eshani-das" target="_blank" rel="noreferrer noopener">Dr. Eshani Das</a></h5>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/maya-khatun.png" alt="Maya Khatun" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://www.jyu.fi/en/people/maya-khatun" target="_blank" rel="noreferrer noopener">Dr. Maya Khatun</a></h5>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/saikat-roy.png" alt="Saikat Roy" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://saikat248.github.io/" target="_blank" rel="noreferrer noopener">Dr. Saikat Roy</a></h5>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/sunanda-panda.png" alt="Sunanda Panda" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://scholar.google.com/citations?hl=en&amp;user=Ob_wY0EAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Sunanda Panda</a></h5>
-                  <p>Jointly with Dr. Kiran Gore.</p>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/moumita-banerjee.png" alt="Moumita Banerjee" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5><a href="https://scholar.google.com/citations?hl=en&amp;user=Ay6U1kAAAAAJ" target="_blank" rel="noreferrer noopener">Dr. Moumita Banerjee</a></h5>
-                  <p>Jointly with Prof. N. D. Pradeep Singh.</p>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/arpita-poddar.png" alt="Arpita Poddar" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5>Arpita Poddar</h5>
-                  <p>Former PhD student, jointly supervised with Prof. P. K. Chattaraj and Prof. Ganesh V.</p>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/pratik-sarkar.png" alt="Pratik Sarkar" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5>Pratik Sarkar</h5>
-                  <p>Former PhD student, jointly supervised with Prof. Sukanta Mandal.</p>
-                </div>
-              </article>
-
-              <article class="student-card">
-                <div class="student-photo">
-                  <img src="images/sandip-giri.png" alt="Sandip Giri" loading="lazy" />
-                </div>
-                <div class="student-body">
-                  <h5>Sandip Giri</h5>
-                  <p>Former PhD student, jointly supervised with Prof. Ganesan Mani.</p>
-                </div>
-              </article>
-
-            </div>
-          </details>
-
-          <details class="details-card">
-            <summary>MSc</summary>
-            <ul class="clean small">
-              <li>Neeladitya Chowdhuri</li><li>Divyangna Sharma</li><li>Sahil Das</li><li>Devesh Avasthi</li><li>Sumit Nath</li><li>Rajkumar</li><li>Ayusman Chiranjivi</li><li>Sayan Paul</li><li>Aurodeep Panda</li><li>Kamal Singh Nayal</li><li>Dr. Rajat S. Majumder</li><li>Shubham Bhatt</li><li>Dr. Debankur Bhattacharyya</li><li>Rishabh Upadhyay</li><li>Susovan Ghosh</li><li>Ved Agnihotri</li><li>Dr. Viki Kumar Prasad</li><li>Rekha Banasal</li><li>Ayushi Maheswari</li><li>Anurag Sharma</li><li>Kusal Kishku</li><li>Parmeet Kaur</li><li>Rajul Srivastava</li><li>Dr. Vasudevan S.</li><li>Lalchhandama V.</li><li>Shafeek A. S.</li><li>Chandan Jana</li>
-            </ul>
-          </details>
-        </div>
-      </div>
-
-      <details class="details-card archive-panel">
-        <summary>Group photos</summary>
-        <div class="group-gallery" style="margin-top:12px;">
-          <div class="group-gallery-row group-gallery-row--top">
-            <div class="group-gallery-item">
-              <img src="images/Group_photo_2.jpg" alt="AnoopLab group photo 2" loading="lazy" />
-            </div>
-            <div class="group-gallery-item">
-              <img src="images/Group_photo_1.jpg" alt="AnoopLab group photo 1" loading="lazy" />
-            </div>
+        </li>
+        <li>
+          <span class="theme-index">04</span>
+          <div>
+            <h3>Computational molecular and materials discovery</h3>
+            <p>Quantum-chemical and data-driven investigations spanning functional molecules, high-energy-density hydrocarbons, nanoclusters, and materials-oriented chemical problems.</p>
           </div>
-          <div class="group-gallery-item group-gallery-item--mid">
-            <img src="images/Group_photo_sep_2018.jpg" alt="AnoopLab group photo from September 2018" loading="lazy" />
-          </div>
-          <div class="group-gallery-item group-gallery-item--solo">
-            <img src="images/Group_photo_b.jpg" alt="AnoopLab group photo B" loading="lazy" />
-          </div>
-        </div>
-      </details>
+        </li>
+      </ol>
     </section>
 
+    <section class="section evidence" id="evidence" aria-labelledby="evidence-title">
+      <header class="section-intro">
+        <p class="section-number">02 · Scientific evidence</p>
+        <h2 id="evidence-title">Selected work</h2>
+        <p>Recent developments and representative methodological foundations.</p>
+      </header>
 
-    <section id="contact" class="card" aria-labelledby="contact-title">
-  <h3 id="contact-title">Contact</h3>
+      <div class="publication-list">
+        <article>
+          <time datetime="2026">2026</time>
+          <div>
+            <h3><a href="https://doi.org/10.1039/D6TC00707D">Chemical Space Exploration and Molecular Design of Organic Donor–Acceptor TADF Emitters</a></h3>
+            <p><em>Journal of Materials Chemistry C</em> · DOI: 10.1039/D6TC00707D</p>
+          </div>
+        </article>
+        <article>
+          <time datetime="2026">2026</time>
+          <div>
+            <h3><a href="https://doi.org/10.1039/D6SE00364H">Data-Driven Exploration of Synthesizable Strained Hydrocarbons as High-Energy-Density Candidates for Sustainable Aviation Fuels</a></h3>
+            <p><em>Sustainable Energy &amp; Fuels</em> 10, 3240–3251 · DOI: 10.1039/D6SE00364H</p>
+          </div>
+        </article>
+        <article>
+          <time datetime="2025">2025</time>
+          <div>
+            <h3><a href="https://doi.org/10.1002/jcc.70236">Computational Exploration of Small Hydrocarbon Networks: A Stochastic Generation and DFT Refinement Framework</a></h3>
+            <p><em>Journal of Computational Chemistry</em> 46, e70236</p>
+          </div>
+        </article>
+        <article>
+          <time datetime="2019">2019</time>
+          <div>
+            <h3><a href="https://doi.org/10.3389/fchem.2019.00644">A Global Optimizer for Nanoclusters</a></h3>
+            <p><em>Frontiers in Chemistry</em> 7, 644</p>
+          </div>
+        </article>
+        <article>
+          <time datetime="2018">2018</time>
+          <div>
+            <h3><a href="https://doi.org/10.1002/chem.201705492">Prebiotic Chemistry of HCN Tetramerization by Automated Reaction Search</a></h3>
+            <p><em>Chemistry – A European Journal</em> 24, 4885–4894</p>
+          </div>
+        </article>
+        <article>
+          <time datetime="2017">2017</time>
+          <div>
+            <h3><a href="https://doi.org/10.1016/j.comptc.2017.03.040">A Tabu-Search Based Strategy for Modeling Molecular Aggregates and Binary Reactions</a></h3>
+            <p><em>Computational and Theoretical Chemistry</em> 1111, 69–81</p>
+          </div>
+        </article>
+      </div>
 
-  <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+      <p class="section-action"><a href="/publications/">Search the full publication archive <span aria-hidden="true">→</span></a></p>
+    </section>
 
-    <div style="display:flex; align-items:center; gap:10px; font-size:0.95rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2" y="4" width="20" height="16" rx="2"/>
-        <path d="M22 6l-10 7L2 6"/>
-      </svg>
-      <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a>
-    </div>
+    <section class="section" id="software" aria-labelledby="software-title">
+      <header class="section-intro">
+        <p class="section-number">03 · Software and data</p>
+        <h2 id="software-title">Research infrastructure built in the group</h2>
+      </header>
 
-    <div style="display:flex; align-items:center; gap:10px; font-size:0.95rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.5 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 22 16.9z"/>
-      </svg>
-      <a href="tel:+914712788027">+91 471 278 8027</a>
-    </div>
+      <div class="software-layout">
+        <article class="software-feature">
+          <p class="software-label">Flagship programme</p>
+          <h3>PyAR</h3>
+          <p>PyAR supports automated exploration of aggregates, reaction pathways, solvation structures, and atomic clusters. Its continued development is central to the group's ambition in software-enabled computational chemistry.</p>
+          <a href="https://github.com/anooplab/pyar">Repository and documentation <span aria-hidden="true">→</span></a>
+        </article>
 
-    <div style="display:flex; align-items:center; gap:10px; font-size:0.95rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.5 1.5"/>
-        <path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.5-1.5"/>
-      </svg>
+        <div class="software-secondary">
+          <article>
+            <h3>HydroMol</h3>
+            <p>A searchable dataset and chemical-space explorer for hydrocarbons.</p>
+            <a href="https://hydromol.github.io/">Explore HydroMol <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <h3>SSA</h3>
+            <p>An implementation of Gillespie's stochastic simulation algorithm.</p>
+            <a href="https://github.com/anooplab/ssa">View the repository <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:baseline;">
-        <span style="color:var(--muted); font-size:0.85rem;">Principal investigator</span>
-        <a href="/anoop/">
-          anooplab.github.io/anoop
+    <section class="section" id="people" aria-labelledby="people-title">
+      <header class="section-intro">
+        <p class="section-number">04 · People and continuity</p>
+        <h2 id="people-title">Current group</h2>
+        <p>Current researchers are shown here; the complete alumni record is maintained separately.</p>
+      </header>
+
+      <div class="people-grid">
+        <a class="person person-pi" href="/anoop/">
+          <img src="/images/anoop.png" alt="Anoop Ayyappan" loading="lazy">
+          <span><strong>Anoop Ayyappan</strong><small>Principal Investigator · Professor, Digital University Kerala</small></span>
         </a>
+        <article class="person">
+          <img src="/images/bhrigu-chakraborty.jpg" alt="Bhrigu Chakraborty" loading="lazy">
+          <span><strong>Bhrigu Chakraborty</strong><small>PhD student · jointly supervised with Prof. P. K. Chattaraj</small></span>
+        </article>
+        <article class="person">
+          <img src="/images/lazumla-sherpa.png" alt="Lazumla Sherpa" loading="lazy">
+          <span><strong>Lazumla Sherpa</strong><small>PhD student · jointly supervised with Prof. S. Bandhyopadyay</small></span>
+        </article>
+        <article class="person">
+          <img src="/images/sayan-paul.png" alt="Sayan Paul" loading="lazy">
+          <span><strong>Sayan Paul</strong><small>PhD student · jointly supervised with Prof. N. D. Pradeep Singh</small></span>
+        </article>
       </div>
-    </div>
 
-    <!-- Address mini-card -->
-    <div
-      style="
-        display:flex;
-        gap:10px;
-        padding:12px;
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:14px;
-        background:rgba(255,255,255,0.03);
-      "
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        aria-hidden="true" style="margin-top:2px; flex:0 0 auto;">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
-      </svg>
-
-      <div style="min-width:0;">
-        <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:baseline;">
-          <span style="color:var(--muted); font-size:0.85rem;">Office</span>
-          <span>Room 32, Ground Floor</span>
-        </div>
-
-        <div style="margin-top:6px; color:var(--muted); line-height:1.5;">
-          <a href="https://duk.ac.in/" target="_blank" rel="noreferrer noopener">Kerala University of Digital Sciences, Innovation and Technology (Digital University Kerala)</a><br>
-          Technopark Phase IV, Pallipuram, Thiruvananthapuram, Kerala 695317
-        </div>
-
-        <div style="margin-top:8px;">
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Digital%20University%20Kerala%20Thiruvananthapuram"
-            target="_blank"
-            rel="noreferrer noopener"
-            style="font-size:0.9rem;"
-          >
-            View on map
-          </a>
-        </div>
+      <div class="alumni-note">
+        <p><strong>AnoopLab alumni</strong> include former PhD and MSc researchers working across academia, research institutes, and related scientific roles.</p>
+        <a href="/alumni/">Complete alumni record and group photographs <span aria-hidden="true">→</span></a>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-    <footer aria-label="Site footer">
-      <div class="sep"></div>
-
-      <div class="footer-card">
-        <div class="footer-bottom">
-          <div class="license">
-            <span>&copy; <span id="year">2026</span></span>
-            <span style="opacity:.9;"> | </span>
-            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer noopener">CC BY-NC 4.0</a>
-          </div>
-          <div class="social" aria-label="Social links">
-            <a class="iconlink" href="https://twitter.com/A_Anoop_A" target="_blank" rel="noreferrer noopener" aria-label="Twitter" title="Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2-2-.1-3.8-1.4-4.4-3.4.7.1 1.4.1 2-.1-2.2-.4-3.8-2.4-3.8-4.7.6.3 1.3.5 2 .5C1.9 7.5 2.6 5 4.4 3.6c2.2 2.7 5.5 4.5 9.2 4.7-.6-2.8 1.6-5.3 4.5-5.3 1.3 0 2.5.5 3.3 1.4.9-.2 1.8-.5 2.6-1z"/></svg>
-            </a>
-            <a class="iconlink" href="https://github.com/anooplab" target="_blank" rel="noreferrer noopener" aria-label="GitHub" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.8c0-1 .1-1.4-.5-2 2.5-.3 5.1-1.2 5.1-5.6 0-1.2-.4-2.3-1.2-3.2.1-.3.5-1.5-.1-3.1 0 0-1-.3-3.2 1.2a11 11 0 0 0-5.8 0C7.1 4.7 6.1 5 6.1 5c-.6 1.6-.2 2.8-.1 3.1-.8.9-1.2 2-1.2 3.2 0 4.4 2.6 5.3 5.1 5.6-.4.4-.6.9-.6 1.8V22"/></svg>
-            </a>
-            <a class="iconlink" href="https://www.linkedin.com/in/anoop-a-9286125/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" title="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a class="iconlink" href="https://www.facebook.com/profile.php?id=61555278326807" target="_blank" rel="noreferrer noopener" aria-label="Facebook" title="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
-            </a>
-            <a class="iconlink" href="mailto:anoop.a@duk.ac.in" aria-label="Email" title="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
-            </a>
-          </div>
-          <p class="footer-meta footer-stamp">Last updated: <span id="lastUpdated">19 May 2026</span></p>
-        </div>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="section-number">05 · Contact</p>
+        <h2 id="contact-title">AnoopLab</h2>
+        <p>School of Digital Sciences<br>Digital University Kerala<br>Technopark Phase IV, Pallipuram<br>Thiruvananthapuram, Kerala 695317</p>
       </div>
-    </footer>
+      <div class="contact-links">
+        <a href="mailto:anoop.a@duk.ac.in">anoop.a@duk.ac.in</a>
+        <a href="tel:+914712788027">+91&nbsp;471&nbsp;278&nbsp;8027</a>
+        <a href="https://scholar.google.com/citations?user=QgKaomgAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-8116-5506">ORCID</a>
+        <a href="https://github.com/anooplab">GitHub</a>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const norm = (s) => String(s || '').toLowerCase().replace(/\s+/g,' ').trim();
-
-    function extractYear(text){
-      const t = String(text || '');
-      const m1 = t.match(/\((19|20)\d{2}\)/);
-      if(m1) return m1[0].slice(1,5);
-      const m2 = t.match(/\b(19|20)\d{2}\b/);
-      return m2 ? m2[0] : '';
-    }
-
-    function hardenBlankTargets(root){
-      const el = root || document;
-      el.querySelectorAll('a[target="_blank"]').forEach(a => {
-        const rel = String(a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
-        const set = new Set(rel);
-        set.add('noreferrer');
-        set.add('noopener');
-        a.setAttribute('rel', Array.from(set).join(' '));
-      });
-    }
-
-    function setupFilter({listSelector, searchId, yearId, clearId, countId}){
-      const ul = document.querySelector(listSelector);
-      if(!ul) return;
-
-      const input = document.getElementById(searchId);
-      const yearSel = document.getElementById(yearId);
-      const clearBtn = document.getElementById(clearId);
-      const countEl = document.getElementById(countId);
-      if(!input || !yearSel || !clearBtn || !countEl) return;
-
-      const items = Array.from(ul.querySelectorAll('li'));
-      const years = new Set();
-
-      items.forEach(li => {
-        const y = extractYear(li.textContent);
-        li.dataset.year = y;
-        if(y) years.add(y);
-      });
-
-      const existing = new Set(Array.from(yearSel.querySelectorAll('option')).map(o => o.value));
-      Array.from(years)
-        .sort((a,b) => Number(b) - Number(a))
-        .forEach(y => {
-          if(existing.has(y)) return;
-          const opt = document.createElement('option');
-          opt.value = y;
-          opt.textContent = y;
-          yearSel.appendChild(opt);
-        });
-
-      function apply(){
-        const q = norm(input.value);
-        const y = yearSel.value;
-        let shown = 0;
-
-        items.forEach(li => {
-          const okQ = !q || norm(li.textContent).includes(q);
-          const okY = !y || li.dataset.year === y;
-          const show = okQ && okY;
-          li.style.display = show ? '' : 'none';
-          if(show) shown++;
-        });
-
-        countEl.textContent = `${shown}/${items.length}`;
-      }
-
-      apply();
-
-      input.addEventListener('input', apply);
-      yearSel.addEventListener('change', apply);
-      clearBtn.addEventListener('click', () => {
-        input.value = '';
-        yearSel.value = '';
-        apply();
-        input.focus();
-      });
-      input.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape'){
-          input.value = '';
-          apply();
-        }
-      });
-    }
-
-    function initFooterDates(){
-      try{
-        const yearEl = document.getElementById('year');
-        if(yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-        const lastEl = document.getElementById('lastUpdated');
-        if(lastEl){
-          const d = new Date(document.lastModified);
-          const fmt = new Intl.DateTimeFormat('en-GB', { day:'2-digit', month:'short', year:'numeric' });
-          lastEl.textContent = fmt.format(d);
-        }
-      }catch(_e){}
-    }
-
-    function initMobileNav(){
-      const topbar = document.querySelector('.topbar');
-      const toggle = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('site-nav');
-      if(!topbar || !toggle || !nav) return;
-
-      function closeMenu(){
-        topbar.classList.remove('nav-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open navigation menu');
-      }
-
-      function openMenu(){
-        topbar.classList.add('nav-open');
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'Close navigation menu');
-      }
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        expanded ? closeMenu() : openMenu();
-      });
-
-      nav.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', () => {
-          if(window.matchMedia('(max-width: 900px)').matches) closeMenu();
-        });
-      });
-
-      window.addEventListener('resize', () => {
-        if(!window.matchMedia('(max-width: 900px)').matches) closeMenu();
-      }, { passive: true });
-
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') closeMenu();
-      });
-
-      closeMenu();
-    }
-
-    function initSelectedWork(){
-      const list = document.getElementById('selectedWorkList');
-      const dataEl = document.getElementById('selectedWorkData');
-      const pubList = document.getElementById('pubList');
-      if(!list || !dataEl) return;
-
-      let items = [];
-      try{
-        items = JSON.parse(dataEl.textContent);
-      }catch(_e){
-        return;
-      }
-
-      const permanentItems = Array.isArray(items) ? items : [];
-      const seenTitles = new Set(permanentItems.map(item => norm(item && item.title)));
-      const excludedRecentUrls = new Set(['https://doi.org/10.1093/nar/gkag397']);
-
-      function collectRecentItems(source, limit){
-        const recentItems = [];
-        if(!source) return recentItems;
-
-        Array.from(source.querySelectorAll('li')).forEach((li) => {
-          if(recentItems.length >= limit) return;
-
-          const titleNode = li.childNodes[0];
-          const title = titleNode ? String(titleNode.textContent || '').trim().replace(/\.$/, '') : '';
-          const journal = li.querySelector('em');
-          const year = extractYear(li.textContent);
-          const metaParts = [];
-
-          if(journal) metaParts.push(journal.textContent.trim());
-          if(year) metaParts.push(year);
-
-          if(!title || seenTitles.has(norm(title))) return;
-
-          const firstLink = li.querySelector('a[href]');
-          const url = firstLink ? firstLink.getAttribute('href') : '';
-          if(url && excludedRecentUrls.has(url.toLowerCase())) return;
-
-          recentItems.push({
-            title,
-            meta: metaParts.join(', '),
-            url
-          });
-          seenTitles.add(norm(title));
-        });
-
-        return recentItems;
-      }
-
-      function renderSelected(itemsToRender){
-        list.innerHTML = '';
-        itemsToRender.forEach((item) => {
-          if(!item || !item.title || !item.meta) return;
-          const article = document.createElement('article');
-          article.className = 'selected-item';
-
-          const title = item.url
-            ? `<a href="${item.url}" target="_blank" rel="noreferrer noopener">${item.title}</a>`
-            : item.title;
-
-          article.innerHTML = `
-            <h4>${title}</h4>
-            <div class="selected-meta">${item.meta}</div>
-          `;
-
-          list.appendChild(article);
-        });
-      }
-
-      async function load(){
-        let recentItems = collectRecentItems(pubList, 2);
-
-        if(recentItems.length < 2){
-          try{
-            const response = await fetch('/publications/index.html', { credentials: 'same-origin' });
-            if(response.ok){
-              const html = await response.text();
-              const doc = new DOMParser().parseFromString(html, 'text/html');
-              recentItems = collectRecentItems(doc.getElementById('pubList'), 2);
-            }
-          }catch(_e){}
-        }
-
-        renderSelected([...recentItems, ...permanentItems].slice(0, 6));
-      }
-
-      load();
-    }
-
-    function activeNav(){
-      const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
-      const map = new Map(navLinks.map(a => [a.getAttribute('href'), a]));
-
-      const ids = navLinks
-        .map(a => a.getAttribute('href'))
-        .filter(Boolean)
-        .map(h => h.slice(1));
-
-      const sections = ids
-        .map(id => document.getElementById(id))
-        .filter(Boolean);
-
-      function setActiveById(id){
-        navLinks.forEach(a => a.classList.remove('active'));
-        const link = map.get('#' + id);
-        if(link) link.classList.add('active');
-      }
-
-      function setDefaultActive(){
-        const hashId = (location.hash || '').slice(1);
-        if(hashId && document.getElementById(hashId)){
-          setActiveById(hashId);
-          return;
-        }
-        const top = 86;
-        const best = sections
-          .map(s => ({ s, r: s.getBoundingClientRect() }))
-          .filter(x => x.r.bottom > top)
-          .sort((a,b) => Math.abs(a.r.top - top) - Math.abs(b.r.top - top))[0];
-        if(best) setActiveById(best.s.id);
-      }
-
-      setDefaultActive();
-
-      if(!('IntersectionObserver' in window) || sections.length === 0) return;
-
-      const io = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if(!visible) return;
-
-        setActiveById(visible.target.id);
-      }, { rootMargin: '-35% 0px -55% 0px', threshold: [0.05, 0.15, 0.35] });
-
-      sections.forEach(s => io.observe(s));
-
-      window.addEventListener('hashchange', () => {
-        const id = (location.hash || '').slice(1);
-        if(id && document.getElementById(id)) setActiveById(id);
-      }, { passive: true });
-
-      window.addEventListener('load', setDefaultActive, { passive: true });
-    }
-
-    hardenBlankTargets(document);
-    initMobileNav();
-    initSelectedWork();
-    initFooterDates();
-    activeNav();
-  </script>
+  <footer class="site-footer">
+    <p>© 2026 AnoopLab · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
+    <p>Last updated: <time datetime="2026-07-11">11 July 2026</time></p>
+  </footer>
 </body>
 </html>
-
-
-
-
-
