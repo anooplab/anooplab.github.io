@@ -925,29 +925,29 @@
       .pub-filter.filterbar > div:last-child{justify-content:flex-start !important;}
     }
   </style>
+  <link rel="stylesheet" href="../css/lab.css">
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
-        <span aria-hidden="true"></span>
-        Menu
-      </button>
-
-      <nav class="nav" id="site-nav" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/#research">Research</a>
-        <a href="/#software">Software</a>
-        <a href="/#members">People</a>
-        <a href="/publications/" class="active">Publications</a>
-        <a href="/anoop/">PI</a>
-        <a href="/#contact">Contact</a>
+<body class="archive-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="identity" href="../" aria-label="AnoopLab home">
+        <img src="../apple-touch-icon.png" alt="" width="46" height="46">
+        <span><strong>AnoopLab</strong><small>Computational Chemistry Group</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../#research">Research</a>
+        <a href="../#evidence" aria-current="page">Publications</a>
+        <a href="../#software">Software &amp; data</a>
+        <a href="../#people">People</a>
+        <a href="../anoop/">PI</a>
+        <a href="../#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap pub-page-main" role="main" id="main">
-    <section class="band" aria-labelledby="publications-title">
+  <main class="archive-main pub-page-main" id="main">
+    <section class="archive-section" aria-labelledby="publications-title">
       <div class="section-head pub-page-head">
         <h1 id="publications-title">Full Publications</h1>
         <p class="archive-intro">This page gathers the full journal-article archive in one place. Search by keyword, filter by year, and follow DOI links directly from each entry.</p>
@@ -956,7 +956,7 @@
       <div class="card archive-shell">
         <div class="pub-page-actions">
           <a class="btn primary" href="/">Return to homepage</a>
-          <a class="btn ghost" href="/#selected-work">Back to publications preview</a>
+          <a class="btn ghost" href="../#evidence">Back to publications preview</a>
         </div>
 
         <div>
@@ -1220,24 +1220,12 @@
       </div>
     </section>
 
-    <footer class="site-footer" style="padding-top:0;">
-      <div class="footer-inner">
-        <div class="footer-top">
-          <p class="footer-title">Anoop Ayyappan</p>
-          <p class="footer-meta">Computational chemistry, automation-driven molecular discovery, and theoretical methods for chemical systems.</p>
-        </div>
-
-        <div class="footer-bottom">
-          <div class="license">
-            <span>&copy; <span id="year">2026</span></span>
-            <span style="opacity:.9;"> | </span>
-            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer noopener">CC BY-NC 4.0</a>
-          </div>
-          <p class="footer-meta footer-stamp">Last updated: <span id="lastUpdated">02 Aug 2026</span></p>
-        </div>
-      </div>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> AnoopLab · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
+    <p><a href="../">Return to homepage</a></p>
+  </footer>
 
   <script>
     const norm = (s) => String(s || '').toLowerCase().replace(/\s+/g,' ').trim();

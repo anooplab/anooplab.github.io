@@ -355,28 +355,29 @@
       .filterbar{ grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="../css/lab.css">
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
-        <span aria-hidden="true"></span>
-        Menu
-      </button>
-      <nav class="nav" id="site-nav" aria-label="Primary navigation">
-        <a href="/anoop/">Home</a>
-        <a href="/anoop/#research">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/engagements/" class="active">Engagements</a>
-        <a href="/anoop/#about">About</a>
-        <a href="/anoop/#contact">Contact</a>
-        <a href="/">Group</a>
+<body class="archive-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="identity" href="../" aria-label="AnoopLab home">
+        <img src="../apple-touch-icon.png" alt="" width="46" height="46">
+        <span><strong>AnoopLab</strong><small>Computational Chemistry Group</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../#research">Research</a>
+        <a href="../#evidence">Publications</a>
+        <a href="../#software">Software &amp; data</a>
+        <a href="../#people">People</a>
+        <a href="../anoop/" aria-current="page">PI</a>
+        <a href="../#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap" role="main" id="main">
-    <section class="band" aria-labelledby="engagements-title">
+  <main class="archive-main" id="main">
+    <section class="archive-section" aria-labelledby="engagements-title">
       <div class="section-head">
         <h1 id="engagements-title">Engagements</h1>
         <p>A full archive of conferences, invited talks, workshops, and related academic activity.</p>
@@ -385,7 +386,7 @@
       <div class="card">
         <div class="pub-page-actions">
           <a class="btn" href="/">Return to homepage</a>
-          <a class="btn ghost" href="/#engagements">Back to engagements preview</a>
+          <a class="btn ghost" href="../anoop/#engagements">Back to engagements preview</a>
         </div>
 
         <div>
@@ -464,22 +465,13 @@
         </div>
       </div>
 
-      <footer class="site-footer">
-        <div class="footer-inner">
-          <p class="footer-title">Anoop Ayyappan</p>
-          <p class="footer-meta">Computational chemistry, automation-driven molecular discovery, and theoretical methods for chemical systems.</p>
-          <div class="footer-bottom">
-            <div>
-              <span>&copy; <span id="year">2026</span></span>
-              <span style="opacity:.9;"> | </span>
-              <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer noopener">CC BY-NC 4.0</a>
-            </div>
-            <p class="footer-meta" style="margin:0;">Last updated: <span id="lastUpdated">04 Apr 2026</span></p>
-          </div>
-        </div>
-      </footer>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> AnoopLab · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
+    <p><a href="../anoop/">Return to PI page</a></p>
+  </footer>
 
   <script>
     const norm = (s) => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
