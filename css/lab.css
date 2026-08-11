@@ -404,8 +404,14 @@ h1 {
 }
 
 .person-pi img { border-color: var(--oxide); }
-.person span { display: grid; padding-top: 15px; }
-.person strong { font-family: var(--serif); font-size: 21px; font-weight: 600; }
+.person-meta { display: grid; padding-top: 15px; }
+.person strong,
+.person h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+}
 .person small { margin-top: 5px; color: var(--ink-soft); font-size: 13px; line-height: 1.45; }
 
 .alumni-note {

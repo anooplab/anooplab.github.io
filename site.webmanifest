@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "AnoopLab Computational Chemistry Group",
+    "short_name": "AnoopLab",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +15,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "theme_color": "#f2eee5",
+    "background_color": "#f2eee5",
+    "display": "minimal-ui"
 }
