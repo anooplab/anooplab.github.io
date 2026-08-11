@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Our research asks how computation can explore molecular and reaction space without losing chemical meaning.">
+  <meta name="description" content="Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="AnoopLab">
   <meta name="theme-color" content="#f2eee5" data-light="#f2eee5" data-dark="#111713">
@@ -16,7 +16,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/css/lab.css">
   <meta property="og:title" content="Research | AnoopLab">
-  <meta property="og:description" content="Our research asks how computation can explore molecular and reaction space without losing chemical meaning.">
+  <meta property="og:description" content="Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://anooplab.github.io/research/">
   <meta property="og:site_name" content="AnoopLab">
@@ -27,7 +27,7 @@
   <meta property="og:image:alt" content="AnoopLab computational research workflow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Research | AnoopLab">
-  <meta name="twitter:description" content="Our research asks how computation can explore molecular and reaction space without losing chemical meaning.">
+  <meta name="twitter:description" content="Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.">
   <meta name="twitter:image" content="https://anooplab.github.io/images/AL-research-workflow.png">
   <script>
     (() => { try { const theme = localStorage.getItem('anooplab-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch (_) {} })();
@@ -42,7 +42,7 @@
       "@id": "https://anooplab.github.io/research/#page",
       "url": "https://anooplab.github.io/research/",
       "name": "Research | AnoopLab",
-      "description": "Our research asks how computation can explore molecular and reaction space without losing chemical meaning.",
+      "description": "Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.",
       "dateModified": "2026-08-11",
       "isPartOf": {
         "@id": "https://anooplab.github.io/#website"
@@ -60,11 +60,11 @@
         },
         {
           "@type": "Thing",
-          "name": "Scientific software"
+          "name": "Automated chemical exploration"
         },
         {
           "@type": "Thing",
-          "name": "Chemical space exploration"
+          "name": "Scientific machine learning"
         },
         {
           "@type": "Thing",
@@ -134,34 +134,37 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Research</span></nav>
       <p class="overline">Scientific agenda</p>
       <h1>Research</h1>
-      <p class="research-page-deck">Our research asks how computation can explore molecular and reaction space without losing chemical meaning.</p>
+      <p class="research-page-deck">Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.</p>
     </header>
     <div class="research-page-layout">
         <aside class="research-toc" aria-label="On this page">
           <p>On this page</p>
-          <a href="#automated-exploration">Automated exploration</a>
-          <a href="#molecular-aggregates-nanoclusters-and-nanoalloys">Molecular aggregates, nanoclusters and nanoalloys</a>
-          <a href="#astrochemical-and-prebiotic-space">Astrochemical and prebiotic space</a>
-          <a href="#molecular-discovery-and-functional-materials">Molecular discovery and functional materials</a>
-          <a href="#group-research">Group research</a>
+          <a href="#automated-chemical-exploration">Automated chemical exploration</a>
+          <a href="#scientific-machine-learning">Scientific machine learning</a>
+          <a href="#application-areas">Application areas</a>
+          <a href="#research-record">Research record</a>
         </aside>
       <article class="research-body">
-<p>Our work begins with a chemical question rather than a preferred algorithm. We use electronic-structure theory, automated exploration, data-driven models and scientific software in combinations suited to the problem.</p>
-<h2 id="automated-exploration">Automated exploration</h2>
+<p>Our research programme has two connected directions: automated chemical exploration and scientific machine learning. Both begin with chemical questions; electronic-structure theory, search algorithms, data-driven models and scientific software are combined as the problem requires.</p>
+<h2 id="automated-chemical-exploration">Automated chemical exploration</h2>
 <p>Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. We are interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.</p>
-<p><a href="/research/pyar/">Explore PyAR, our programme for automated structure and reaction search →</a></p>
-<h2 id="molecular-aggregates-nanoclusters-and-nanoalloys">Molecular aggregates, nanoclusters and nanoalloys</h2>
-<p>Atoms and molecules can assemble into many competing structures whose stability and properties depend on size, composition, bonding and collective interactions. We use automated cluster building, quantum chemistry and machine-learned potentials to explore these landscapes—from hydrogen-bonded molecular aggregates to metallic clusters and multicomponent nanoalloys.</p>
-<p><a href="/research/clusters/">Explore molecular aggregates, nanoclusters and nanoalloys →</a></p>
-<h2 id="astrochemical-and-prebiotic-space">Astrochemical and prebiotic space</h2>
+<p>PyAR is our principal software programme for reproducible structure and reaction search. It supports systematic generation and exploration across reactions, molecular aggregates and atomic clusters.</p>
+<p><a href="/research/pyar/">Explore PyAR and automated structure and reaction search →</a></p>
+<h2 id="scientific-machine-learning">Scientific machine learning</h2>
+<p>We use machine learning when it makes a chemical problem more tractable: to accelerate an energy model, guide a search or identify relationships worth testing. We favour interpretable, chemically grounded models and make validation, uncertainty and domain limits part of the scientific argument. Prediction alone is not enough.</p>
+<h2 id="application-areas">Application areas</h2>
+<h3 id="reaction-discovery-astrochemical-and-prebiotic-space">Reaction discovery, astrochemical and prebiotic space</h3>
 <p>Some problems begin by asking which molecules are possible; others ask how those molecules form. HydroMol maps a defined space of small hydrocarbons, while our automated reaction studies explore networks involving HCN, HNC, ammonia, formaldehyde and related species. Astrochemistry and prebiotic chemistry provide demanding tests of both approaches.</p>
 <p><a href="/research/reaction-discovery/">Explore automated reaction discovery and astrochemical space →</a></p>
-<h2 id="molecular-discovery-and-functional-materials">Molecular discovery and functional materials</h2>
+<h3 id="molecular-aggregates-nanoclusters-and-nanoalloys">Molecular aggregates, nanoclusters and nanoalloys</h3>
+<p>Atoms and molecules can assemble into many competing structures whose stability and properties depend on size, composition, bonding and collective interactions. We use automated cluster building, quantum chemistry and machine-learned potentials to explore these landscapes—from hydrogen-bonded molecular aggregates to metallic clusters and multicomponent nanoalloys.</p>
+<p><a href="/research/clusters/">Explore molecular aggregates, nanoclusters and nanoalloys →</a></p>
+<h3 id="molecular-discovery-and-functional-materials">Molecular discovery and functional materials</h3>
 <p>We combine molecular generation, quantum chemistry and machine learning to move from large candidate spaces towards molecules selected for particular functions. Current applications include strained hydrocarbons for energy storage, TADF emitters for OLEDs, photocages, photoswitches and photosensitisers.</p>
 <p><a href="/research/functional-materials/">Explore molecular discovery and functional materials →</a></p>
-<p>Across these themes, machine learning is used when it makes a chemical problem more tractable: to expand a search, accelerate an energy model or identify relationships worth testing. Prediction alone is not enough; the model, data, uncertainty and domain limits must remain visible.</p>
-<h2 id="group-research">Group research</h2>
-<p>Detailed projects, publications, software and current group members belong on the <a href="https://anooplab.github.io/">AnoopLab website</a>. The independent page on <a href="https://anooplab.github.io/research/collaborations/">collaborative research</a> explains how experimental questions and shared investigations shaped these research directions. Open-source software and data are maintained through the <a href="https://github.com/anooplab">AnoopLab GitHub organisation</a>.</p>
+<p>The same two directions run through these application areas: automated exploration widens what can be considered, while scientific machine learning helps rank, accelerate or interpret where appropriate.</p>
+<h2 id="research-record">Research record</h2>
+<p>The detailed theme pages present the questions, methods and representative evidence. The <a href="https://anooplab.github.io/publications/">publication archive</a> provides the complete scholarly record, while the account of <a href="https://anooplab.github.io/research/collaborations/">collaborative research</a> explains how experimental questions and shared investigations shaped the programme. Open-source software and data are maintained through the <a href="https://github.com/anooplab">AnoopLab GitHub organisation</a>.</p>
 
       </article>
     </div>

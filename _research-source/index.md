@@ -2,38 +2,46 @@
 layout: page
 title: Research
 eyebrow: Scientific agenda
-description: Our research asks how computation can explore molecular and reaction space without losing chemical meaning.
+description: Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.
 permalink: /research/
 ---
 
-Our work begins with a chemical question rather than a preferred algorithm. We use electronic-structure theory, automated exploration, data-driven models and scientific software in combinations suited to the problem.
+Our research programme has two connected directions: automated chemical exploration and scientific machine learning. Both begin with chemical questions; electronic-structure theory, search algorithms, data-driven models and scientific software are combined as the problem requires.
 
-## Automated exploration
+## Automated chemical exploration
 
 Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. We are interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.
 
-[Explore PyAR, our programme for automated structure and reaction search →]({{ '/research/pyar/' | relative_url }})
+PyAR is our principal software programme for reproducible structure and reaction search. It supports systematic generation and exploration across reactions, molecular aggregates and atomic clusters.
 
-## Molecular aggregates, nanoclusters and nanoalloys
+[Explore PyAR and automated structure and reaction search →]({{ '/research/pyar/' | relative_url }})
 
-Atoms and molecules can assemble into many competing structures whose stability and properties depend on size, composition, bonding and collective interactions. We use automated cluster building, quantum chemistry and machine-learned potentials to explore these landscapes—from hydrogen-bonded molecular aggregates to metallic clusters and multicomponent nanoalloys.
+## Scientific machine learning
 
-[Explore molecular aggregates, nanoclusters and nanoalloys →]({{ '/research/clusters/' | relative_url }})
+We use machine learning when it makes a chemical problem more tractable: to accelerate an energy model, guide a search or identify relationships worth testing. We favour interpretable, chemically grounded models and make validation, uncertainty and domain limits part of the scientific argument. Prediction alone is not enough.
 
-## Astrochemical and prebiotic space
+## Application areas
+
+### Reaction discovery, astrochemical and prebiotic space
 
 Some problems begin by asking which molecules are possible; others ask how those molecules form. HydroMol maps a defined space of small hydrocarbons, while our automated reaction studies explore networks involving HCN, HNC, ammonia, formaldehyde and related species. Astrochemistry and prebiotic chemistry provide demanding tests of both approaches.
 
 [Explore automated reaction discovery and astrochemical space →]({{ '/research/reaction-discovery/' | relative_url }})
 
-## Molecular discovery and functional materials
+### Molecular aggregates, nanoclusters and nanoalloys
+
+Atoms and molecules can assemble into many competing structures whose stability and properties depend on size, composition, bonding and collective interactions. We use automated cluster building, quantum chemistry and machine-learned potentials to explore these landscapes—from hydrogen-bonded molecular aggregates to metallic clusters and multicomponent nanoalloys.
+
+[Explore molecular aggregates, nanoclusters and nanoalloys →]({{ '/research/clusters/' | relative_url }})
+
+### Molecular discovery and functional materials
 
 We combine molecular generation, quantum chemistry and machine learning to move from large candidate spaces towards molecules selected for particular functions. Current applications include strained hydrocarbons for energy storage, TADF emitters for OLEDs, photocages, photoswitches and photosensitisers.
 
 [Explore molecular discovery and functional materials →]({{ '/research/functional-materials/' | relative_url }})
 
-Across these themes, machine learning is used when it makes a chemical problem more tractable: to expand a search, accelerate an energy model or identify relationships worth testing. Prediction alone is not enough; the model, data, uncertainty and domain limits must remain visible.
+The same two directions run through these application areas: automated exploration widens what can be considered, while scientific machine learning helps rank, accelerate or interpret where appropriate.
 
-## Group research
+## Research record
 
-Detailed projects, publications, software and current group members belong on the [AnoopLab website](https://anooplab.github.io/). The independent page on [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental questions and shared investigations shaped these research directions. Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
+The detailed theme pages present the questions, methods and representative evidence. The [publication archive](https://anooplab.github.io/publications/) provides the complete scholarly record, while the account of [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental questions and shared investigations shaped the programme. Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
