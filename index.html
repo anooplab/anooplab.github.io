@@ -6,7 +6,7 @@
   <meta name="description" content="AnoopLab develops scientific software and computational methods for chemical-space exploration, molecular structure prediction, explainable machine learning, and molecular and materials discovery.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="A. Anoop">
-  <meta name="theme-color" content="#f2eee5">
+  <meta name="theme-color" content="#f2eee5" data-light="#f2eee5" data-dark="#111713">
   <title>AnoopLab | Computational Chemistry and Molecular Discovery</title>
 
   <link rel="canonical" href="https://anooplab.github.io/">
@@ -34,6 +34,8 @@
   <meta name="twitter:image" content="https://anooplab.github.io/images/AL-research-workflow.png">
   <meta name="twitter:image:alt" content="AnoopLab computational research workflow">
 
+  <script>(() => { try { const t = localStorage.getItem('anooplab-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (_) {} })();</script>
+  <script src="js/theme.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,13 +105,14 @@
         </span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#research">Research</a>
+        <a href="research/">Research</a>
         <a href="research/collaborations/">Collaborations</a>
         <a href="publications/">Publications</a>
         <a href="#software">Software &amp; data</a>
         <a href="#people">People</a>
         <a href="#contact">Contact</a>
         <a href="https://anoopduk.github.io/">A. Anoop <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false"><span aria-hidden="true">◐</span><span class="theme-toggle-text">Theme</span></button>
       </nav>
     </div>
   </header>
@@ -149,7 +152,7 @@
           <span class="theme-index">01</span>
           <div>
             <h3>Scientific software and reproducible computational discovery</h3>
-            <p>Reusable tools, documented workflows, and research datasets for chemical structure, reaction, and property exploration. PyAR is the principal software-development programme. <a href="https://anoopduk.github.io/research/pyar/">Explore the PyAR research theme <span aria-hidden="true">→</span></a></p>
+            <p>Reusable tools, documented workflows, and research datasets for chemical structure, reaction, and property exploration. PyAR is the principal software-development programme. <a href="research/pyar/">Explore the PyAR research theme <span aria-hidden="true">→</span></a></p>
           </div>
         </li>
         <li>
@@ -163,14 +166,14 @@
           <span class="theme-index">03</span>
           <div>
             <h3>Automated exploration of chemical space, reactions, and structures</h3>
-            <p>Systematic generation and exploration of molecules, reaction networks, aggregates, and nanoclusters, including global optimisation and multilevel refinement. <a href="https://anoopduk.github.io/research/reaction-discovery/">Explore reaction discovery <span aria-hidden="true">→</span></a> <a href="https://anoopduk.github.io/research/clusters/">Explore aggregates, nanoclusters and nanoalloys <span aria-hidden="true">→</span></a></p>
+            <p>Systematic generation and exploration of molecules, reaction networks, aggregates, and nanoclusters, including global optimisation and multilevel refinement. <a href="research/reaction-discovery/">Explore reaction discovery <span aria-hidden="true">→</span></a> <a href="research/clusters/">Explore aggregates, nanoclusters and nanoalloys <span aria-hidden="true">→</span></a></p>
           </div>
         </li>
         <li>
           <span class="theme-index">04</span>
           <div>
             <h3>Computational molecular and materials discovery</h3>
-            <p>Quantum-chemical and data-driven investigations spanning functional molecules, high-energy-density hydrocarbons, nanoclusters, and materials-oriented chemical problems.</p>
+            <p>Quantum-chemical and data-driven investigations spanning functional molecules, high-energy-density hydrocarbons, nanoclusters, and materials-oriented chemical problems. <a href="research/functional-materials/">Explore molecular discovery and functional materials <span aria-hidden="true">→</span></a></p>
           </div>
         </li>
       </ol>
@@ -215,7 +218,7 @@
           <div>
             <h3><a href="https://doi.org/10.3389/fchem.2019.00644">A Global Optimizer for Nanoclusters</a></h3>
             <p><em>Frontiers in Chemistry</em> 7, 644</p>
-            <p><a href="https://anoopduk.github.io/research/clusters/">Research theme: molecular aggregates, nanoclusters and nanoalloys <span aria-hidden="true">→</span></a></p>
+            <p><a href="research/clusters/">Research theme: molecular aggregates, nanoclusters and nanoalloys <span aria-hidden="true">→</span></a></p>
           </div>
         </article>
         <article>
@@ -248,7 +251,7 @@
           <p class="software-label">Flagship programme</p>
           <h3>PyAR</h3>
           <p>PyAR supports automated exploration of aggregates, reaction pathways, solvation structures, and atomic clusters. Its continued development is central to the group's ambition in software-enabled computational chemistry.</p>
-          <a href="https://anoopduk.github.io/research/pyar/">Explore the PyAR research programme <span aria-hidden="true">→</span></a><br>
+          <a href="research/pyar/">Explore the PyAR research programme <span aria-hidden="true">→</span></a><br>
           <a href="https://github.com/anooplab/pyar">Repository and documentation <span aria-hidden="true">→</span></a>
         </article>
 

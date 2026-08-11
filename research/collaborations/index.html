@@ -6,7 +6,7 @@
   <meta name="description" content="How collaborative efforts to understand experimental reactions, structures and properties shaped AnoopLab's research in automated discovery, functional molecular design and AI-assisted molecular science.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="A. Anoop">
-  <meta name="theme-color" content="#f2eee5">
+  <meta name="theme-color" content="#f2eee5" data-light="#f2eee5" data-dark="#111713">
   <title>Collaborative Research | AnoopLab</title>
 
   <link rel="canonical" href="https://anooplab.github.io/research/collaborations/">
@@ -34,6 +34,8 @@
   <meta name="twitter:image" content="https://anooplab.github.io/images/AL-research-workflow.png">
   <meta name="twitter:image:alt" content="AnoopLab computational research workflow">
 
+  <script>(() => { try { const t = localStorage.getItem('anooplab-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (_) {} })();</script>
+  <script src="../../js/theme.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,7 +55,7 @@
         "@id": "https://anooplab.github.io/research/collaborations/#breadcrumb",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anooplab.github.io/"},
-          {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://anooplab.github.io/#research"},
+          {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://anooplab.github.io/research/"},
           {"@type": "ListItem", "position": 3, "name": "Collaborative research", "item": "https://anooplab.github.io/research/collaborations/"}
         ]
       },
@@ -84,13 +86,14 @@
         <span><strong>AnoopLab</strong><small>Computational Chemistry Group</small></span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="../../#research">Research</a>
+        <a href="../">Research</a>
         <a href="./" aria-current="page">Collaborations</a>
         <a href="../../publications/">Publications</a>
         <a href="../../#software">Software &amp; data</a>
         <a href="../../#people">People</a>
         <a href="../../#contact">Contact</a>
         <a href="https://anoopduk.github.io/">A. Anoop <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false"><span aria-hidden="true">◐</span><span class="theme-toggle-text">Theme</span></button>
       </nav>
     </div>
   </header>
@@ -128,15 +131,15 @@
 
         <p class="transition-statement">These studies showed both the power and the limitation of conventional mechanistic modelling. Once plausible intermediates and products have been proposed, calculations can distinguish among them. But the search remains constrained by what someone thought to propose; unexpected products and alternative pathways may never enter the calculation.</p>
 
-        <p>This difficulty led us towards <strong>automated reaction discovery</strong>: beginning with reactants, systematically generating possible encounters and bond rearrangements, identifying distinct products and then examining the pathways that connect them. It also contributed directly to the development of <a href="https://anoopduk.github.io/research/pyar/">PyAR</a> as a framework for exploring reaction space rather than calculating only a mechanism chosen in advance.</p>
+        <p>This difficulty led us towards <strong>automated reaction discovery</strong>: beginning with reactants, systematically generating possible encounters and bond rearrangements, identifying distinct products and then examining the pathways that connect them. It also contributed directly to the development of <a href="../pyar/">PyAR</a> as a framework for exploring reaction space rather than calculating only a mechanism chosen in advance.</p>
 
         <p>A collaboration with <a href="https://barbatti.org/research-topics/">Mario Barbatti</a> provided another decisive turn. Our <a href="https://doi.org/10.1002/anie.201303246">study of the photochemical transformation of an HCN tetramer</a> combined excited-state dynamics, ground-state pathways and kinetic modelling to examine a step towards a purine precursor. It showed that the source and dissipation of energy can change which mechanisms are accessible: a reaction map restricted to thermal ground-state chemistry may miss the relevant pathway.</p>
 
         <p>That work introduced prebiotic chemistry into our programme. The questions it raised—how simple molecules generate unexpectedly diverse products, and how thermal, photochemical and environmental conditions reshape the available pathways—subsequently became part of our research on automated reaction discovery and prebiotic chemical space.</p>
 
         <nav class="related-paths" aria-label="Research arising from reaction collaborations">
-          <a href="https://anoopduk.github.io/research/reaction-discovery/">Automated reaction discovery and astrochemical space <span aria-hidden="true">→</span></a>
-          <a href="https://anoopduk.github.io/research/pyar/">PyAR: automated exploration <span aria-hidden="true">→</span></a>
+          <a href="../reaction-discovery/">Automated reaction discovery and astrochemical space <span aria-hidden="true">→</span></a>
+          <a href="../pyar/">PyAR: automated exploration <span aria-hidden="true">→</span></a>
         </nav>
       </div>
     </article>
@@ -158,8 +161,8 @@
         <p>What began as an effort to explain unusual experimental and theoretical structures therefore developed into a broader programme on the automated exploration of structural landscapes.</p>
 
         <nav class="related-paths" aria-label="Research arising from structure collaborations">
-          <a href="https://anoopduk.github.io/research/clusters/">Molecular aggregates, nanoclusters and nanoalloys <span aria-hidden="true">→</span></a>
-          <a href="https://anoopduk.github.io/research/pyar/">PyAR structure exploration <span aria-hidden="true">→</span></a>
+          <a href="../clusters/">Molecular aggregates, nanoclusters and nanoalloys <span aria-hidden="true">→</span></a>
+          <a href="../pyar/">PyAR structure exploration <span aria-hidden="true">→</span></a>
         </nav>
       </div>
     </article>
@@ -183,7 +186,7 @@
         <p>Collaborative property studies thus became a foundation for moving from the explanation of known molecules towards the design and experimental evaluation of new candidates.</p>
 
         <nav class="related-paths" aria-label="Research arising from property collaborations">
-          <a href="https://anoopduk.github.io/research/functional-materials/">Molecular discovery and functional materials <span aria-hidden="true">→</span></a>
+          <a href="../functional-materials/">Molecular discovery and functional materials <span aria-hidden="true">→</span></a>
           <a href="../../publications/">Find the associated publications <span aria-hidden="true">→</span></a>
         </nav>
       </div>
@@ -206,7 +209,7 @@
         <p>Collaboration remains where these methods are tested against difficult chemistry—and where new research directions often begin.</p>
 
         <nav class="related-paths" aria-label="Continue exploring the AnoopLab programme">
-          <a href="../../#research">Explore the complete research programme <span aria-hidden="true">→</span></a>
+          <a href="../">Explore the complete research programme <span aria-hidden="true">→</span></a>
           <a href="../../#software">Software and research data <span aria-hidden="true">→</span></a>
           <a href="../../publications/">Full publication archive <span aria-hidden="true">→</span></a>
         </nav>
@@ -216,7 +219,7 @@
 
   <footer class="site-footer">
     <p>© 2026 AnoopLab · <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
-    <p><a href="../../#research">Research programme</a> · <a href="../../publications/">Publications</a></p>
+    <p><a href="../">Research programme</a> · <a href="../../publications/">Publications</a></p>
   </footer>
 </body>
 </html>

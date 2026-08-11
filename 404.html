@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The requested AnoopLab page could not be found. Return to the computational chemistry group homepage.">
   <meta name="robots" content="noindex,follow">
-  <meta name="theme-color" content="#f2eee5">
+  <meta name="theme-color" content="#f2eee5" data-light="#f2eee5" data-dark="#111713">
   <meta property="og:title" content="Page not found | AnoopLab">
   <meta property="og:description" content="The requested AnoopLab page could not be found. Return to the computational chemistry group homepage.">
   <meta property="og:type" content="website">
@@ -19,6 +19,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="stylesheet" href="/css/lab.css">
+  <script>(() => { try { const t = localStorage.getItem('anooplab-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (_) {} })();</script>
+  <script src="/js/theme.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -29,12 +31,13 @@
         <span><strong>AnoopLab</strong><small>Computational Chemistry Group</small></span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="/#research">Research</a>
+        <a href="/research/">Research</a>
         <a href="/research/collaborations/">Collaborations</a>
         <a href="/publications/">Publications</a>
         <a href="/#software">Software &amp; data</a>
         <a href="/#people">People</a>
         <a href="https://anoopduk.github.io/">A. Anoop <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false"><span aria-hidden="true">◐</span><span class="theme-toggle-text">Theme</span></button>
         <a href="/#contact">Contact</a>
       </nav>
     </div>
