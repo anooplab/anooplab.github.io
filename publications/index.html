@@ -3,27 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Full publications archive for Anoop Lab, a computational chemistry group at Digital University Kerala, with journal articles, DOI links, and searchable browsing by keyword and year." />
+  <meta name="description" content="Full publications archive for AnoopLab, a computational chemistry group at Digital University Kerala, with journal articles, DOI links, and searchable browsing by keyword and year." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="A. Anoop">
   <meta name="theme-color" content="#0b0907">
-  <meta property="og:title" content="Full Publications | Anoop Lab" />
-  <meta property="og:description" content="Search the full publications archive of Anoop Lab, a computational chemistry group at Digital University Kerala, including journal articles with DOI links and year filtering." />
+  <meta property="og:title" content="Full Publications | AnoopLab" />
+  <meta property="og:description" content="Search the full publications archive of AnoopLab, a computational chemistry group at Digital University Kerala, including journal articles with DOI links and year filtering." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://anooplab.github.io/publications/" />
-  <meta property="og:site_name" content="Anoop Lab" />
+  <meta property="og:site_name" content="AnoopLab" />
   <meta property="og:locale" content="en_IN" />
-  <meta property="og:image" content="https://anooplab.github.io/images/AL-hero-img.png" />
-  <meta property="og:image:width" content="1536" />
-  <meta property="og:image:height" content="1024" />
+  <meta property="og:image" content="https://anooplab.github.io/images/AL-hero-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
   <meta property="og:image:alt" content="AnoopLab hero image with campus and computational chemistry visual theme" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Full Publications | Anoop Lab" />
-  <meta name="twitter:description" content="Search the full publications archive of Anoop Lab, a computational chemistry group at Digital University Kerala, including journal articles with DOI links and year filtering." />
-  <meta name="twitter:image" content="https://anooplab.github.io/images/AL-hero-img.png" />
+  <meta name="twitter:title" content="Full Publications | AnoopLab" />
+  <meta name="twitter:description" content="Search the full publications archive of AnoopLab, a computational chemistry group at Digital University Kerala, including journal articles with DOI links and year filtering." />
+  <meta name="twitter:image" content="https://anooplab.github.io/images/AL-hero-social.jpg" />
   <meta name="twitter:image:alt" content="AnoopLab hero image with campus and computational chemistry visual theme" />
   <title>Publications | AnoopLab Computational Chemistry Group</title>
   <link rel="canonical" href="https://anooplab.github.io/publications/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="author" href="https://anoopduk.github.io/about/" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,7 +39,7 @@
           "@id": "https://anooplab.github.io/publications/#page",
           "url": "https://anooplab.github.io/publications/",
           "name": "Publications | AnoopLab Computational Chemistry Group",
-          "description": "Search the full publications archive of Anoop Lab, a computational chemistry group at Digital University Kerala, including journal articles with DOI links and year filtering.",
+          "description": "Search the full publications archive of AnoopLab, a computational chemistry group at Digital University Kerala, including journal articles with DOI links and year filtering.",
           "isPartOf": {
             "@id": "https://anooplab.github.io/#website"
           },
@@ -45,7 +51,7 @@
           "@type": "WebSite",
           "@id": "https://anooplab.github.io/#website",
           "url": "https://anooplab.github.io/",
-          "name": "Anoop Lab",
+          "name": "AnoopLab",
           "publisher": {
             "@id": "https://anooplab.github.io/#organization"
           }
@@ -71,11 +77,12 @@
         {
           "@type": "Organization",
           "@id": "https://anooplab.github.io/#organization",
-          "name": "Anoop Lab",
+          "name": "AnoopLab",
           "url": "https://anooplab.github.io/",
           "logo": "https://anooplab.github.io/apple-touch-icon.png",
           "member": {
             "@type": "Person",
+            "@id": "https://anoopduk.github.io/#person",
             "name": "A. Anoop",
             "alternateName": ["Anoop Ayyappan", "Anakuthil Anoop Ayyappan"],
             "jobTitle": "Professor",
@@ -965,7 +972,7 @@
           <h2 style="margin:0 0 6px;">Journal articles</h2>
           <p class="muted small" style="margin-top:0;">Search by title, author, or journal, and narrow the archive by year when needed.</p>
 
-          <div class="pub-filter filterbar" aria-label="Filter publications">
+          <div class="pub-filter filterbar" role="search" aria-label="Filter publications">
             <div>
               <label for="pubSearch" class="muted small" style="display:block; margin-bottom:6px;">Search (title, author, journal)</label>
               <input id="pubSearch" type="search" placeholder="Type to filter..." autocomplete="off" spellcheck="false" />
