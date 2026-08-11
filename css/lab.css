@@ -469,6 +469,151 @@ h1 {
 
 .site-footer p { margin: 0; }
 
+/* Collaborative research story */
+.programme-origin {
+  margin-top: 46px;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+  gap: 48px;
+  align-items: center;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.programme-origin p { max-width: 72ch; margin-bottom: 0; color: var(--ink-soft); }
+.programme-origin strong { color: var(--ink); }
+.programme-origin a { justify-self: end; font-size: 14px; font-weight: 700; }
+
+.research-story { width: min(calc(100% - 48px), var(--max)); }
+
+.article-hero {
+  padding: clamp(76px, 9vw, 124px) 0 88px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(290px, .7fr);
+  gap: clamp(52px, 8vw, 104px);
+  align-items: end;
+  border-bottom: 2px solid var(--ink);
+}
+
+.article-hero h1 {
+  max-width: 12ch;
+  margin-bottom: 28px;
+}
+
+.article-hero > div > p { max-width: 72ch; color: var(--ink-soft); }
+.article-hero .article-lead {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(21px, 2.15vw, 28px);
+  line-height: 1.42;
+}
+
+.article-note {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.story-map {
+  display: grid;
+  align-content: end;
+  border-top: 2px solid var(--ink);
+}
+
+.story-map-label {
+  margin: 0;
+  padding: 17px 0;
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.story-map a {
+  padding: 14px 0;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.story-map a:last-child { border-bottom: 1px solid var(--line); }
+.story-map a:hover { color: var(--oxide); }
+.story-map span { color: var(--oxide); font-family: var(--serif); font-weight: 500; }
+
+.story-section {
+  padding: clamp(76px, 9vw, 112px) 0;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  border-bottom: 1px solid var(--line-dark);
+  scroll-margin-top: 96px;
+}
+
+.story-number {
+  padding-top: 9px;
+  color: var(--oxide);
+  font-family: var(--serif);
+  font-size: 20px;
+}
+
+.story-content { max-width: 880px; }
+.section-kicker {
+  margin-bottom: 13px;
+  color: var(--oxide);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.story-content h2 {
+  max-width: 23ch;
+  margin-bottom: 36px;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.04;
+}
+
+.story-content > p { max-width: 76ch; color: var(--ink-soft); }
+.story-content > p + p { margin-top: 20px; }
+
+.transition-statement {
+  margin: 40px 0 34px;
+  padding: 25px 0 25px 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-left: 5px solid var(--oxide);
+  color: var(--ink) !important;
+  font-family: var(--serif);
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.48;
+}
+
+.related-paths {
+  margin-top: 46px;
+  display: grid;
+  border-top: 2px solid var(--ink);
+}
+
+.related-paths a {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.related-paths a:hover { color: var(--oxide); }
+
 /* Alumni page */
 .page-hero {
   padding: 86px 0 70px;
@@ -963,6 +1108,8 @@ h1 {
   .pi-portrait { max-width: 420px; }
   .pi-narrative { grid-template-columns: 1fr; gap: 18px; }
   .archive-section > .section-head { grid-template-columns: 1fr; gap: 18px; }
+  .article-hero { grid-template-columns: 1fr; align-items: start; }
+  .story-map { max-width: 640px; }
 }
 
 @media (max-width: 680px) {
@@ -996,6 +1143,13 @@ h1 {
   .archive-page .filterbar { grid-template-columns: 1fr; }
   .archive-page .filterbar > div:last-child { justify-content: flex-start !important; }
   .archive-page .clean { padding-inline: 18px; }
+  .programme-origin { grid-template-columns: 1fr; gap: 16px; }
+  .programme-origin a { justify-self: start; }
+  .research-story { width: min(calc(100% - 32px), var(--max)); }
+  .article-hero { padding: 62px 0 70px; gap: 42px; }
+  .story-section { grid-template-columns: 42px minmax(0, 1fr); gap: 14px; }
+  .story-content h2 { font-size: clamp(36px, 11vw, 50px); }
+  .transition-statement { padding-left: 18px; }
 }
 
 @media (max-width: 420px) {
