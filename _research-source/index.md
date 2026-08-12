@@ -22,7 +22,7 @@ We use machine learning when it makes a chemical problem more tractable: to acce
 
 ## Application areas
 
-### Reaction discovery, astrochemical and prebiotic space
+### Reaction discovery, astrochemistry and prebiotic chemistry
 
 Some problems begin by asking which molecules are possible; others ask how those molecules form. HydroMol maps a defined space of small hydrocarbons, while our automated reaction studies explore networks involving HCN, HNC, ammonia, formaldehyde and related species. Astrochemistry and prebiotic chemistry provide demanding tests of both approaches.
 
@@ -41,7 +41,3 @@ We combine molecular generation, quantum chemistry and machine learning to move 
 [Explore molecular discovery and functional materials →]({{ '/research/functional-materials/' | relative_url }})
 
 The same two directions run through these application areas: automated exploration widens what can be considered, while scientific machine learning helps rank, accelerate or interpret where appropriate.
-
-## Research record
-
-The detailed theme pages present the questions, methods and representative evidence. The [publication archive](https://anooplab.github.io/publications/) provides the complete scholarly record, while the account of [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental questions and shared investigations shaped the programme. Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
