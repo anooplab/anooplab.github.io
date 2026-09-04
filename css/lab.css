@@ -664,11 +664,19 @@ h1 {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 32px 22px;
+  align-items: start;
 }
-.photo-grid figure { margin: 0; }
-.photo-grid img { width: 100%; display: block; background: var(--white); border: 1px solid var(--line); }
+.photo-grid figure { min-width: 0; margin: 0; }
+.photo-grid .photo-wide { grid-column: 1 / -1; }
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
 .photo-grid figcaption { margin-top: 8px; color: var(--ink-soft); font-size: 12px; }
 
 /* Searchable archive pages */
