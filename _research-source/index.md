@@ -2,11 +2,9 @@
 layout: page
 title: Research
 eyebrow: Scientific agenda
-description: Our research combines automated chemical exploration with scientific machine learning to investigate molecular structure, reactivity and function.
+description: Our research develops computational methods and scientific software for exploring chemical space systematically. Automated structure and reaction search forms the core of the programme, while quantum chemistry and scientific machine learning are used to evaluate, accelerate, guide and interpret these searches.
 permalink: /research/
 ---
-
-Our research programme has two connected directions: automated chemical exploration and scientific machine learning. Both begin with chemical questions; electronic-structure theory, search algorithms, data-driven models and scientific software are combined as the problem requires.
 
 ## Automated chemical exploration
 
