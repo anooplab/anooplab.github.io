@@ -219,6 +219,7 @@ h1 {
 
 .workflow-figure img {
   width: 100%;
+  height: auto;
   display: block;
   filter: drop-shadow(0 22px 30px rgba(24, 34, 30, .13));
 }
